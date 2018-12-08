@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /ars00.png
 /ars01.png
 /ars02.png
@@ -189,3 +190,9 @@
 /nameMCT
 /nameMUN
 /nameTOT
+||||||| merged common ancestors
+=======
+/Main.class
+/application/
+/logic/
+>>>>>>> 9258ce2b20da1de86f9624ca69066ddbd2dbf01b
