@@ -1,11 +1,15 @@
 package application;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -13,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.util.Callback;
 import logic.Club;
 import logic.Standings;
 
@@ -51,7 +56,30 @@ public class Tables extends Pane {
 
 		TableColumn posCol = new TableColumn("Pos");
 		posCol.setPrefWidth(40);
-		posCol.setSortType(TableColumn.SortType.ASCENDING);
+		// numbered row
+		posCol.setCellValueFactory(new Callback<CellDataFeatures<Standings, Standings>, ObservableValue<Standings>>() {
+            @Override public ObservableValue<Standings> call(CellDataFeatures<Standings, Standings> p) {
+                return new ReadOnlyObjectWrapper(p.getValue());
+            }
+        });
+
+        posCol.setCellFactory(new Callback<TableColumn<Standings, Standings>, TableCell<Standings, Standings>>() {
+            @Override public TableCell<Standings, Standings> call(TableColumn<Standings, Standings> param) {
+                return new TableCell<Standings, Standings>() {
+                    @Override protected void updateItem(Standings item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (this.getTableRow() != null && item != null) {
+                            setText(this.getTableRow().getIndex()+1+"");
+                        } else {
+                            setText("");
+                        }
+                    }
+                };
+            }
+        });
+        posCol.setSortable(false);
+		
 		
 		TableColumn<Standings, String> clubCol = new TableColumn("Club");
 		clubCol.setPrefWidth(200);
