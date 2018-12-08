@@ -1,9 +1,11 @@
 package application;
 
+import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -16,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Callback;
 import logic.Club;
@@ -51,6 +54,7 @@ public class Tables extends Pane {
 		topic = new Label("RANKING");
 		topic.setFont(new Font(50));
 		topic.setAlignment(Pos.TOP_LEFT);
+		topic.setTextFill(Color.WHITE);
 		
 		table = new TableView<Standings>();
 
@@ -118,10 +122,29 @@ public class Tables extends Pane {
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
-		table.setItems(getDate());
 		table.setPrefHeight(560);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
+//		table.setStyle("-fx-background-color: #EDEDED;");
+		
+		// try to sort
+//		Callback<Standings,Observable[]> cb =(Standings stock) -> new Observable[]{
+//		        stock.percentChangeProperty(),
+//		    };
+//		SortedList<Standings> sortedItems = new SortedList<>( getDate(), 
+//	      (Standings stan1, Standings stan2) -> {
+//	          if( stan1.getPoints() < stan2.getPoints() ) {
+//	              return -1;
+//	          } else if( stan1.getPoints() > stan2.getPoints() ) {
+//	              return 1;
+//	          } else {
+//	              return 0;
+//	          }
+//	      });
+//		table.setItems(sortedItems);
+//		sortedItems.comparatorProperty().bind(table.comparatorProperty());
+		
+		table.setItems(getDate());
 		
 		v.getChildren().addAll(topic, table);
 		this.getChildren().addAll(v, cup, cup2);

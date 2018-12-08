@@ -45,7 +45,7 @@ public class Main extends Application{
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 		
-		root.setStyle("-fx-background-color: #CB918B;");
+		root.setStyle("-fx-background-color: #5A335D;");     // 5A335D , 6E4B71 , 5D3761
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
