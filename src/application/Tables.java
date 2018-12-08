@@ -23,6 +23,7 @@ public class Tables extends Pane {
 //	private Standings team = new Standings(club);
 	private TableView<Standings> table;
 	private ImageView cup;
+	private ImageView cup2;
 	
 	public Tables() {
 		VBox v = new VBox();
@@ -33,8 +34,14 @@ public class Tables extends Pane {
 		cup = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup.setFitHeight(50);
 		cup.setFitWidth(50);
-		cup.setLayoutX(70);
+		cup.setLayoutX(180);
 		cup.setLayoutY(20);
+		
+		cup2 = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
+		cup2.setFitHeight(50);
+		cup2.setFitWidth(50);
+		cup2.setLayoutX(470);
+		cup2.setLayoutY(20);
 		
 		topic = new Label("RANKING");
 		topic.setFont(new Font(50));
@@ -89,7 +96,7 @@ public class Tables extends Pane {
 				gfCol, gaCol, gdCol, pointCol);
 		
 		v.getChildren().addAll(topic, table);
-		this.getChildren().addAll(v, cup);
+		this.getChildren().addAll(v, cup, cup2);
 	
 	}
 	
