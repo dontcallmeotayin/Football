@@ -1,8 +1,5 @@
 package application;
 
-import java.time.LocalDate;
-
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -17,7 +14,9 @@ public class MatchPane extends HBox{
 		super(5);
 		setPrefWidth(300);
 		setPrefHeight(40);
-		String start = match.getStartTime().toString();
+		String startH = ""+match.getStartTime().getHour();
+		String startM = ""+match.getStartTime().getMinute();
+		String start = startH + ":" + startM;
 		String hometeam = match.getHomeTeam().getKey().getName();
 		String awayteam = match.getAwayTeam().getKey().getName();
 		String stadium = match.getStadium().getName();

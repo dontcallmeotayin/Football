@@ -1,5 +1,4 @@
-import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 import application.MatchPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -23,7 +22,7 @@ public class Main extends Application{
 //		Pair<Club,Integer> c = new Pair<>(che,1);
 //		Stadium stamford = new Stadium("stamford");
 //		che.setStadium(stamford);
-//		LocalDate date = LocalDate.now().get;
+//		LocalDateTime date = LocalDateTime.now();
 //		Match test = new Match(c,a,date);
 //		MatchPane testpane = new MatchPane(test);
 //		root.getChildren().add(testpane);

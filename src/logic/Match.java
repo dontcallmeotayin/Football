@@ -1,6 +1,7 @@
 package logic;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javafx.util.Pair;
 
 public class Match {
@@ -8,13 +9,13 @@ public class Match {
 	private int totalGoals;
 	private Pair<Club,Integer> homeTeam;
 	private Pair<Club,Integer> awayTeam;
-	private LocalDate startTime;
-	private LocalDate endTime;
+	private LocalDateTime startTime;
+	private LocalDateTime endTime;
 	private Refree refree;
 	private Stadium stadium;
 	private boolean isDone;
 	
-	public Match(String id,Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDate start,LocalDate end,Refree refree,boolean isDone) {
+	public Match(String id,Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDateTime start,LocalDateTime end,Refree refree,boolean isDone) {
 		this.id = id;
 		this.homeTeam = home;
 		this.awayTeam = away;
@@ -26,7 +27,7 @@ public class Match {
 		totalGoals();
 	}
 	
-	public Match(Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDate start) {
+	public Match(Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDateTime start) {
 		this.homeTeam = home;
 		this.awayTeam = away;
 		this.startTime = start;
@@ -69,19 +70,19 @@ public class Match {
 		this.awayTeam = awayTeam;
 	}
 
-	public LocalDate getStartTime() {
+	public LocalDateTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(LocalDate startTime) {
+	public void setStartTime(LocalDateTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public LocalDate getEndTime() {
+	public LocalDateTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(LocalDate endTime) {
+	public void setEndTime(LocalDateTime endTime) {
 		this.endTime = endTime;
 	}
 

@@ -17,4 +17,45 @@ public class Competition {
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ArrayList<Standings> getStandings() {
+		return Std;
+	}
+
+	public void setStandings(ArrayList<Standings> std) {
+		Std = std;
+	}
+
+	public ArrayList<Match> getMatches() {
+		return Matches;
+	}
+
+	public void setMatches(ArrayList<Match> matches) {
+		Matches = matches;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+	
 }
