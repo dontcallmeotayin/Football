@@ -15,6 +15,8 @@ public class Main extends Application{
 	@Override
 	public void start(Stage stage) {
 		VBox root = new VBox();
+		root.setPrefWidth(800);
+		root.setPrefHeight(600);
 //		Club ars = new Club("ARS");
 //		Club che = new Club("CHE");
 //		Pair<Club,Integer> a = new Pair<>(ars,1);
