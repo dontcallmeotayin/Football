@@ -21,7 +21,6 @@ public class Player extends Person {
 		super(f, l, n, d);
 		this.setAge(calAge());
 	}
-	
 
 	public Player(String f, String l, String n, LocalDate d,
 			double h,String p,int no,boolean cap,int g,int c,int ap,int as) {

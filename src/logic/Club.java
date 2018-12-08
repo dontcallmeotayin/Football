@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 
-public class Club {
+public class Club extends IncludeImage {
 	private String name;
 	private String code;
 	private Stadium stadium;
@@ -19,17 +19,27 @@ public class Club {
 		this.Players = players;
 		this.Colors = colors;
 		this.manager = mng;
-		codeToName();
 		this.stadium = stadium;
+		if(codeToName()) {
+			imgPath();
+		}
 	}
 	
 	public Club(String code) {
 		this.code = code;
-		codeToName();
+		if(codeToName()) {
+			imgPath();
+		}
 	}
 	
-	public void codeToName() {
+	public void imgPath() {
+		String img = (this.code).toLowerCase()+"00";
+		this.setImagename(img);
+	}
+	
+	public boolean codeToName() {
 		String c = this.code;
+		boolean check = true;
 		if(c.equals("ARS")) name = "Arsenal";
 		if(c.equals("MCI")) name = "Manchester City";
 		if(c.equals("LIV")) name = "Liverpool";
@@ -50,6 +60,11 @@ public class Club {
 		if(c.equals("SOU")) name = "Southampton";
 		if(c.equals("BUR")) name = "Burnley";
 		if(c.equals("FUL")) name = "Fulham";
+		else {
+			name = "";
+			check = false;
+		}
+		return check;
 	}
 
 	public String getName() {

@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 
 import javafx.scene.image.Image;
 
-public class Person {
+public class Person extends IncludeImage {
 	private String firstName;
 	private String lastName;
 	private LocalDate bd;

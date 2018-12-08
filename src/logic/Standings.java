@@ -15,8 +15,7 @@ public class Standings {
 		this.team = team;
 	}
 	
-	public Standings(Club team,int pg,int w,int l,int d,
-			int gf, int ga) {
+	public Standings(Club team,int pg,int w,int l,int d,int gf, int ga) {
 		this.team = team;
 		this.playedGames = pg;
 		this.win = w;
