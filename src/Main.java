@@ -21,8 +21,14 @@ public class Main extends Application{
 	@Override
 	public void start(Stage stage) {
 		VBox root = new VBox();
+<<<<<<< HEAD
 		root.setPrefSize(700, 675);
 		
+||||||| merged common ancestors
+=======
+		root.setPrefWidth(800);
+		root.setPrefHeight(600);
+>>>>>>> 7caaaaa124de6dfc1ecc5012b39a7fe2a065a954
 //		Club ars = new Club("ARS");
 //		Club che = new Club("CHE");
 //		Pair<Club,Integer> a = new Pair<>(ars,1);

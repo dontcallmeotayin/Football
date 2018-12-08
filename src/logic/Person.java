@@ -34,6 +34,10 @@ public class Person {
 		int age = (int) ChronoUnit.YEARS.between(today, getBd());
 		return age;
 	}
+	
+	public String getName() {
+		return getFirstName()+" "+getLastName();
+	}
 
 	public String getFirstName() {
 		return firstName;
