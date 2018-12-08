@@ -1,18 +1,26 @@
 package application;
 
+import javafx.beans.Observable;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.util.Callback;
 import logic.Club;
 import logic.Standings;
 
@@ -46,12 +54,36 @@ public class Tables extends Pane {
 		topic = new Label("RANKING");
 		topic.setFont(new Font(50));
 		topic.setAlignment(Pos.TOP_LEFT);
+		topic.setTextFill(Color.WHITE);
 		
 		table = new TableView<Standings>();
 
 		TableColumn posCol = new TableColumn("Pos");
 		posCol.setPrefWidth(40);
-		posCol.setSortType(TableColumn.SortType.ASCENDING);
+		// numbered row
+		posCol.setCellValueFactory(new Callback<CellDataFeatures<Standings, Standings>, ObservableValue<Standings>>() {
+            @Override public ObservableValue<Standings> call(CellDataFeatures<Standings, Standings> p) {
+                return new ReadOnlyObjectWrapper(p.getValue());
+            }
+        });
+
+        posCol.setCellFactory(new Callback<TableColumn<Standings, Standings>, TableCell<Standings, Standings>>() {
+            @Override public TableCell<Standings, Standings> call(TableColumn<Standings, Standings> param) {
+                return new TableCell<Standings, Standings>() {
+                    @Override protected void updateItem(Standings item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (this.getTableRow() != null && item != null) {
+                            setText(this.getTableRow().getIndex()+1+"");
+                        } else {
+                            setText("");
+                        }
+                    }
+                };
+            }
+        });
+        posCol.setSortable(false);
+		
 		
 		TableColumn<Standings, String> clubCol = new TableColumn("Club");
 		clubCol.setPrefWidth(200);
@@ -90,10 +122,29 @@ public class Tables extends Pane {
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
-		table.setItems(getDate());
 		table.setPrefHeight(560);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
+//		table.setStyle("-fx-background-color: #EDEDED;");
+		
+		// try to sort
+//		Callback<Standings,Observable[]> cb =(Standings stock) -> new Observable[]{
+//		        stock.percentChangeProperty(),
+//		    };
+//		SortedList<Standings> sortedItems = new SortedList<>( getDate(), 
+//	      (Standings stan1, Standings stan2) -> {
+//	          if( stan1.getPoints() < stan2.getPoints() ) {
+//	              return -1;
+//	          } else if( stan1.getPoints() > stan2.getPoints() ) {
+//	              return 1;
+//	          } else {
+//	              return 0;
+//	          }
+//	      });
+//		table.setItems(sortedItems);
+//		sortedItems.comparatorProperty().bind(table.comparatorProperty());
+		
+		table.setItems(getDate());
 		
 		v.getChildren().addAll(topic, table);
 		this.getChildren().addAll(v, cup, cup2);
@@ -103,31 +154,26 @@ public class Tables extends Pane {
 	public ObservableList<Standings> getDate() {
 		ObservableList<Standings> data = FXCollections.observableArrayList(
 				new Standings(new Club("ARS"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MCI"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("LIV"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("MCI"), 1, 2, 1, 1, 1, 1),
+				new Standings(new Club("LIV"), 1, 1, 3, 1, 1, 1),
 				new Standings(new Club("TOT"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MUN"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("MUN"), 1, 1, 9, 1, 1, 1),
 				new Standings(new Club("CHE"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("EVE"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("EVE"), 1, 4, 1, 1, 1, 1),
 				new Standings(new Club("BOU"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("LEI"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("BHA"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("LEI"), 1, 3, 1, 1, 1, 1),
+				new Standings(new Club("BHA"), 1, 3, 1, 1, 1, 1),
 				new Standings(new Club("WAT"), 1, 1, 1, 1, 1, 1),
 				new Standings(new Club("WOL"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("WHU"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("WHU"), 1, 4, 3, 1, 1, 1),
 				new Standings(new Club("NEW"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("CRY"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("CAR"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("CRY"), 1, 8, 1, 1, 1, 1),
+				new Standings(new Club("CAR"), 1, 1, 6, 1, 1, 1),
 				new Standings(new Club("HUD"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("SOU"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("SOU"), 1, 2, 5, 1, 1, 1),
 				new Standings(new Club("BUR"), 1, 1, 1, 1, 1, 1),
 				new Standings(new Club("FUL"), 1, 1, 1, 1, 1, 1)
 		);
-		
-//		for(Standings s : data) {
-//			data.add(new Standings(team.getTeam().getName(), 1, 1, 1, 1, 1, 1));
-//		}
-//		data.add(new Standings(club.getName(), 1, 1, 1, 1, 1, 1);
 		return data;
 	}
 	
