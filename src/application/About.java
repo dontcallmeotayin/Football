@@ -39,6 +39,7 @@ public class About extends Pane{
 	private Text data16;
 	private Text data17;
 	private Text data18;
+	private ImageView home;
 	
 	public About() {
 		
@@ -232,7 +233,8 @@ public class About extends Pane{
 		
 		data18 = new Text("There has been an increase in English representation in Europe since the start of the Premier League,\n"
 				+ "when, in the opening season, only the champions qualified for the UEFA Champions League, with the \n"
-				+ "second and third-placed clubs entering the UEFA Cup, as the UEFA Europa League was then known.\n\n\n\n\n\n\n");
+				+ "second and third-placed clubs entering the UEFA Cup, as the UEFA Europa League was then known.\n"
+				+ "\n\n\n\n\n\n\n\n\n\n");
 		data18.setFont(new Font(13));
 		data18.setFill(javafx.scene.paint.Color.WHITESMOKE);
 		data18.setLayoutX(23);
@@ -240,13 +242,22 @@ public class About extends Pane{
 		
 		this.setPrefSize(700, 675);
 		
+		Btn b = new Btn();
+		home = b.getHome();
+		home.setLayoutX(615);
+		home.setLayoutY(2210);
+		
 		v.getChildren().addAll(lion);
 		pane.getChildren().addAll(vv, v, head, data, data2, data3, photo1, data4, data5,
 				head2, data6, data7, data8, data9, data10, data11, data12, data13, data14,
-				photo2, data15, data16, data17, data18);
+				photo2, data15, data16, data17, data18, home);
 		scrollPane.setContent(pane);
 		this.getChildren().addAll(scrollPane);
 		// .addAll(vv, v, head, data, data2, data3, photo1;
+	}
+	
+	public ImageView getGoHome() {
+		return home;
 	}
 	
 }

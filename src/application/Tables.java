@@ -32,6 +32,7 @@ public class Tables extends Pane {
 	private TableView<Standings> table;
 	private ImageView cup;
 	private ImageView cup2;
+	private ImageView home;
 	
 	public Tables() {
 		
@@ -125,7 +126,7 @@ public class Tables extends Pane {
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
-		table.setPrefHeight(560);
+		table.setPrefHeight(540);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
 //		table.setStyle("-fx-background-color: #EDEDED;");
@@ -148,9 +149,14 @@ public class Tables extends Pane {
 //		sortedItems.comparatorProperty().bind(table.comparatorProperty());
 		
 		table.setItems(getDate());
+
+		Btn b = new Btn();
+		home = b.getHome();
+		home.setLayoutX(640);
+		home.setLayoutY(10);
 		
 		v.getChildren().addAll(topic, table);
-		this.getChildren().addAll(v, cup, cup2);
+		this.getChildren().addAll(v, cup, cup2, home);
 	
 	}
 	
@@ -178,6 +184,10 @@ public class Tables extends Pane {
 				new Standings(new Club("FUL"), 1, 1, 1, 1, 1, 1)
 		);
 		return data;
+	}
+	
+	public ImageView getGoHome() {
+		return home;
 	}
 	
 //	public ObservableList<Standings> getOrder() {

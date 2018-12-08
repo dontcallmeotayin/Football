@@ -6,23 +6,40 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import application.About;
+import application.Btn;
+import application.Calendar;
+import application.ClubScreen;
+import application.Day;
+import application.ManagerScreen;
 import application.MatchPane;
+import application.PlayerScreen;
+import application.RefreeScreen;
 import application.Tables;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import logic.Club;
+import logic.Manager;
 import logic.Match;
+import logic.Player;
+import logic.Refree;
 import logic.Stadium;
 import logic.Standings;
 
 public class Main extends Application{
 
 	private Standings data;
+	private ArrayList<Day> days;
+	private Club club;
+	private Manager mng;
+	private Player player;
+	private Refree rf;
 	
 	@Override
 	public void start(Stage stage) {
@@ -83,11 +100,108 @@ public class Main extends Application{
 //		MatchPane testpane = new MatchPane(test);
 //		root.getChildren().add(testpane);
 		
-		
-//		Tables table = new Tables();
+//		Calendar calender = new Calendar(days);
+//		ClubScreen clubS = new ClubScreen(club);
+		Tables table = new Tables();
+//		ManagerScreen manager = new ManagerScreen(mng);
+//		PlayerScreen playerS = new PlayerScreen(player);
 		About about = new About();
+//		RefreeScreen refree = new RefreeScreen(rf);
 		
-		root.getChildren().addAll(about);
+		Btn btn = new Btn();
+		
+		//-------------------------------------------------------------
+		
+		ImageView calendarBtn =  btn.getCalendarBtn();
+		calendarBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(calendar);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView clubBtn =  btn.getClubBtn();
+		clubBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(clubS);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView tableBtn =  btn.getTableBtn();
+		tableBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(table);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView managerBtn =  btn.getManagerBtn();
+		managerBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(manager);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView playerBtn =  btn.getPlayerBtn();
+		playerBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(playerS);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView aboutBtn =  btn.getAboutBtn();
+		aboutBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(about);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView refreeBtn =  btn.getRefreeBtn();
+		refreeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(refree);
+			root.getChildren().remove(btn);
+		});
+		
+		//-------------------------------------------------------------
+			// back home button
+		
+//		ImageView cahomeBtn =  calender.getGoHome();
+//		cahomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(calender);
+//		});
+		
+//		ImageView clhomeBtn =  clubS.getGoHome();
+//		clhomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(clubS);
+//		});
+		
+		ImageView thomeBtn =  table.getGoHome();
+		thomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(table);
+		});
+		
+//		ImageView mhomeBtn =  manager.getGoHome();
+//		mhomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(manager);
+//		});
+		
+//		ImageView phomeBtn =  playerS.getGoHome();
+//		phomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(playerS);
+//		});
+		
+		ImageView ahomeBtn =  about.getGoHome();
+		ahomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(about);
+		});
+		
+//		ImageView rhomeBtn =  refree.getGoHome();
+//		rhomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(refree);
+//		});
+		
+		//-------------------------------------------------------------
+		
+		root.getChildren().addAll(btn);
 		
 		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
 		MediaPlayer bgm = new MediaPlayer(song);
