@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+import application.About;
 import application.MatchPane;
 import application.Tables;
 import javafx.application.Application;
@@ -35,9 +36,10 @@ public class Main extends Application{
 //		root.getChildren().add(testpane);
 		
 		
-		Tables table = new Tables();
+//		Tables table = new Tables();
+		About about = new About();
 		
-		root.getChildren().addAll(table);
+		root.getChildren().addAll(about);
 		
 		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
 		MediaPlayer bgm = new MediaPlayer(song);
@@ -45,7 +47,7 @@ public class Main extends Application{
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 		
-		root.setStyle("-fx-background-color: #5A335D;");     // 5A335D , 6E4B71 , 5D3761
+		root.setStyle("-fx-background-color: #EDEDED;");
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);

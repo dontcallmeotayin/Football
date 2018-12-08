@@ -34,10 +34,13 @@ public class Tables extends Pane {
 	private ImageView cup2;
 	
 	public Tables() {
+		
 		VBox v = new VBox();
+		v.setPrefSize(700, 675);
 		v.setAlignment(Pos.CENTER);
-		v.setPadding(new Insets(15, 22, 0, 22));
+		v.setPadding(new Insets(-10, 22, 0, 22));
 		v.setSpacing(10);
+		v.setStyle("-fx-background-color: #5D3761;"); // 5A335D , 6E4B71 , 5D3761
 		
 		cup = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup.setFitHeight(50);
