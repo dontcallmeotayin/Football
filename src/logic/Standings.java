@@ -24,6 +24,7 @@ public class Standings {
 		this.gf = gf;
 		this.ga = ga;
 		this.gd = gf - ga;
+		this.points = win*3 + draw;
 	}
 
 	public Club getTeam() {

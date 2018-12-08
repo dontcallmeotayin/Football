@@ -103,31 +103,26 @@ public class Tables extends Pane {
 	public ObservableList<Standings> getDate() {
 		ObservableList<Standings> data = FXCollections.observableArrayList(
 				new Standings(new Club("ARS"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MCI"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("LIV"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("MCI"), 1, 2, 1, 1, 1, 1),
+				new Standings(new Club("LIV"), 1, 1, 3, 1, 1, 1),
 				new Standings(new Club("TOT"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MUN"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("MUN"), 1, 1, 9, 1, 1, 1),
 				new Standings(new Club("CHE"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("EVE"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("EVE"), 1, 4, 1, 1, 1, 1),
 				new Standings(new Club("BOU"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("LEI"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("BHA"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("LEI"), 1, 3, 1, 1, 1, 1),
+				new Standings(new Club("BHA"), 1, 3, 1, 1, 1, 1),
 				new Standings(new Club("WAT"), 1, 1, 1, 1, 1, 1),
 				new Standings(new Club("WOL"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("WHU"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("WHU"), 1, 4, 3, 1, 1, 1),
 				new Standings(new Club("NEW"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("CRY"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("CAR"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("CRY"), 1, 8, 1, 1, 1, 1),
+				new Standings(new Club("CAR"), 1, 1, 6, 1, 1, 1),
 				new Standings(new Club("HUD"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("SOU"), 1, 1, 1, 1, 1, 1),
+				new Standings(new Club("SOU"), 1, 2, 5, 1, 1, 1),
 				new Standings(new Club("BUR"), 1, 1, 1, 1, 1, 1),
 				new Standings(new Club("FUL"), 1, 1, 1, 1, 1, 1)
 		);
-		
-//		for(Standings s : data) {
-//			data.add(new Standings(team.getTeam().getName(), 1, 1, 1, 1, 1, 1));
-//		}
-//		data.add(new Standings(club.getName(), 1, 1, 1, 1, 1, 1);
 		return data;
 	}
 	
