@@ -3,12 +3,14 @@ package logic;
 import java.time.LocalDate;
 
 public class Player extends Person {
-	private double height;
-	private String pos;
-	private int number;
-	private boolean isCap;
-	private int goals;
-	private int cleansheets;
+	private double height=0;
+	private String pos="";
+	private int number=0;
+	private boolean isCap=false;
+	private int goals=0;
+	private int cleansheets = 0;
+	private int appearance = 0;
+	private int assists = 0;
 	
 	public Player() {
 		super();
@@ -17,18 +19,11 @@ public class Player extends Person {
 	
 	public Player(String f, String l, String n, LocalDate d) {
 		super(f, l, n, d);
-		this.height = 0;
-		this.pos = "";
-		this.number = 0;
-		this.isCap = false;
-		this.goals = 0;
-		this.cleansheets = 0;
 		this.setAge(calAge());
 	}
-	
 
 	public Player(String f, String l, String n, LocalDate d,
-			double h,String p,int no,boolean cap,int g,int c) {
+			double h,String p,int no,boolean cap,int g,int c,int ap,int as) {
 		this.setFirstName(f);
 		this.setLastName(l);
 		this.setNationality(n);
@@ -39,6 +34,8 @@ public class Player extends Person {
 		this.isCap = cap;
 		this.goals = g;
 		this.cleansheets = c;
+		this.appearance = ap;
+		this.assists = as;
 	}
 
 	public double getHeight() {
@@ -88,8 +85,21 @@ public class Player extends Person {
 	public void setCleansheets(int cleansheets) {
 		this.cleansheets = cleansheets;
 	}
-	
-	
-	
+
+	public int getAppearance() {
+		return appearance;
+	}
+
+	public void setAppearance(int appearance) {
+		this.appearance = appearance;
+	}
+
+	public int getAssists() {
+		return assists;
+	}
+
+	public void setAssists(int assists) {
+		this.assists = assists;
+	}
 	
 }

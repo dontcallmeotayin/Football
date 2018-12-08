@@ -1,11 +1,13 @@
 package application;
 
-import java.time.LocalDate;
-
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import logic.Match;
 
 public class MatchPane extends HBox{
@@ -15,15 +17,18 @@ public class MatchPane extends HBox{
 	
 	public MatchPane(Match match) {
 		super(5);
+		setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 		setPrefWidth(300);
 		setPrefHeight(40);
-		String start = match.getStartTime().toString();
+		String startH = ""+match.getStartTime().getHour();
+		String startM = ""+match.getStartTime().getMinute();
+		String start = startH + ":" + startM;
 		String hometeam = match.getHomeTeam().getKey().getName();
 		String awayteam = match.getAwayTeam().getKey().getName();
-		String stadium = match.getStadium().getName();
+//		String stadium = match.getStadium().getName();
 		
 		time = new Label(start);
-		place = new Label(stadium);
+//		place = new Label(stadium);
 		
 		teams = new VBox();
 		teams.setPrefWidth(200);
@@ -32,6 +37,6 @@ public class MatchPane extends HBox{
 		Label away = new Label(awayteam);
 		teams.getChildren().addAll(home,away);
 		
-		getChildren().addAll(time,teams,place);
+		getChildren().addAll(time,teams);
 	}
 }
