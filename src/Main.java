@@ -5,6 +5,7 @@ import application.About;
 import application.Btn;
 import application.Calendar;
 import application.ClubScreen;
+import application.Credit;
 import application.Day;
 import application.ManagerScreen;
 import application.MatchPane;
@@ -43,6 +44,9 @@ public class Main extends Application{
 		//Home
 		Btn btn = new Btn();
 		
+		//Credit
+		Credit credit = new Credit();
+				
 		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
@@ -214,11 +218,11 @@ public class Main extends Application{
 //			root.getChildren().remove(refree);
 //		});
 		
-//		ImageView shomeBtn =  stadium.getGoHome();
-//		shomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(stadium);
-//		});
+		ImageView shomeBtn =  stadiumScreen.getHome();
+		shomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(stadiumScreen);
+		});
 		
 	//-------------------------------------------------------------
 		
