@@ -50,15 +50,25 @@ public class Main extends Application{
 		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
-		Match match = new Match(c7,2, c8, 0, LocalDateTime.now());
+		Match match = new Match(c7,2, c8, 0, LocalDateTime.now(),true);
+		Match match2 = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
 		match.setStadium(new Stadium("Langear"));
+		match2.setStadium(new Stadium("Langear"));
 		System.out.println(match.getStadium().getName());
 		MatchPane m1 = new MatchPane(match);
+		MatchPane m2 = new MatchPane(match2);
+		MatchPane m3 = new MatchPane(match2);
+		MatchPane m4 = new MatchPane(match);
 		ArrayList<MatchPane> matches = new ArrayList<MatchPane>();
 		matches.add(m1);
+		matches.add(m2);
+		matches.add(m4);
+		matches.add(m3);
 		Day day = new Day(LocalDate.now(), matches);
+		Day day2 = new Day(LocalDate.now(), matches);
 		ArrayList<Day> days = new ArrayList<Day>();
 		days.add(day);
+		days.add(day2);
 		Calendar calendar = new Calendar(days);
 		/****************/
 		
@@ -115,41 +125,41 @@ public class Main extends Application{
 		
 		//.......................................................//
 		ImageView ars = playerTeamSelection.getArsenal();
+		ImageView che = playerTeamSelection.getChelsea();
+		ImageView spur = playerTeamSelection.getSpur();
+		ImageView mci = playerTeamSelection.getMancity();
+		ImageView mun = playerTeamSelection.getManu();
+		ImageView liv = playerTeamSelection.getLiverpool();
 		ars.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("ARS")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});
-		ImageView che = playerTeamSelection.getChelsea();
 		che.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("CHE")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView spur = playerTeamSelection.getSpur();
 		spur.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("TOT")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView mci = playerTeamSelection.getMancity();
 		mci.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("MCI")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView mun = playerTeamSelection.getManu();
 		mun.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("MUN")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView liv = playerTeamSelection.getLiverpool();
 		liv.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("LIV")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
@@ -240,13 +250,7 @@ public class Main extends Application{
 		});
 		
 	//-------------------------------------------------------------
-		
-//		ImageView pshomeBtn =  playerScreen.getHome();
-//		pshomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(playerTeamSelection);
-//			root.getChildren().remove(playerScreen);
-//		});
-		
+				
 	//-------------------------------------------------------------
 		
 		root.getChildren().addAll(btn);
@@ -255,10 +259,10 @@ public class Main extends Application{
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.show();
 	}
-	
+		
 	public static void main(String [] args) {
 		launch(args);
 	}

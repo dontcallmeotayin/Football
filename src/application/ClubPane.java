@@ -27,7 +27,7 @@ public class ClubPane extends HBox {
 		image.setFitWidth(120);
 		
 		Label name = new Label(club.getName());
-		Label stadium = new Label("          "+club.getStadium().getName());
+		Label stadium = new Label("             "+club.getStadium().getName());
 		name.setTextFill(Color.WHITESMOKE);
 		stadium.setTextFill(Color.WHITESMOKE);
 		name.setFont(Font.font("", FontWeight.BOLD, 15));

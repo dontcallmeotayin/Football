@@ -17,7 +17,7 @@ public class PlayerScreen extends Pane{
 	public PlayerScreen(ArrayList<Player> players) {
 		
 		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setPrefSize(700, 675);
+		scrollPane.setPrefSize(540, 675);
 		
 		tpane = new TilePane();
 		tpane.setPrefColumns(2);
@@ -36,11 +36,8 @@ public class PlayerScreen extends Pane{
 		
 		scrollPane.setContent(tpane);
 		getChildren().addAll(scrollPane,home);
+		setPadding(new Insets(5));
 
-	}
-
-	public ImageView getHome() {
-		return home;
 	}
 	
 //	public Pane getPlayerScreen() {

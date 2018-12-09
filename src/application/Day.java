@@ -23,21 +23,23 @@ public class Day extends Pane{
 	
 	public Day(LocalDate dateNow,ArrayList<MatchPane> matches) {
 		
+		int count = matches.size();
+		
 		Pane bg = new Pane();
-		bg.setPrefSize(700, 675);
-		bg.setStyle("-fx-background-color: #643D68;");		// same color with table class   ,  DARKSALMON >> so cute
+//		bg.setPrefSize(700, 675);
+//		bg.setStyle("-fx-background-color: #643D68;");		// same color with table class   ,  DARKSALMON >> so cute
 		
 		Pane pane = new Pane();
 		pane.setBorder(new Border(new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		pane.setBackground(new Background(new BackgroundFill(Color.GHOSTWHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-		pane.setPrefSize(640, 40);
+		pane.setPrefSize(640, 40*count);
 		pane.setLayoutX(30);
 		pane.setLayoutY(120);
 		
 		Pane pane2 = new Pane();
 		pane2.setBorder(new Border(new BorderStroke(Color.LIGHTGRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		pane2.setBackground(new Background(new BackgroundFill(Color.GHOSTWHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-		pane2.setPrefSize(640, 80);
+		pane2.setPrefSize(640, (count*65));
 		pane2.setLayoutX(30);
 		pane2.setLayoutY(159);
 		
@@ -55,10 +57,15 @@ public class Day extends Pane{
 		
 		bg.getChildren().addAll(pane, pane2, date);
 		
-		
+		VBox blog = new VBox();
 		for(MatchPane panes:matches) {
-			bg.getChildren().add(panes);
+			blog.getChildren().add(panes);
 		}
+		blog.setSpacing(7);
+		blog.setPrefWidth(640);
+		blog.setLayoutX(30);
+		blog.setLayoutY(159);
+		bg.getChildren().add(blog);
 	
 		this.getChildren().add(bg);
 		

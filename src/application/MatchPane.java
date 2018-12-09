@@ -1,6 +1,7 @@
 package application;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -27,15 +28,46 @@ public class MatchPane extends HBox{
 		setLayoutX(45);
 		setLayoutY(172);
 		
-		String startH = ""+match.getStartTime().getHour();
-		String startM = ""+match.getStartTime().getMinute();
-		String start = startH + ":" + startM;
+		if(!match.isDone()) {
+			String startH = ""+match.getStartTime().getHour();
+			String startM = ""+match.getStartTime().getMinute();
+			if(match.getStartTime().getHour()<10) {
+				startH = "0"+startH;
+			}
+			if(match.getStartTime().getMinute()<10) {
+				startM = "0"+startM;
+			}
+			String start = startH + " : " + startM;
+			time = new Label("         "+start+"          ");
+			time.setFont(new Font(15));
+			time.setMinHeight(40);
+			time.setAlignment(Pos.CENTER);
+			
+			getChildren().add(time);
+		}
+		else if(match.isDone()) {
+			String hg = ""+match.getHomegoal();
+			String ag = ""+match.getAwaygoal();
+			
+			Label h = new Label(hg);
+			Label a = new Label(ag);
+			h.setFont(new Font(15));
+			a.setFont(new Font(15));
+			
+			VBox score = new VBox();
+			score.setMinWidth(120);
+			score.setMinHeight(40);
+			score.getChildren().addAll(h,a);
+			score.setAlignment(Pos.CENTER);
+			
+			getChildren().add(score);
+
+		}
+		
 		String hometeam = match.getHomeTeam().getName();  
 		String awayteam = match.getAwayTeam().getName();
 		String stadium = match.getStadium().getName();
-		
-		time = new Label("       "+start+"              ");
-		time.setFont(new Font(15));
+
 		place = new Label("                              "+stadium);
 		place.setFont(new Font(15));
 		
@@ -51,6 +83,6 @@ public class MatchPane extends HBox{
 		teams.getChildren().addAll(home,away);
 //		teams.setStyle("-fx-background-color: #9273AD;");		// color in box of team
 		
-		getChildren().addAll(time,teams,place);
+		getChildren().addAll(teams,place);
 	}
 }

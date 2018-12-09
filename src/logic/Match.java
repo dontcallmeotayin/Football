@@ -29,13 +29,14 @@ public class Match implements CsvAvailable{
 		this.stadium = new Stadium("");
 	}
 		
-	public Match(Club home,int hg,Club away,int ag,LocalDateTime start) {
+	public Match(Club home,int hg,Club away,int ag,LocalDateTime start,boolean isDone) {
 		this.homeTeam = home;
 		this.awayTeam = away;
 		this.homegoal = hg;
 		this.awaygoal = ag;
 		this.startTime = start;
 		this.stadium = home.getStadium();
+		this.isDone = isDone;
 		totalGoals();
 	}
 	
@@ -129,7 +130,7 @@ public class Match implements CsvAvailable{
 
 	@Override
 	public String getCsv() {
-		return "res/match.csv";
+		return "res/matchthisweek.csv";
 	}
 	
 	public ArrayList<Match> makeList() {
@@ -147,8 +148,19 @@ public class Match implements CsvAvailable{
 	              Club a = new Club(csvdata[2]);
 	              int ag = Integer.parseInt(csvdata[4]);
 	              String[] date = csvdata[0].split("/");
-	              LocalDateTime start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
-	              Match newdata = new Match(h,hg,a,ag,start);
+	              int check = Integer.parseInt(csvdata[5]);
+	              boolean done = false;
+	              LocalDateTime start = LocalDateTime.now();
+	              if(check==1) {
+	            	  done = true;
+		              start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
+	              }
+	              else {
+		              start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 3, 4);
+		              hg = -1;
+		              ag = -1;
+	              }
+	              Match newdata = new Match(h,hg,a,ag,start,done);
 		          data.add(newdata);
 		      }
 		   } catch (FileNotFoundException e) {
