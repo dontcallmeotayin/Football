@@ -11,14 +11,12 @@ public class Refree extends Person{
 		super();
 	}
 	
-	public Refree(String f, String l, String n, LocalDate d) {
-		super(f, l, n, d);
-		this.setAge(calAge());
+	public Refree(String f, String l) {
+		super(f, l);
 	}
 	
-	public Refree(String f, String l, String n, LocalDate d,
-			int m, int r, int y) {
-		super(f, l, n, d);
+	public Refree(String f, String l, int m, int r, int y) {
+		super(f, l);
 		this.matches = m;
 		this.red = r;
 		this.yellow = y;
