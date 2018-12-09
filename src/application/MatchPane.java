@@ -25,10 +25,10 @@ public class MatchPane extends HBox{
 		String start = startH + ":" + startM;
 		String hometeam = match.getHomeTeam().getName();
 		String awayteam = match.getAwayTeam().getName();
-//		String stadium = match.getStadium().getName();
+		String stadium = match.getStadium().getName();
 		
 		time = new Label(start);
-//		place = new Label(stadium);
+		place = new Label(stadium);
 		
 		teams = new VBox();
 		teams.setPrefWidth(200);
@@ -37,6 +37,6 @@ public class MatchPane extends HBox{
 		Label away = new Label(awayteam);
 		teams.getChildren().addAll(home,away);
 		
-		getChildren().addAll(time,teams);
+		getChildren().addAll(time,teams,place);
 	}
 }
