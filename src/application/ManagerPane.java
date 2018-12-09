@@ -17,7 +17,6 @@ public class ManagerPane extends HBox{
 	public ManagerPane(Manager mng) {
 		super(10);
 		
-		setAlignment(Pos.CENTER_LEFT);
 		setPrefWidth(500);
 		setPrefHeight(100);
 		setAlignment(Pos.CENTER_LEFT);
