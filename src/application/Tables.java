@@ -124,11 +124,15 @@ public class Tables extends Pane {
 		TableColumn<Standings, String> pointCol = new TableColumn("Points");
 		pointCol.setPrefWidth(64);
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
+		pointCol.setSortable(true);
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
 		table.setPrefHeight(550);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
+		table.getSortOrder().add(pointCol);
+//		table.sort();
+		
 //		table.setStyle("-fx-background-color: #EDEDED;");
 		
 		// try to sort
@@ -162,33 +166,42 @@ public class Tables extends Pane {
 	
 	public ObservableList<Standings> getDate() {
 		ObservableList<Standings> data = FXCollections.observableArrayList(
-				new Standings(new Club("ARS"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MCI"), 1, 2, 1, 1, 1, 1),
-				new Standings(new Club("LIV"), 1, 1, 3, 1, 1, 1),
-				new Standings(new Club("TOT"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("MUN"), 1, 1, 9, 1, 1, 1),
-				new Standings(new Club("CHE"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("EVE"), 1, 4, 1, 1, 1, 1),
-				new Standings(new Club("BOU"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("LEI"), 1, 3, 1, 1, 1, 1),
-				new Standings(new Club("BHA"), 1, 3, 1, 1, 1, 1),
-				new Standings(new Club("WAT"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("WOL"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("WHU"), 1, 4, 3, 1, 1, 1),
-				new Standings(new Club("NEW"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("CRY"), 1, 8, 1, 1, 1, 1),
-				new Standings(new Club("CAR"), 1, 1, 6, 1, 1, 1),
-				new Standings(new Club("HUD"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("SOU"), 1, 2, 5, 1, 1, 1),
-				new Standings(new Club("BUR"), 1, 1, 1, 1, 1, 1),
-				new Standings(new Club("FUL"), 1, 1, 1, 1, 1, 1)
+				new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
+				new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
+				new Standings(new Club("LIV"), 16, 13, 3, 0, 34, 6),
+				new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
+				new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
+				new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
+				new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
+				new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
+				new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
+				new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
+				new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
+				new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
+				new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
+				new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
+				new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
+				new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
+				new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
+				new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
+				new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
+				new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)
 		);
+//		table.sort();
 		return data;
 	}
 	
 	public ImageView getGoHome() {
 		return home;
 	}
+	
+	public TableView<Standings> getTable() {
+		return table;
+	}
+	
+//	public Object sortTable() {
+//		return getTable().sort();
+//	}
 	
 //	public ObservableList<Standings> getOrder() {
 //		ObservableList<> oder = FXCollections.observableArrayList(
@@ -198,3 +211,45 @@ public class Tables extends Pane {
 //	}
 
 }
+
+//	new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
+//	new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
+//	new Standings(new Club("LIV"), 16, 13, 3, 0, 5, 3),
+//	new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
+//	new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
+//	new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
+//	new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
+//	new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
+//	new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
+//	new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
+//	new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
+//	new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
+//	new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
+//	new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
+//	new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
+//	new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
+//	new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
+//	new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
+//	new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
+//	new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)
+
+//	new Standings(new Club("LIV"), 16, 13, 3, 0, 34, 6),
+//	new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
+//	new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
+//	new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
+//	new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
+//	new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
+//	new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
+//	new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
+//	new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
+//	new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
+//	new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
+//	new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
+//	new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
+//	new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
+//	new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
+//	new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
+//	new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
+//	new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
+//	new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
+//	new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)

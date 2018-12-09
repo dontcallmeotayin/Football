@@ -87,13 +87,13 @@ public class Main extends Application{
 //                }
 //            }
 //        }
-        
+//        
 //        for(int i=10;i<15;i++) {
 //        	MatchPane matchpane = new MatchPane(matches.get(i));
 //        	root.getChildren().add(matchpane);
 //        }
-
-		
+//
+//		
 //		Club ars = new Club("ARS");
 //		Club che = new Club("CHE");
 //		Pair<Club,Integer> a = new Pair<>(ars,1);
@@ -105,7 +105,7 @@ public class Main extends Application{
 //		MatchPane testpane = new MatchPane(test);
 //		root.getChildren().add(testpane);
 		
-//		Calendar calender = new Calendar(days);
+//		Calendar calendar = new Calendar(days);
 //		ClubScreen clubS = new ClubScreen(club);
 		Tables table = new Tables();
 //		ManagerScreen manager = new ManagerScreen(mng);

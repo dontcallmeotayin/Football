@@ -9,7 +9,7 @@ public class Standings {
 	private int points = 0;
 	private int gf = 0;
 	private int ga = 0;
-	private int gd = 0;
+	private String gd = "+0";
 	
 	public Standings(Club team) {
 		this.team = team;
@@ -23,7 +23,8 @@ public class Standings {
 		this.draw = d;
 		this.gf = gf;
 		this.ga = ga;
-		this.gd = gf - ga;
+		if(gf-ga>=0) this.gd = "+" + Integer.toString(gf - ga);
+		else if(gf-ga<0) this.gd = Integer.toString(gf - ga);
 		this.points = win*3 + draw;
 	}
 
@@ -91,11 +92,11 @@ public class Standings {
 		this.ga = ga;
 	}
 
-	public int getGd() {
+	public String getGd() {
 		return gd;
 	}
 
-	public void setGd(int gd) {
+	public void setGd(String gd) {
 		this.gd = gd;
 	}
 
