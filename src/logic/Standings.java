@@ -23,12 +23,8 @@ public class Standings {
 		this.draw = d;
 		this.gf = gf;
 		this.ga = ga;
-		int diff = gf - ga;
-		if(diff<0) {
-			this.gd = String.valueOf(diff);
-		}else {
-			this.gd = "+"+String.valueOf(diff);
-		}
+		if(gf-ga>=0) this.gd = "+" + Integer.toString(gf - ga);
+		else if(gf-ga<0) this.gd = Integer.toString(gf - ga);
 		this.points = win*3 + draw;
 	}
 
@@ -95,5 +91,4 @@ public class Standings {
 	public String getGd() {
 		return gd;
 	}
-
 }

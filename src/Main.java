@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -54,7 +53,18 @@ public class Main extends Application{
 		bgm.setVolume(0.2);
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
-		
+				
+//		Club ars = new Club("ARS");
+//		Club che = new Club("CHE");
+//		Pair<Club,Integer> a = new Pair<>(ars,1);
+//		Pair<Club,Integer> c = new Pair<>(che,1);
+//		Stadium stamford = new Stadium("stamford");
+//		che.setStadium(stamford);
+//		LocalDateTime date = LocalDateTime.now();
+//		Match test = new Match(c,a,date);
+//		MatchPane testpane = new MatchPane(test);
+//		root.getChildren().add(testpane);
+
 		/****************/
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
@@ -79,7 +89,6 @@ public class Main extends Application{
 //			temp.getChildren().add(player);
 //		root.getChildren().add(temp);
 		
-//		Calendar calender = new Calendar(days);
 //		ClubScreen clubS = new ClubScreen(club);
 		Tables table = new Tables(logic.getPml().getStandings());
 //		ManagerScreen manager = new ManagerScreen(mng);
@@ -136,11 +145,11 @@ public class Main extends Application{
 		//-------------------------------------------------------------
 			// back home button
 		
-//		ImageView cahomeBtn =  calendar.getGoHome();
-//		cahomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(calendar);
-//		});
+		ImageView cahomeBtn =  calendar.getGoHome();
+		cahomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(calendar);
+		});
 		
 //		ImageView clhomeBtn =  clubS.getGoHome();
 //		clhomeBtn.setOnMouseClicked(e -> {

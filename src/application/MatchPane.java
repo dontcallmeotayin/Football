@@ -8,6 +8,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import logic.Match;
 
 public class MatchPane extends HBox{
@@ -17,9 +18,15 @@ public class MatchPane extends HBox{
 	
 	public MatchPane(Match match) {
 		super(5);
-		setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
-		setPrefWidth(300);
-		setPrefHeight(40);
+		setPadding(new Insets(7));
+		setStyle("-fx-background-color: #E4D7F0;");			// box color
+		
+		setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+		setPrefWidth(610);
+		setPrefHeight(53);
+		setLayoutX(45);
+		setLayoutY(172);
+		
 		String startH = ""+match.getStartTime().getHour();
 		String startM = ""+match.getStartTime().getMinute();
 		String start = startH + ":" + startM;
@@ -27,15 +34,22 @@ public class MatchPane extends HBox{
 		String awayteam = match.getAwayTeam().getName();
 		String stadium = match.getStadium().getName();
 		
-		time = new Label(start);
-		place = new Label(stadium);
+		time = new Label("       "+start+"              ");
+		time.setFont(new Font(15));
+		place = new Label("                              "+stadium);
+		place.setFont(new Font(15));
 		
 		teams = new VBox();
 		teams.setPrefWidth(200);
 		teams.setPrefHeight(40);
+		
 		Label home = new Label(hometeam);
+		home.setFont(new Font(15));
 		Label away = new Label(awayteam);
+		away.setFont(new Font(15));
+		
 		teams.getChildren().addAll(home,away);
+//		teams.setStyle("-fx-background-color: #9273AD;");		// color in box of team
 		
 		getChildren().addAll(time,teams,place);
 	}

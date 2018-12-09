@@ -42,9 +42,9 @@ public class Tables extends Pane {
 		VBox v = new VBox();
 		v.setPrefSize(700, 675);
 		v.setAlignment(Pos.CENTER);
-		v.setPadding(new Insets(-10, 22, 0, 22));
+		v.setPadding(new Insets(-15, 22, 0, 22));
 		v.setSpacing(10);
-		v.setStyle("-fx-background-color: #5D3761;"); // 5A335D , 6E4B71 , 5D3761
+		v.setStyle("-fx-background-color: #643D68;"); // 5A335D , 6E4B71 , 5D3761
 		
 		this.std = std;
 		
@@ -52,13 +52,13 @@ public class Tables extends Pane {
 		cup.setFitHeight(50);
 		cup.setFitWidth(50);
 		cup.setLayoutX(180);
-		cup.setLayoutY(20);
+		cup.setLayoutY(22);
 		
 		cup2 = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup2.setFitHeight(50);
 		cup2.setFitWidth(50);
 		cup2.setLayoutX(470);
-		cup2.setLayoutY(20);
+		cup2.setLayoutY(22);
 		
 		topic = new Label("RANKING");
 		topic.setFont(new Font(50));
@@ -129,11 +129,15 @@ public class Tables extends Pane {
 		TableColumn<Standings, String> pointCol = new TableColumn("Points");
 		pointCol.setPrefWidth(64);
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
+		pointCol.setSortable(true);
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
 		table.setPrefHeight(550);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
+		table.getSortOrder().add(pointCol);
+//		table.sort();
+		
 //		table.setStyle("-fx-background-color: #EDEDED;");
 		
 		// try to sort
@@ -169,11 +173,20 @@ public class Tables extends Pane {
 	
 	public ObservableList<Standings> getDate() {
 		return this.std;
+//		table.sort();
 	}
 	
 	public ImageView getGoHome() {
 		return home;
 	}
+	
+	public TableView<Standings> getTable() {
+		return table;
+	}
+	
+//	public Object sortTable() {
+//		return getTable().sort();
+//	}
 	
 //	public ObservableList<Standings> getOrder() {
 //		ObservableList<> oder = FXCollections.observableArrayList(
@@ -183,3 +196,45 @@ public class Tables extends Pane {
 //	}
 
 }
+
+//	new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
+//	new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
+//	new Standings(new Club("LIV"), 16, 13, 3, 0, 5, 3),
+//	new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
+//	new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
+//	new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
+//	new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
+//	new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
+//	new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
+//	new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
+//	new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
+//	new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
+//	new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
+//	new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
+//	new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
+//	new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
+//	new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
+//	new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
+//	new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
+//	new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)
+
+//	new Standings(new Club("LIV"), 16, 13, 3, 0, 34, 6),
+//	new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
+//	new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
+//	new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
+//	new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
+//	new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
+//	new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
+//	new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
+//	new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
+//	new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
+//	new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
+//	new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
+//	new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
+//	new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
+//	new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
+//	new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
+//	new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
+//	new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
+//	new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
+//	new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)
