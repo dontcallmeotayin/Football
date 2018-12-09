@@ -27,7 +27,7 @@ import logic.PremierLeagueLogic;
 import logic.Stadium;
 
 public class Main extends Application{
-	
+
 	@Override
 	public void start(Stage stage) {
 		VBox root = new VBox();
@@ -223,6 +223,14 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(stadiumScreen);
 		});
+		
+	//-------------------------------------------------------------
+		
+//		ImageView pshomeBtn =  playerScreen.getHome();
+//		pshomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(playerTeamSelection);
+//			root.getChildren().remove(playerScreen);
+//		});
 		
 	//-------------------------------------------------------------
 		

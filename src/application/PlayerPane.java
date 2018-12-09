@@ -19,10 +19,11 @@ public class PlayerPane extends HBox{
 	public PlayerPane(Player p) {
 		super(10);
 		setAlignment(Pos.CENTER_LEFT);
-		setMinWidth(350);
-		setMaxWidth(350);
+		setMinWidth(340);
+		setMaxWidth(340);
 		setPrefHeight(100);
-		setStyle("-fx-background-color: #f5f5f5;-fx-border-color : #9e9e9e");			
+		setStyle("-fx-background-color: #f5f5f5;-fx-border-color : #9e9e9e");
+		setPadding(new Insets(10));
 		
 		ImageView club = new ImageView(p.getTeam()+"00.png");
 		club.setFitHeight(20); 
@@ -37,6 +38,5 @@ public class PlayerPane extends HBox{
 		Label name = new Label(p.getName());
 		name.setFont(new Font(15));
 		getChildren().addAll(club,img,number,name);
-				
 	}
 }
