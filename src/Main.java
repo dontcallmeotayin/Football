@@ -79,25 +79,19 @@ public class Main extends Application{
 		days.add(day);
 		Calendar calendar = new Calendar(days);
 		/****************/
-		
-//		BorderPane temp = new BorderPane();
 		PremierLeagueLogic logic = new PremierLeagueLogic();
-//		logic.getAllplayers();
-//			Player p = new Player("Petr","Cech",1,"ARS","GOAL");
-//			PlayerPane player = new PlayerPane(p);
-//			System.out.println(p.getImagePath());
-//			temp.getChildren().add(player);
-//		root.getChildren().add(temp);
-		
-//		ClubScreen clubS = new ClubScreen(club);
+
 		Tables table = new Tables(logic.getPml().getStandings());
-//		ManagerScreen manager = new ManagerScreen(mng);
-//		PlayerScreen playerS = new PlayerScreen(player);
 		About about = new About();
-//		RefreeScreen refree = new RefreeScreen(rf);
 		
 		Btn btn = new Btn();
-		
+
+//		ArrayList<Player> players = new ArrayList<Player>();
+//		Player p = new Player("Petr","Cech",1,"ARS","GOAL");
+//		Player p2 = new Player("Hecter","Bellerin",2,"ARS","DEFENDER");
+//		players.add(p); players.add(p2);
+		PlayerScreen temp = new PlayerScreen(logic.getAllplayers());
+				
 		//-------------------------------------------------------------
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
@@ -126,7 +120,8 @@ public class Main extends Application{
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(playerS);
+		/*******************************************/
+			root.getChildren().add(temp);
 			root.getChildren().remove(btn);
 		});
 		
