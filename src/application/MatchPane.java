@@ -1,6 +1,7 @@
 package application;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -30,10 +31,17 @@ public class MatchPane extends HBox{
 		if(!match.isDone()) {
 			String startH = ""+match.getStartTime().getHour();
 			String startM = ""+match.getStartTime().getMinute();
-			String start = startH + ":" + startM;
-			
-			time = new Label("       "+start+"              ");
+			if(match.getStartTime().getHour()<10) {
+				startH = "0"+startH;
+			}
+			if(match.getStartTime().getMinute()<10) {
+				startM = "0"+startM;
+			}
+			String start = startH + " : " + startM;
+			time = new Label("         "+start+"          ");
 			time.setFont(new Font(15));
+			time.setMinHeight(40);
+			time.setAlignment(Pos.CENTER);
 			
 			getChildren().add(time);
 		}
@@ -41,9 +49,18 @@ public class MatchPane extends HBox{
 			String hg = ""+match.getHomegoal();
 			String ag = ""+match.getAwaygoal();
 			
+			Label h = new Label(hg);
+			Label a = new Label(ag);
+			h.setFont(new Font(15));
+			a.setFont(new Font(15));
+			
 			VBox score = new VBox();
-			score.setPrefWidth(200);
-			score.setPrefHeight(40);
+			score.setMinWidth(120);
+			score.setMinHeight(40);
+			score.getChildren().addAll(h,a);
+			score.setAlignment(Pos.CENTER);
+			
+			getChildren().add(score);
 
 		}
 		

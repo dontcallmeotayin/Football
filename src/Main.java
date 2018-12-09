@@ -50,15 +50,25 @@ public class Main extends Application{
 		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
-		Match match = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
+		Match match = new Match(c7,2, c8, 0, LocalDateTime.now(),true);
+		Match match2 = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
 		match.setStadium(new Stadium("Langear"));
+		match2.setStadium(new Stadium("Langear"));
 		System.out.println(match.getStadium().getName());
 		MatchPane m1 = new MatchPane(match);
+		MatchPane m2 = new MatchPane(match2);
+		MatchPane m3 = new MatchPane(match2);
+		MatchPane m4 = new MatchPane(match);
 		ArrayList<MatchPane> matches = new ArrayList<MatchPane>();
 		matches.add(m1);
+		matches.add(m2);
+		matches.add(m4);
+		matches.add(m3);
 		Day day = new Day(LocalDate.now(), matches);
+		Day day2 = new Day(LocalDate.now(), matches);
 		ArrayList<Day> days = new ArrayList<Day>();
 		days.add(day);
+		days.add(day2);
 		Calendar calendar = new Calendar(days);
 		/****************/
 		
@@ -182,11 +192,11 @@ public class Main extends Application{
 			root.getChildren().remove(calendar);
 		});
 		
-//		ImageView clhomeBtn =  clubS.getGoHome();
-//		clhomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(clubS);
-//		});
+		ImageView clhomeBtn =  clubScreen.getGoHome();
+		clhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(clubScreen);
+		});
 		
 		ImageView thomeBtn =  table.getGoHome();
 		thomeBtn.setOnMouseClicked(e -> {

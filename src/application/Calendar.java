@@ -1,7 +1,6 @@
 package application;
 
 import java.util.ArrayList;
-
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,8 +17,19 @@ public class Calendar extends Pane {
 
 	public Calendar(ArrayList<Day> days) {
 		
+		int count = 0;
+		
+		Pane bg = new Pane();
+		bg.setPrefSize(700, 675);
+		bg.setStyle("-fx-background-color: #643D68;");		// same color with table class   ,  DARKSALMON >> so cute
+		
+		VBox blog = new VBox();
 		for(Day day:days) {
-			this.getChildren().addAll(day);
+			double d = day.getScaleY();
+			double l = day.getLayoutY();
+			day.setLayoutY(l+(d*count+5));
+			bg.getChildren().addAll(day);
+			count += 1;
 		}
 		
 		calendar = new Label("CALENDAR");
@@ -39,7 +49,7 @@ public class Calendar extends Pane {
 		home.setLayoutX(635);
 		home.setLayoutY(610);
 		
-		this.getChildren().addAll(calendar, home, cal);
+		this.getChildren().addAll(bg,calendar, home, cal);
 //		this.setStyle("-fx-background-color: #9273AD;");
 		
 	}
