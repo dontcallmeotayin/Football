@@ -238,6 +238,12 @@ public class Main extends Application{
 			root.getChildren().remove(btn);
 		});
 		
+		ImageView stadiumBtn =  btn.getStadiumBtn();
+		stadiumBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(stadium);
+			root.getChildren().remove(btn);
+		});
+		
 		//-------------------------------------------------------------
 			// back home button
 		
@@ -281,6 +287,12 @@ public class Main extends Application{
 //		rhomeBtn.setOnMouseClicked(e -> {
 //			root.getChildren().add(btn);
 //			root.getChildren().remove(refree);
+//		});
+		
+//		ImageView shomeBtn =  stadium.getGoHome();
+//		shomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(stadium);
 //		});
 		
 		//-------------------------------------------------------------
