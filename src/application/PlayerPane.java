@@ -22,7 +22,7 @@ public class PlayerPane extends HBox{
 		setMinWidth(350);
 		setMaxWidth(350);
 		setPrefHeight(100);
-		setStyle("-fx-background-color: #ffffff;-fx-border-color : #000000");			
+		setStyle("-fx-background-color: #f5f5f5;-fx-border-color : #9e9e9e");			
 		
 		ImageView club = new ImageView(p.getTeam()+"00.png");
 		club.setFitHeight(20); 
