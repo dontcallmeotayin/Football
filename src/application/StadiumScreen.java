@@ -22,9 +22,9 @@ public class StadiumScreen extends Pane {
 	bg.setStyle("-fx-background-color: #643D68;");
 	
 	VBox vpane = new VBox();
-	vpane.setPrefSize(600, 675);
+	vpane.setPrefSize(700, 675);
 	vpane.setAlignment(Pos.TOP_CENTER);
-	vpane.setPadding(new Insets(20, 0, 0, 100));
+	vpane.setPadding(new Insets(20, 30, 0, 30));
 	vpane.setSpacing(5);
 
 	for(Stadium std:stArrayList) {

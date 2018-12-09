@@ -27,7 +27,7 @@ import logic.PremierLeagueLogic;
 import logic.Stadium;
 
 public class Main extends Application{
-	
+
 	@Override
 	public void start(Stage stage) {
 		VBox root = new VBox();
@@ -122,41 +122,41 @@ public class Main extends Application{
 		
 		//.......................................................//
 		ImageView ars = playerTeamSelection.getArsenal();
+		ImageView che = playerTeamSelection.getChelsea();
+		ImageView spur = playerTeamSelection.getSpur();
+		ImageView mci = playerTeamSelection.getMancity();
+		ImageView mun = playerTeamSelection.getManu();
+		ImageView liv = playerTeamSelection.getLiverpool();
 		ars.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("ARS")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});
-		ImageView che = playerTeamSelection.getChelsea();
 		che.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("CHE")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView spur = playerTeamSelection.getSpur();
 		spur.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("TOT")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView mci = playerTeamSelection.getMancity();
 		mci.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("MCI")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView mun = playerTeamSelection.getManu();
 		mun.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("MUN")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
 			root.getChildren().add(ps);
 			root.getChildren().remove(playerTeamSelection);
 		});		
-		ImageView liv = playerTeamSelection.getLiverpool();
 		liv.setOnMouseClicked(e -> {
 			ArrayList<Player> p = (new Player("LIV")).makeList();
 			PlayerScreen ps = new PlayerScreen(p);
@@ -235,6 +235,8 @@ public class Main extends Application{
 		});
 		
 	//-------------------------------------------------------------
+				
+	//-------------------------------------------------------------
 		
 		root.getChildren().addAll(btn);
 		
@@ -242,10 +244,10 @@ public class Main extends Application{
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.show();
 	}
-	
+		
 	public static void main(String [] args) {
 		launch(args);
 	}

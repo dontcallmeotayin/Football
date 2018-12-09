@@ -331,17 +331,20 @@ public class About extends Pane{
 		linkin.setLayoutX(318);
 		linkin.setLayoutY(2213);
 		
+		Hyperlink link = new Hyperlink();
+		
 		Btn b = new Btn();
 		home = b.getHome();
-		home.setLayoutX(610);
-		home.setLayoutY(2215);
+		home.setLayoutX(620);
+		home.setLayoutY(610);
 		
 		v.getChildren().addAll(lion);
-		pane.getChildren().addAll(vv, v, head, data, data2, data3, photo1, data4, data5,
+		pane.getChildren().addAll(vv, v, link, linklogo, linkface, linktwit, linkin,
+				head, data, data2, data3, photo1, data4, data5,
 				head2, data6, data7, data8, data9, data10, data11, data12, data13, data14,
-				photo2, data15, data16, data17, data18, home, linklogo, linkface, linktwit, linkin);
+				photo2, data15, data16, data17, data18);
 		scrollPane.setContent(pane);
-		this.getChildren().addAll(scrollPane);
+		this.getChildren().addAll(scrollPane, home);
 		// .addAll(vv, v, head, data, data2, data3, photo1;
 		
 	}

@@ -1,5 +1,6 @@
 package application;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -12,10 +13,12 @@ public class StadiumPane extends HBox {
 	
 	public StadiumPane(Stadium stadium) {
 		
-		this.setPrefSize(700, 100);
-		this.setAlignment(Pos.CENTER_LEFT);
-		this.setStyle("-fx-background-color: #F3F3F3;-fx-border-color : #636363");
-		this.setSpacing(10);
+		setPrefWidth(500);
+		setPrefHeight(100);
+		setAlignment(Pos.CENTER_LEFT);
+		setStyle("-fx-background-color: #F3F3F3;-fx-border-color : #636363");
+		setPadding(new Insets(5,10,5,15));
+		setSpacing(20);
 		
 		Label name = new Label(stadium.getName());
 		name.setFont(new Font(25));
@@ -24,6 +27,8 @@ public class StadiumPane extends HBox {
 		VBox h = new VBox();
 		h.setPrefWidth(480);
 		h.setSpacing(5);
+		h.setPadding(new Insets(10));
+		
 		HBox v1 = new HBox(5);
 		HBox v2 = new HBox(5);
 		HBox v3 = new HBox(5);
