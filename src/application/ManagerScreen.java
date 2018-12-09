@@ -1,16 +1,18 @@
 package application;
 
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import logic.Manager;
-import logic.Person;
+import java.util.ArrayList;
 
-public class ManagerScreen extends VBox{
-	private PersonalDetails head;
-	private Text bio;
+import javafx.scene.layout.VBox;
+import logic.Manager;
+
+public class ManagerScreen extends VBox {
 	
-	public ManagerScreen(Manager mng) {
-		head = new PersonalDetails(mng);
-		getChildren().addAll(head);
+	public ManagerScreen(ArrayList<Manager> managers) {
+		super(20);
+		for(Manager mng:managers) {
+			ManagerPane pane = new ManagerPane(mng);
+			getChildren().add(pane);
+		}
 	}
+
 }

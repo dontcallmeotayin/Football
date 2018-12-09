@@ -3,29 +3,23 @@ package logic;
 import javafx.scene.image.Image;
 
 public class IncludeImage {
-	private String imagename;
-	public static final String IMGTYPE = ".png";
+	private String imagename = "NoImageAvailable.png";
 	private Image image;
 	
 	public IncludeImage() {
-		this.imagename = "NoImageAvailable";
-		setImage();
+		setImage(this.imagename);
 	}
 	
 	public IncludeImage(String name) {
 		this.imagename = name;
-		setImage();
+		setImage(this.imagename);
 	}
 	
-	public String ImagePath() {
-		return imagename+IMGTYPE;
-	}
-
-	public String getImagename() {
+	public String getImagePath() {
 		return imagename;
 	}
 
-	public void setImagename(String imagename) {
+	public void setImagePath(String imagename) {
 		this.imagename = imagename;
 	}
 
@@ -33,8 +27,9 @@ public class IncludeImage {
 		return image;
 	}
 
-	public void setImage() {
-		this.image = new Image(ClassLoader.getSystemResource(ImagePath()).toString());
+	public void setImage(String imagename) {
+		this.imagename = imagename;
+		this.image = new Image(ClassLoader.getSystemResource(imagename).toString());
 	}
 	
 }

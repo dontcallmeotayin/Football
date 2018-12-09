@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.beans.Observable;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
@@ -22,6 +24,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Callback;
 import logic.Club;
+import logic.Competition;
 import logic.Standings;
 
 public class Tables extends Pane {
@@ -35,7 +38,6 @@ public class Tables extends Pane {
 	private ImageView home;
 	
 	public Tables() {
-		
 		VBox v = new VBox();
 		v.setPrefSize(700, 675);
 		v.setAlignment(Pos.CENTER);
@@ -157,6 +159,8 @@ public class Tables extends Pane {
 		
 		v.getChildren().addAll(topic, table);
 		this.getChildren().addAll(v, cup, cup2, home);
+		
+		table.setEditable(false);
 	
 	}
 	

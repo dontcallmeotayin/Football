@@ -4,46 +4,41 @@ import java.time.LocalDateTime;
 
 import javafx.util.Pair;
 
-public class Match {
-	private String id;
+public class Match implements CsvAvailable{
 	private int totalGoals;
-	private Pair<Club,Integer> homeTeam;
-	private Pair<Club,Integer> awayTeam;
+	private Club homeTeam;
+	private Club awayTeam;
+	private int homegoal;
+	private int awaygoal;
 	private LocalDateTime startTime;
-	private LocalDateTime endTime;
 	private Refree refree;
 	private Stadium stadium;
 	private boolean isDone;
 	
-	public Match(String id,Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDateTime start,LocalDateTime end,Refree refree,boolean isDone) {
-		this.id = id;
+	public Match(Club home,int hg,Club away,int ag,LocalDateTime start,Refree refree,boolean isDone) {
 		this.homeTeam = home;
 		this.awayTeam = away;
+		this.homegoal = hg;
+		this.awaygoal = ag;
 		this.startTime = start;
-		this.endTime = end;
 		this.refree = refree;
-		this.stadium = home.getKey().getStadium();
+		this.stadium = home.getStadium();
 		this.isDone = isDone;
 		totalGoals();
 	}
 	
-	public Match(Pair<Club,Integer> home,Pair<Club,Integer> away,LocalDateTime start) {
+	public Match(Club home,int hg,Club away,int ag,LocalDateTime start) {
 		this.homeTeam = home;
 		this.awayTeam = away;
+		this.homegoal = hg;
+		this.awaygoal = ag;
 		this.startTime = start;
-		this.stadium = home.getKey().getStadium();
+		this.stadium = home.getStadium();
+		totalGoals();
 	}
 	
 	public void totalGoals() {
-		this.totalGoals = this.homeTeam.getValue() + this.awayTeam.getValue();
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+		this.totalGoals = this.homegoal+this.awaygoal;
 	}
 
 	public int getTotalGoals() {
@@ -54,20 +49,36 @@ public class Match {
 		this.totalGoals = totalGoals;
 	}
 
-	public Pair<Club, Integer> getHomeTeam() {
+	public Club getHomeTeam() {
 		return homeTeam;
 	}
 
-	public void setHomeTeam(Pair<Club, Integer> homeTeam) {
+	public void setHomeTeam(Club homeTeam) {
 		this.homeTeam = homeTeam;
 	}
 
-	public Pair<Club, Integer> getAwayTeam() {
+	public Club getAwayTeam() {
 		return awayTeam;
 	}
 
-	public void setAwayTeam(Pair<Club, Integer> awayTeam) {
+	public void setAwayTeam(Club awayTeam) {
 		this.awayTeam = awayTeam;
+	}
+
+	public int getHomegoal() {
+		return homegoal;
+	}
+
+	public void setHomegoal(int homegoal) {
+		this.homegoal = homegoal;
+	}
+
+	public int getAwaygoal() {
+		return awaygoal;
+	}
+
+	public void setAwaygoal(int awaygoal) {
+		this.awaygoal = awaygoal;
 	}
 
 	public LocalDateTime getStartTime() {
@@ -76,14 +87,6 @@ public class Match {
 
 	public void setStartTime(LocalDateTime startTime) {
 		this.startTime = startTime;
-	}
-
-	public LocalDateTime getEndTime() {
-		return endTime;
-	}
-
-	public void setEndTime(LocalDateTime endTime) {
-		this.endTime = endTime;
 	}
 
 	public Refree getRefree() {
@@ -108,6 +111,11 @@ public class Match {
 
 	public void setStadium(Stadium stadium) {
 		this.stadium = stadium;
+	}
+
+	@Override
+	public String getCsv() {
+		return "res/match.csv";
 	}
 	
 }

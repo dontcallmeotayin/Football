@@ -1,32 +1,36 @@
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import application.About;
 import application.Btn;
 import application.Calendar;
-import application.ClubScreen;
 import application.Day;
-import application.ManagerScreen;
 import application.MatchPane;
+import application.PlayerPane;
 import application.PlayerScreen;
-import application.RefreeScreen;
 import application.Tables;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import logic.Club;
+import logic.CsvAvailable;
 import logic.Manager;
 import logic.Match;
+import logic.Person;
 import logic.Player;
+import logic.PremierLeagueLogic;
 import logic.Refree;
 import logic.Stadium;
 import logic.Standings;
@@ -51,59 +55,27 @@ public class Main extends Application{
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 		
-//        String csvFile = "res/match.csv";
-//        BufferedReader br = null;
-//        String line = "";
-//        String cvsSplitBy = ",";
-//        
-//    	ArrayList<Match> matches = new ArrayList<Match>();
-//
-//        try {
-//            br = new BufferedReader(new FileReader(csvFile));
-//            while ((line = br.readLine()) != null) {
-//                String[] matchdata = line.split(cvsSplitBy);
-//                Club h = new Club(matchdata[1]);
-//                int hg = Integer.parseInt(matchdata[3]);
-//                Pair<Club,Integer> home = new Pair<Club, Integer>(h, hg);
-//                Club a = new Club(matchdata[2]);
-//                Pair<Club,Integer> away = new Pair<Club, Integer>(h, Integer.valueOf(matchdata[4]));
-//                String[] date = matchdata[0].split("/");
-//                LocalDateTime start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
-//                Match match = new Match(home, away, start);
-//                matches.add(match);
-//                System.out.println(match.getHomeTeam().getKey().getCode());
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (br != null) {
-//                try {
-//                    br.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-        
-//        for(int i=10;i<15;i++) {
-//        	MatchPane matchpane = new MatchPane(matches.get(i));
-//        	root.getChildren().add(matchpane);
-//        }
-
+		/****************/
+		Club c7 = new Club("EVE"); 
+		Club c8 = new Club("BOU"); 
+		Match match = new Match(c7,2, c8, 0, LocalDateTime.now());
+		MatchPane m1 = new MatchPane(match);
+		ArrayList<MatchPane> matches = new ArrayList<MatchPane>();
+		matches.add(m1);
+		Day day = new Day(LocalDate.now(), matches);
+		ArrayList<Day> days = new ArrayList<Day>();
+		days.add(day);
+		Calendar calendar = new Calendar(days);
+		/****************/
 		
-//		Club ars = new Club("ARS");
-//		Club che = new Club("CHE");
-//		Pair<Club,Integer> a = new Pair<>(ars,1);
-//		Pair<Club,Integer> c = new Pair<>(che,1);
-//		Stadium stamford = new Stadium("stamford");
-//		che.setStadium(stamford);
-//		LocalDateTime date = LocalDateTime.now();
-//		Match test = new Match(c,a,date);
-//		MatchPane testpane = new MatchPane(test);
-//		root.getChildren().add(testpane);
+//		BorderPane temp = new BorderPane();
+//		PremierLeagueLogic logic = new PremierLeagueLogic();
+//		logic.getAllplayers();
+//			Player p = new Player("Petr","Cech",1,"ARS","GOAL");
+//			PlayerPane player = new PlayerPane(p);
+//			System.out.println(p.getImagePath());
+//			temp.getChildren().add(player);
+//		root.getChildren().add(temp);
 		
 //		Calendar calender = new Calendar(days);
 //		ClubScreen clubS = new ClubScreen(club);
@@ -119,7 +91,7 @@ public class Main extends Application{
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
 		calendarBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(calendar);
+			root.getChildren().add(calendar);
 			root.getChildren().remove(btn);
 		});
 		

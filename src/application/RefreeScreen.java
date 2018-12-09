@@ -1,17 +1,20 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import logic.Person;
+import logic.Manager;
 import logic.Refree;
 
-public class RefreeScreen extends VBox {
-	private PersonalDetails head;
-	private Text bio;
+public class RefreeScreen extends VBox{
 	
-	public RefreeScreen(Refree rf) {
-		head = new PersonalDetails(rf);
-		getChildren().addAll(head);
+	public RefreeScreen(ArrayList<Refree> refree) {
+		super(20);
+		for(Refree rf:refree) {
+			RefreePane pane = new RefreePane(rf);
+			getChildren().add(pane);
+		}
 	}
+
 
 }
