@@ -40,6 +40,11 @@ public class MatchPane extends HBox{
 		else if(match.isDone()) {
 			String hg = ""+match.getHomegoal();
 			String ag = ""+match.getAwaygoal();
+			
+			VBox score = new VBox();
+			score.setPrefWidth(200);
+			score.setPrefHeight(40);
+
 		}
 		
 		String hometeam = match.getHomeTeam().getName();  

@@ -50,7 +50,7 @@ public class Main extends Application{
 		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
-		Match match = new Match(c7,2, c8, 0, LocalDateTime.now());
+		Match match = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
 		match.setStadium(new Stadium("Langear"));
 		System.out.println(match.getStadium().getName());
 		MatchPane m1 = new MatchPane(match);
