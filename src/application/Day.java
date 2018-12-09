@@ -55,6 +55,7 @@ public class Day extends Pane{
 		
 		bg.getChildren().addAll(pane, pane2, date);
 		
+		
 		for(MatchPane panes:matches) {
 			bg.getChildren().add(panes);
 		}

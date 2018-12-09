@@ -9,6 +9,7 @@ import application.About;
 import application.Btn;
 import application.Calendar;
 import application.Day;
+import application.ManagerScreen;
 import application.MatchPane;
 import application.PlayerPane;
 import application.PlayerScreen;
@@ -54,18 +55,12 @@ public class Main extends Application{
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 				
-//		Club ars = new Club("ARS");
-//		Club che = new Club("CHE");
-//		Pair<Club,Integer> a = new Pair<>(ars,1);
-//		Pair<Club,Integer> c = new Pair<>(che,1);
-//		Stadium stamford = new Stadium("stamford");
-//		che.setStadium(stamford);
-//		LocalDateTime date = LocalDateTime.now();
-//		Match test = new Match(c,a,date);
-//		MatchPane testpane = new MatchPane(test);
-//		root.getChildren().add(testpane);
-
-		/****************/
+		PremierLeagueLogic logic = new PremierLeagueLogic();
+		
+		//Home
+		Btn btn = new Btn();
+		
+		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
 		Match match = new Match(c7,2, c8, 0, LocalDateTime.now());
@@ -79,18 +74,16 @@ public class Main extends Application{
 		days.add(day);
 		Calendar calendar = new Calendar(days);
 		/****************/
-		PremierLeagueLogic logic = new PremierLeagueLogic();
-
+		
+		// Tables
 		Tables table = new Tables(logic.getPml().getStandings());
 		About about = new About();
 		
-		Btn btn = new Btn();
-
-//		ArrayList<Player> players = new ArrayList<Player>();
-//		Player p = new Player("Petr","Cech",1,"ARS","GOAL");
-//		Player p2 = new Player("Hecter","Bellerin",2,"ARS","DEFENDER");
-//		players.add(p); players.add(p2);
-		PlayerScreen temp = new PlayerScreen(logic.getAllplayers());
+		//Player
+//		PlayerScreen temp = new PlayerScreen(logic.getAllplayers());
+		
+		//Manager
+		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
 				
 		//-------------------------------------------------------------
 		
@@ -114,14 +107,15 @@ public class Main extends Application{
 		
 		ImageView managerBtn =  btn.getManagerBtn();
 		managerBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(manager);
+			root.getChildren().add(managerscreen);
 			root.getChildren().remove(btn);
 		});
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(temp);
-			root.getChildren().remove(btn);
+//		root.getChildren().add(temp);
+//		root.getChildren().add(playerscreen);
+		root.getChildren().remove(btn);
 		});
 		
 		ImageView aboutBtn =  btn.getAboutBtn();
@@ -163,11 +157,11 @@ public class Main extends Application{
 			root.getChildren().remove(table);
 		});
 		
-//		ImageView mhomeBtn =  manager.getGoHome();
-//		mhomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(manager);
-//		});
+		ImageView mhomeBtn =  managerscreen.getGoHome();
+		mhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(managerscreen);
+		});
 		
 //		ImageView phomeBtn =  playerS.getGoHome();
 //		phomeBtn.setOnMouseClicked(e -> {

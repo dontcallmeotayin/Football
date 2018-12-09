@@ -42,7 +42,6 @@ public class Player extends Person implements CsvAvailable {
 		try {
 			setImage(team.toLowerCase()+number+".png");
 		} catch (NullPointerException e) {
-            System.out.print("NullPointerException Caught"); 
             setImagetoBasic();
 		}
 	}
