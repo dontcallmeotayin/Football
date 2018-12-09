@@ -71,7 +71,7 @@ public class Main extends Application{
 		/****************/
 		
 //		BorderPane temp = new BorderPane();
-//		PremierLeagueLogic logic = new PremierLeagueLogic();
+		PremierLeagueLogic logic = new PremierLeagueLogic();
 //		logic.getAllplayers();
 //			Player p = new Player("Petr","Cech",1,"ARS","GOAL");
 //			PlayerPane player = new PlayerPane(p);
@@ -81,7 +81,7 @@ public class Main extends Application{
 		
 //		Calendar calender = new Calendar(days);
 //		ClubScreen clubS = new ClubScreen(club);
-		Tables table = new Tables();
+		Tables table = new Tables(logic.getPml().getStandings());
 //		ManagerScreen manager = new ManagerScreen(mng);
 //		PlayerScreen playerS = new PlayerScreen(player);
 		About about = new About();

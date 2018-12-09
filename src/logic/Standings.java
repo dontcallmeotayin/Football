@@ -9,13 +9,13 @@ public class Standings {
 	private int points = 0;
 	private int gf = 0;
 	private int ga = 0;
-	private int gd = 0;
+	private String gd = "";
 	
 	public Standings(Club team) {
 		this.team = team;
 	}
 	
-	public Standings(Club team,int pg,int w,int l,int d,int gf, int ga) {
+	public Standings(Club team,int pg,int w,int d,int l,int gf, int ga) {
 		this.team = team;
 		this.playedGames = pg;
 		this.win = w;
@@ -23,7 +23,12 @@ public class Standings {
 		this.draw = d;
 		this.gf = gf;
 		this.ga = ga;
-		this.gd = gf - ga;
+		int diff = gf - ga;
+		if(diff<0) {
+			this.gd = String.valueOf(diff);
+		}else {
+			this.gd = "+"+String.valueOf(diff);
+		}
 		this.points = win*3 + draw;
 	}
 
@@ -71,10 +76,6 @@ public class Standings {
 		return points;
 	}
 
-	public void setPoints(int points) {
-		this.points = points;
-	}
-
 	public int getGf() {
 		return gf;
 	}
@@ -91,12 +92,8 @@ public class Standings {
 		this.ga = ga;
 	}
 
-	public int getGd() {
+	public String getGd() {
 		return gd;
-	}
-
-	public void setGd(int gd) {
-		this.gd = gd;
 	}
 
 }

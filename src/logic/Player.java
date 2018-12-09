@@ -1,7 +1,12 @@
 package logic;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import javafx.util.Pair;
 
@@ -19,11 +24,13 @@ public class Player extends Person implements CsvAvailable {
 	public Player() {
 		super();
 //		this.setAge(calAge());
+		setImagetoBasic();
 	}
 	
 	public Player(String f, String l) {
 		super(f, l);
 //		this.setAge(calAge());
+		setImagetoBasic();
 	}
 	
 	public Player(String f,String l,int n,String t,String pos) {
@@ -32,7 +39,12 @@ public class Player extends Person implements CsvAvailable {
 		this.number = n;
 		this.team = t;
 		this.pos = pos;
-		setImage(team.toLowerCase()+number+".png");
+		try {
+			setImage(team.toLowerCase()+number+".png");
+		} catch (NullPointerException e) {
+            System.out.print("NullPointerException Caught"); 
+            setImagetoBasic();
+		}
 	}
 
 //	public Player(String f, String l, String n, LocalDate d,
@@ -128,19 +140,38 @@ public class Player extends Person implements CsvAvailable {
 	public String getCsv() {
 		return "res/Player.csv";
 	}
-	
-//	@Override
-//	public CsvAvailable getData(String line,String cvsSplitBy) {
-//          String[] csvdata = line.split(cvsSplitBy);
-//		  int num = Integer.parseInt(csvdata[0]);
-//		  String pos = csvdata[1];
-//		  String first = csvdata[2];
-//		  String last = csvdata[3];
-//		  String team = csvdata[4];
-////        String[] date = split[0].split("/");
-////        LocalDateTime start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
-//		  Player p = new Player(first, last, num, team, pos);
-//		  return p;
-//	}
-	
+
+	public ArrayList<Player> makeList() {
+		  BufferedReader br = null;
+		  String line = "";
+		  String cvsSplitBy = ",";
+		  ArrayList<Player> data = new ArrayList<Player>();
+		  try {
+		      br = new BufferedReader(new FileReader(this.getCsv()));
+		      while ((line = br.readLine()) != null) {
+		          String[] csvdata = line.split(cvsSplitBy);
+		          //----------------------
+		    		  int num = Integer.parseInt(csvdata[0]);
+		    		  String pos = csvdata[1];
+		    		  String first = csvdata[2];
+		    		  String last = csvdata[3];
+		    		  String team = csvdata[4];
+		    		  Player newdata = new Player(first, last, num, team, pos);
+			          data.add(newdata);
+		      }
+		   } catch (FileNotFoundException e) {
+			      e.printStackTrace();
+		   } catch (IOException e) {
+			      e.printStackTrace();
+		   } finally {
+			    if (br != null) {
+			        try {
+			            br.close();
+			         } catch (IOException e) {
+			            e.printStackTrace();
+			         }
+			    }
+			 }
+		  return data;
+		}
 }

@@ -23,7 +23,7 @@ public class MatchPane extends HBox{
 		String startH = ""+match.getStartTime().getHour();
 		String startM = ""+match.getStartTime().getMinute();
 		String start = startH + ":" + startM;
-		String hometeam = match.getHomeTeam().getName();
+		String hometeam = match.getHomeTeam().getName();  
 		String awayteam = match.getAwayTeam().getName();
 		String stadium = match.getStadium().getName();
 		

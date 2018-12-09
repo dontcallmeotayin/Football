@@ -1,8 +1,13 @@
 package logic;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Refree extends Person{
+public class Refree extends Person implements CsvAvailable{
 	private int matches = 0;
 	private int red = 0;
 	private int yellow = 0;
@@ -45,5 +50,45 @@ public class Refree extends Person{
 	public void setYellow(int yellow) {
 		this.yellow = yellow;
 	}
+
+	@Override
+	public String getCsv() {
+		return "res/refree.csv";
+	}
+	
+	public ArrayList<Refree> makeList() {
+		  BufferedReader br = null;
+		  String line = "";
+		  String cvsSplitBy = ",";
+		  ArrayList<Refree> data = new ArrayList<Refree>();
+		  try {
+		      br = new BufferedReader(new FileReader(this.getCsv()));
+		      while ((line = br.readLine()) != null) {
+		          String[] csvdata = line.split(cvsSplitBy);
+		          //----------------------
+		    		  String first = csvdata[0];
+		    		  String last = csvdata[1];
+		    		  int g = Integer.parseInt(csvdata[2]);
+		    		  int r = Integer.parseInt(csvdata[3]);
+		    		  int y = Integer.parseInt(csvdata[4]);
+		    		  Refree newdata = new Refree(first, last, g, r, y);
+			          data.add(newdata);
+		      }
+		   } catch (FileNotFoundException e) {
+			      e.printStackTrace();
+		   } catch (IOException e) {
+			      e.printStackTrace();
+		   } finally {
+			    if (br != null) {
+			        try {
+			            br.close();
+			         } catch (IOException e) {
+			            e.printStackTrace();
+			         }
+			    }
+			 }
+		  return data;
+		}
+
 
 }

@@ -3,14 +3,16 @@ package logic;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import javafx.collections.ObservableList;
+
 public class Competition {
 	private String name;
-	private ArrayList<Standings> Std;
+	private ObservableList<Standings> Std;
 	private ArrayList<Match> Matches;
 	private LocalDate startDate;
 	private LocalDate endDate;
 	
-	public Competition(String name,ArrayList<Standings> Std,ArrayList<Match> Matches,LocalDate startDate,LocalDate endDate) {
+	public Competition(String name,ObservableList<Standings> Std,ArrayList<Match> Matches,LocalDate startDate,LocalDate endDate) {
 		this.name = name;
 		this.Std =  Std;
 		this.Matches = Matches;
@@ -26,11 +28,11 @@ public class Competition {
 		this.name = name;
 	}
 
-	public ArrayList<Standings> getStandings() {
+	public ObservableList<Standings> getStandings() {
 		return Std;
 	}
 
-	public void setStandings(ArrayList<Standings> std) {
+	public void setStandings(ObservableList<Standings> std) {
 		Std = std;
 	}
 
