@@ -150,11 +150,11 @@ public class Main extends Application{
 			root.getChildren().remove(calendar);
 		});
 		
-//		ImageView clhomeBtn =  clubS.getGoHome();
-//		clhomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(clubS);
-//		});
+		ImageView clhomeBtn =  clubScreen.getGoHome();
+		clhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(clubScreen);
+		});
 		
 		ImageView thomeBtn =  table.getGoHome();
 		thomeBtn.setOnMouseClicked(e -> {
