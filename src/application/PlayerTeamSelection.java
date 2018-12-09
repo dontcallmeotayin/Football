@@ -1,10 +1,13 @@
 package application;
 
+
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -18,6 +21,7 @@ public class PlayerTeamSelection extends VBox {
 	private ImageView mancity;
 	private ImageView manu;
 	private ImageView liverpool;
+	private ImageView home;
 	
 	public PlayerTeamSelection() {
 		super(10);
@@ -46,9 +50,43 @@ public class PlayerTeamSelection extends VBox {
 		liverpool.setFitWidth(100);
 		liverpool.setPreserveRatio(true);
 		
+		Btn b = new Btn();
+		home = b.getHome();
+		home.setLayoutX(650);
+		home.setLayoutY(610);
+		
 		this.setAlignment(Pos.CENTER);
 		this.setPadding(new Insets(12));
-		getChildren().addAll(arsenal,chelsea,spur,mancity,manu,liverpool);
+		getChildren().addAll(arsenal,chelsea,spur,mancity,manu,liverpool,home);
 		
+		
+	}
+
+	public ImageView getArsenal() {
+		return arsenal;
+	}
+
+	public ImageView getChelsea() {
+		return chelsea;
+	}
+
+	public ImageView getSpur() {
+		return spur;
+	}
+
+	public ImageView getMancity() {
+		return mancity;
+	}
+
+	public ImageView getManu() {
+		return manu;
+	}
+
+	public ImageView getLiverpool() {
+		return liverpool;
+	}
+	
+	public ImageView getHome() {
+		return home;
 	}
 }

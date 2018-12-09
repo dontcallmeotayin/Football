@@ -37,6 +37,7 @@ public class ManagerPane extends HBox{
 		
 		Label name = new Label(mng.getName());
 		name.setFont(new Font(22));
+		name.setMinWidth(200);
 		
 		Label seasonl = new Label("Seasons");
 		Label seasonv = new Label(String.valueOf(mng.getSeasons()));

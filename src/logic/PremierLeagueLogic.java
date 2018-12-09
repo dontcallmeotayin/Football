@@ -12,20 +12,27 @@ public class PremierLeagueLogic {
 	private ArrayList<Player> allplayers;
 	private ArrayList<Manager> allmng;
 	private ArrayList<Refree> refree;
+	private ArrayList<Stadium> stadiums;
 	
 	public PremierLeagueLogic() {
-						
+		
 		allmng =  (new Manager()).makeList();
-		refree = (new Refree()).makeList();
 		ArrayList<Match> matches = (new Match()).makeList();
 		
 		//Stadium
-		Stadium em = new Stadium("Emirates Stadium",60260,"Highbury House, 75 Drayton Park, London, N5 1BU");
-		Stadium stf = new Stadium("Stamford Bridge",40853,"Stamford Bridge, Fulham Road, London, SW6 1HS");
-		Stadium a = new Stadium("Anfield",53394,"Anfield, Anfield Road, Liverpool, L4 0TH");
-		Stadium o = new Stadium("Old Trafford",74879,"Sir Matt Busby Way, Old Trafford, Manchester, M16 0RA");
-		Stadium w = new Stadium("Wembley Stadium", 90000,"Wembley Stadium, Wembley, London, HA9 0WS");
-		Stadium et = new Stadium("Etihad Stadium",55017,"Etihad Stadium, Etihad Campus, Manchester, M11 3FF");
+		Stadium em = new Stadium("Emirates Stadium",60260,"Highbury House, 75 Drayton Park, London, N5 1BU","ARS");
+		Stadium stf = new Stadium("Stamford Bridge",40853,"Stamford Bridge, Fulham Road, London, SW6 1HS","CHE");
+		Stadium a = new Stadium("Anfield",53394,"Anfield, Anfield Road, Liverpool, L4 0TH","LIV");
+		Stadium o = new Stadium("Old Trafford",74879,"Sir Matt Busby Way, Old Trafford, Manchester, M16 0RA","MUN");
+		Stadium w = new Stadium("Wembley Stadium", 90000,"Wembley Stadium, Wembley, London, HA9 0WS","TOT");
+		Stadium et = new Stadium("Etihad Stadium",55017,"Etihad Stadium, Etihad Campus, Manchester, M11 3FF","MCI");
+		stadiums = new ArrayList<Stadium>();
+		stadiums.add(em);
+		stadiums.add(et);
+		stadiums.add(a);
+		stadiums.add(w);
+		stadiums.add(o);
+		stadiums.add(stf);
 		
 		//Club
 		clubs = new ArrayList<Club>();
@@ -98,6 +105,7 @@ public class PremierLeagueLogic {
 	}
 
 	public ArrayList<Refree> getRefree() {
+		refree = (new Refree()).makeList();
 		return refree;
 	}	
 	
@@ -107,5 +115,8 @@ public class PremierLeagueLogic {
 		return players;
 	}
 
+	public ArrayList<Stadium> getStadiums() {
+		return stadiums;
+	}
 	
 }

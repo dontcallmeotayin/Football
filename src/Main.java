@@ -1,51 +1,32 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import application.About;
 import application.Btn;
 import application.Calendar;
-import application.ClubPane;
 import application.ClubScreen;
+import application.Credit;
 import application.Day;
 import application.ManagerScreen;
 import application.MatchPane;
-import application.PlayerPane;
 import application.PlayerScreen;
 import application.PlayerTeamSelection;
+import application.StadiumScreen;
 import application.Tables;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene  .media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 import logic.Club;
-import logic.CsvAvailable;
-import logic.Manager;
 import logic.Match;
-import logic.Person;
 import logic.Player;
 import logic.PremierLeagueLogic;
-import logic.Refree;
 import logic.Stadium;
-import logic.Standings;
 
 public class Main extends Application{
-
-	private Standings data;
-	private ArrayList<Day> days;
-	private Club club;
-	private Manager mng;
-	private Player player;
-	private Refree rf;
 	
 	@Override
 	public void start(Stage stage) {
@@ -63,6 +44,9 @@ public class Main extends Application{
 		//Home
 		Btn btn = new Btn();
 		
+		//Credit
+		Credit credit = new Credit();
+				
 		//Calendar
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
@@ -86,11 +70,15 @@ public class Main extends Application{
 		ClubScreen clubScreen = new ClubScreen();
 		
 		//Player
+		PlayerTeamSelection playerTeamSelection = new PlayerTeamSelection();
 		
 		//Manager
 		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
+		
+		//Stadium
+		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
 				
-		//-------------------------------------------------------------
+	//-------------------------------------------------------------
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
 		calendarBtn.setOnMouseClicked(e -> {
@@ -118,10 +106,54 @@ public class Main extends Application{
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-//		root.getChildren().add(temp);
-//		root.getChildren().add(playerscreen);
+		root.getChildren().add(playerTeamSelection);
 		root.getChildren().remove(btn);
 		});
+		
+		//.......................................................//
+		ImageView ars = playerTeamSelection.getArsenal();
+		ars.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("ARS")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});
+		ImageView che = playerTeamSelection.getChelsea();
+		che.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("CHE")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});		
+		ImageView spur = playerTeamSelection.getSpur();
+		spur.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("TOT")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});		
+		ImageView mci = playerTeamSelection.getMancity();
+		mci.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("MCI")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});		
+		ImageView mun = playerTeamSelection.getManu();
+		mun.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("MUN")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});		
+		ImageView liv = playerTeamSelection.getLiverpool();
+		liv.setOnMouseClicked(e -> {
+			ArrayList<Player> p = (new Player("LIV")).makeList();
+			PlayerScreen ps = new PlayerScreen(p);
+			root.getChildren().add(ps);
+			root.getChildren().remove(playerTeamSelection);
+		});
+		//.......................................................//
 		
 		ImageView aboutBtn =  btn.getAboutBtn();
 		aboutBtn.setOnMouseClicked(e -> {
@@ -137,11 +169,11 @@ public class Main extends Application{
 		
 		ImageView stadiumBtn =  btn.getStadiumBtn();
 		stadiumBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(stadium);
+			root.getChildren().add(stadiumScreen);
 			root.getChildren().remove(btn);
 		});
 		
-		//-------------------------------------------------------------
+	//-------------------------------------------------------------
 			// back home button
 		
 		ImageView cahomeBtn =  calendar.getGoHome();
@@ -168,11 +200,11 @@ public class Main extends Application{
 			root.getChildren().remove(managerscreen);
 		});
 		
-//		ImageView phomeBtn =  playerS.getGoHome();
-//		phomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(playerS);
-//		});
+		ImageView phomeBtn =  playerTeamSelection.getHome();
+		phomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(playerTeamSelection);
+		});
 		
 		ImageView ahomeBtn =  about.getGoHome();
 		ahomeBtn.setOnMouseClicked(e -> {
@@ -186,13 +218,13 @@ public class Main extends Application{
 //			root.getChildren().remove(refree);
 //		});
 		
-//		ImageView shomeBtn =  stadium.getGoHome();
-//		shomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(stadium);
-//		});
+		ImageView shomeBtn =  stadiumScreen.getHome();
+		shomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(stadiumScreen);
+		});
 		
-		//-------------------------------------------------------------
+	//-------------------------------------------------------------
 		
 		root.getChildren().addAll(btn);
 		
