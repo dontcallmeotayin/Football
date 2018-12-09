@@ -27,6 +27,12 @@ public class Player extends Person implements CsvAvailable {
 		setImagetoBasic();
 	}
 	
+	public Player(String team) {
+		super();
+		this.team = team;
+		setImagetoBasic();
+	}
+	
 	public Player(String f, String l) {
 		super(f, l);
 //		this.setAge(calAge());
@@ -135,8 +141,13 @@ public class Player extends Person implements CsvAvailable {
 	public void setTeam(String team) {
 		this.team = team;
 	}
-
+	
 	public String getCsv() {
+		String c = this.getTeam();
+		if(c.equals("ARS") || c.equals("MCI") || c.equals("TOT") ||
+		   c.equals("MUN") || c.equals("LIV") || c.equals("CHE")) {
+			return "res/"+c+"player.csv";
+		}
 		return "res/Player.csv";
 	}
 

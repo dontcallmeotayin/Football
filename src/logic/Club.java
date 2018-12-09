@@ -2,34 +2,29 @@ package logic;
 
 import java.util.ArrayList;
 
-import javafx.scene.image.Image;
 
 public class Club extends IncludeImage {
 	private String name ;
 	private String code;
 	private Stadium stadium;
 	private ArrayList<Player> Players;
-	private ArrayList<String> Colors;
 	private Manager manager;
-	
-	public Club(String code,ArrayList<Player> players,ArrayList<String> colors,
-			Manager mng,Stadium stadium) {
-		this.code = code.toUpperCase();
-		this.Players = players;
-		this.Colors = colors;
-		this.manager = mng;
-		this.stadium = stadium;
-		codeToName();
-	}
 	
 	public Club(String code) {
 		this.code = code.toUpperCase().trim();
 		codeToName();
 	}
-
 	
 	public Club(String code,Manager mng,Stadium stadium) {
 		this.code = code.toUpperCase();
+		this.manager = mng;
+		this.stadium = stadium;
+		codeToName();
+	}
+	
+	public Club(String code,ArrayList<Player> players,Manager mng,Stadium stadium) {
+		this.code = code.toUpperCase();
+		this.Players = players;
 		this.manager = mng;
 		this.stadium = stadium;
 		codeToName();
@@ -86,14 +81,6 @@ public class Club extends IncludeImage {
 
 	public void setPlayers(ArrayList<Player> players) {
 		Players = players;
-	}
-
-	public ArrayList<String> getColors() {
-		return Colors;
-	}
-
-	public void setColors(ArrayList<String> colors) {
-		Colors = colors;
 	}
 
 	public Manager getManager() {

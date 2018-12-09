@@ -23,22 +23,5 @@ public class ClubPane extends VBox {
 		text.getChildren().addAll(name,stadium);
 		head.getChildren().addAll(image,text);
 		
-		Manager mng = club.getManager();
-		ImageView mngImage = new ImageView(mng.getImage());
-		Label mngName = new Label(mng.getName());
-		HBox manager = new HBox();
-		manager.getChildren().addAll(mngImage,mngName);
-		
-		data.getChildren().add(manager);
-		
-		ArrayList<logic.Player> players = club.getPlayers();
-		for(Player p:players) {
-			ImageView img = new ImageView(p.getImage());
-			Label no = new Label(String.valueOf(p.getNumber()));
-			Label n = new Label(p.getName());
-			HBox player = new HBox();
-			player.getChildren().addAll(img,no,n);
-			data.getChildren().add(player);
-		}
 	}
 }
