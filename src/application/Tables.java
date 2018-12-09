@@ -126,7 +126,7 @@ public class Tables extends Pane {
 		pointCol.setCellValueFactory(new PropertyValueFactory<>("points"));
 		pointCol.setSortType(TableColumn.SortType.DESCENDING);
 
-		table.setPrefHeight(540);
+		table.setPrefHeight(550);
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
 //		table.setStyle("-fx-background-color: #EDEDED;");

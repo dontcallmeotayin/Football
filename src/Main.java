@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
 import application.About;
 import application.Btn;
 import application.Calendar;
@@ -45,6 +44,12 @@ public class Main extends Application{
 	public void start(Stage stage) {
 		VBox root = new VBox();
 		root.setPrefSize(700, 675);
+		
+		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
+		MediaPlayer bgm = new MediaPlayer(song);
+		bgm.setVolume(0.2);
+		bgm.setAutoPlay(true);
+		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 		
 //        String csvFile = "res/match.csv";
 //        BufferedReader br = null;
@@ -202,12 +207,6 @@ public class Main extends Application{
 		//-------------------------------------------------------------
 		
 		root.getChildren().addAll(btn);
-		
-		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
-		MediaPlayer bgm = new MediaPlayer(song);
-		bgm.setVolume(0.2);
-		bgm.setAutoPlay(true);
-		bgm.setCycleCount(MediaPlayer.INDEFINITE);
 		
 		root.setStyle("-fx-background-color: #EDEDED;");
 		
