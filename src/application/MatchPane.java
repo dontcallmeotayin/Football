@@ -27,15 +27,25 @@ public class MatchPane extends HBox{
 		setLayoutX(45);
 		setLayoutY(172);
 		
-		String startH = ""+match.getStartTime().getHour();
-		String startM = ""+match.getStartTime().getMinute();
-		String start = startH + ":" + startM;
+		if(!match.isDone()) {
+			String startH = ""+match.getStartTime().getHour();
+			String startM = ""+match.getStartTime().getMinute();
+			String start = startH + ":" + startM;
+			
+			time = new Label("       "+start+"              ");
+			time.setFont(new Font(15));
+			
+			getChildren().add(time);
+		}
+		else if(match.isDone()) {
+			String hg = ""+match.getHomegoal();
+			String ag = ""+match.getAwaygoal();
+		}
+		
 		String hometeam = match.getHomeTeam().getName();  
 		String awayteam = match.getAwayTeam().getName();
 		String stadium = match.getStadium().getName();
-		
-		time = new Label("       "+start+"              ");
-		time.setFont(new Font(15));
+
 		place = new Label("                              "+stadium);
 		place.setFont(new Font(15));
 		
@@ -51,6 +61,6 @@ public class MatchPane extends HBox{
 		teams.getChildren().addAll(home,away);
 //		teams.setStyle("-fx-background-color: #9273AD;");		// color in box of team
 		
-		getChildren().addAll(time,teams,place);
+		getChildren().addAll(teams,place);
 	}
 }
