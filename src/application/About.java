@@ -1,14 +1,16 @@
 package application;
 
 import java.awt.Color;
-
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,7 +22,6 @@ import javafx.scene.text.Text;
 public class About extends Pane{
 
 	private ImageView lion;
-	private Label topic;
 	private Text head;
 	private Text data;
 	private Text data2;
@@ -45,6 +46,9 @@ public class About extends Pane{
 	private Text data18;
 	private ImageView home;
 	private ImageView logo;
+	private ImageView fb;
+	private ImageView tw;
+	private ImageView in;
 	
 	public About() {
 		
@@ -63,10 +67,6 @@ public class About extends Pane{
 		vv.setStyle("-fx-background-color: #EDEDED;");
 		vv.setPrefWidth(682);
 		vv.setPrefHeight(140);
-		
-//		topic = new Label(" Premier League");
-//		topic.setFont(new Font(70));
-//		topic.setStyle("-fx-text-fill: #35073A");
 		
 		lion = new ImageView(new Image(ClassLoader.getSystemResource("pl-large.png").toString()));
 		lion.setFitHeight(200);
@@ -247,33 +247,99 @@ public class About extends Pane{
 		
 		this.setPrefSize(700, 675);
 		
-//		logo = new ImageView(new Image(ClassLoader.getSystemResource("premier-logo.png").toString()));
-//		logo.setFitHeight(30);
-//		logo.setFitWidth(100);
-//		logo.setLayoutX(50);
-//		logo.setLayoutY(2210);
-//		
-//		Hyperlink hpl = new Hyperlink();
-//		hpl.setGraphic(logo);
-//		hpl.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent e) {
-//            	getHostServices().showDocument(hpl.getText());
-//            }
-//        });
-//		
-//		ListView listView = new ListView();
-//		listView.getItems().add(hpl);
+		logo = new ImageView(new Image(ClassLoader.getSystemResource("premier-logo.png").toString()));
+		logo.setFitHeight(40);
+		logo.setFitWidth(110);
+		
+		Hyperlink linklogo = new Hyperlink();
+		linklogo.setGraphic(logo);
+		linklogo.setOnAction(e -> {
+			if(Desktop.isDesktopSupported())
+		    {
+		        try {
+		            Desktop.getDesktop().browse(new URI("https://www.premierleague.com"));
+		        } catch (IOException e1) {
+		            e1.printStackTrace();
+		        } catch (URISyntaxException e1) {
+		            e1.printStackTrace();
+		        }
+		    }
+		});
+		linklogo.setLayoutX(50);
+		linklogo.setLayoutY(2210);
+		
+		fb = new ImageView(new Image(ClassLoader.getSystemResource("facebook.png").toString()));
+		fb.setFitHeight(30);
+		fb.setFitWidth(30);
+		
+		Hyperlink linkface = new Hyperlink();
+		linkface.setGraphic(fb);
+		linkface.setOnAction(e -> {
+			if(Desktop.isDesktopSupported())
+		    {
+		        try {
+		            Desktop.getDesktop().browse(new URI("https://www.facebook.com/premierleague"));
+		        } catch (IOException e1) {
+		            e1.printStackTrace();
+		        } catch (URISyntaxException e1) {
+		            e1.printStackTrace();
+		        }
+		    }
+		});
+		linkface.setLayoutX(185);
+		linkface.setLayoutY(2213);
+		
+		tw = new ImageView(new Image(ClassLoader.getSystemResource("twitter.png").toString()));
+		tw.setFitHeight(30);
+		tw.setFitWidth(30);
+		
+		Hyperlink linktwit = new Hyperlink();
+		linktwit.setGraphic(tw);
+		linktwit.setOnAction(e -> {
+			if(Desktop.isDesktopSupported())
+		    {
+		        try {
+		            Desktop.getDesktop().browse(new URI("https://twitter.com/premierleague"));
+		        } catch (IOException e1) {
+		            e1.printStackTrace();
+		        } catch (URISyntaxException e1) {
+		            e1.printStackTrace();
+		        }
+		    }
+		});
+		linktwit.setLayoutX(250);
+		linktwit.setLayoutY(2213);
+		
+		in = new ImageView(new Image(ClassLoader.getSystemResource("in.png").toString()));
+		in.setFitHeight(30);
+		in.setFitWidth(30);
+		
+		Hyperlink linkin = new Hyperlink();
+		linkin.setGraphic(in);
+		linkin.setOnAction(e -> {
+			if(Desktop.isDesktopSupported())
+		    {
+		        try {
+		            Desktop.getDesktop().browse(new URI("https://www.instagram.com/premierleague"));
+		        } catch (IOException e1) {
+		            e1.printStackTrace();
+		        } catch (URISyntaxException e1) {
+		            e1.printStackTrace();
+		        }
+		    }
+		});
+		linkin.setLayoutX(318);
+		linkin.setLayoutY(2213);
 		
 		Btn b = new Btn();
 		home = b.getHome();
-		home.setLayoutX(615);
-		home.setLayoutY(2210);
+		home.setLayoutX(610);
+		home.setLayoutY(2215);
 		
 		v.getChildren().addAll(lion);
 		pane.getChildren().addAll(vv, v, head, data, data2, data3, photo1, data4, data5,
 				head2, data6, data7, data8, data9, data10, data11, data12, data13, data14,
-				photo2, data15, data16, data17, data18, home);
+				photo2, data15, data16, data17, data18, home, linklogo, linkface, linktwit, linkin);
 		scrollPane.setContent(pane);
 		this.getChildren().addAll(scrollPane);
 		// .addAll(vv, v, head, data, data2, data3, photo1;
@@ -283,5 +349,9 @@ public class About extends Pane{
 	public ImageView getGoHome() {
 		return home;
 	}
+	
+    private void openBrowser(final String url) {
+//        getHostServices().showDocument(url);
+    }
 	
 }
