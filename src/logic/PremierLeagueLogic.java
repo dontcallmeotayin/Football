@@ -15,7 +15,6 @@ public class PremierLeagueLogic {
 	
 	public PremierLeagueLogic() {
 						
-		allplayers = (new Player()).makeList();
 		allmng =  (new Manager()).makeList();
 		refree = (new Refree()).makeList();
 		ArrayList<Match> matches = (new Match()).makeList();
@@ -90,6 +89,7 @@ public class PremierLeagueLogic {
 	}
 
 	public ArrayList<Player> getAllplayers() {
+		allplayers = (new Player()).makeList();
 		return allplayers;
 	}
 
@@ -100,5 +100,12 @@ public class PremierLeagueLogic {
 	public ArrayList<Refree> getRefree() {
 		return refree;
 	}	
+	
+	public ArrayList<Player> getPlayers(Club c) {
+		String team = c.getCode();
+		ArrayList<Player> players = (new Player(team)).makeList();
+		return players;
+	}
+
 	
 }

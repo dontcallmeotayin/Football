@@ -333,7 +333,7 @@ public class About extends Pane{
 		
 		Btn b = new Btn();
 		home = b.getHome();
-		home.setLayoutX(612);
+		home.setLayoutX(610);
 		home.setLayoutY(2215);
 		
 		v.getChildren().addAll(lion);

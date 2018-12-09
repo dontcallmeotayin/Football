@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import application.About;
 import application.Btn;
 import application.Calendar;
+import application.ClubPane;
+import application.ClubScreen;
 import application.Day;
 import application.ManagerScreen;
 import application.MatchPane;
 import application.PlayerPane;
 import application.PlayerScreen;
+import application.PlayerTeamSelection;
 import application.Tables;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -79,8 +82,10 @@ public class Main extends Application{
 		Tables table = new Tables(logic.getPml().getStandings());
 		About about = new About();
 		
+		//Club
+		ClubScreen clubScreen = new ClubScreen();
+		
 		//Player
-//		PlayerScreen temp = new PlayerScreen(logic.getAllplayers());
 		
 		//Manager
 		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
@@ -95,7 +100,7 @@ public class Main extends Application{
 		
 		ImageView clubBtn =  btn.getClubBtn();
 		clubBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(clubS);
+			root.getChildren().add(clubScreen);
 			root.getChildren().remove(btn);
 		});
 		
