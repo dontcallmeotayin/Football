@@ -12,8 +12,6 @@ import logic.Manager;
 import logic.Player;
 
 public class ClubPane extends VBox {
-	private HBox head;
-	private VBox data;
 
 	public ClubPane(Club club) {
 		ImageView image = new ImageView(club.getImage());
@@ -21,7 +19,7 @@ public class ClubPane extends VBox {
 		Label stadium = new Label(club.getStadium().getName());
 		VBox text = new VBox();
 		text.getChildren().addAll(name,stadium);
-		head.getChildren().addAll(image,text);
+		getChildren().addAll(image,text);
 		
 	}
 }
