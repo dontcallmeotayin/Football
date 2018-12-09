@@ -31,7 +31,14 @@ public class ManagerPane extends HBox{
 		img.setPreserveRatio(true);
 		Label name = new Label(mng.getName());
 		name.setFont(new Font(20));
+		Label seasonl = new Label("Seasons");
+		Label seasonv = new Label(String.valueOf(mng.getSeasons()));
+		seasonl.setFont(new Font(10));
+		seasonv.setFont(new Font(10));
+		VBox season = new VBox(); 
+		season.setAlignment(Pos.CENTER);
+		season.getChildren().addAll(seasonl,seasonv);
 		
-		getChildren().addAll(club,img,name);
+		getChildren().addAll(club,img,name,season);
 	}
 }

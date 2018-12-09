@@ -80,7 +80,7 @@ public class Main extends Application{
 		About about = new About();
 		
 		//Player
-		PlayerScreen playerscreen = new PlayerScreen(logic.getAllplayers());
+//		PlayerScreen playerscreen = new PlayerScreen(logic.getAllplayers());
 		
 		//Manager
 		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
@@ -113,7 +113,7 @@ public class Main extends Application{
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(playerscreen);
+//			root.getChildren().add(playerscreen);
 			root.getChildren().remove(btn);
 		});
 		
