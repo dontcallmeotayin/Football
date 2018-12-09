@@ -118,8 +118,9 @@ public class Main extends Application{
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(playerscreen);
-			root.getChildren().remove(btn);
+//		root.getChildren().add(temp);
+//		root.getChildren().add(playerscreen);
+		root.getChildren().remove(btn);
 		});
 		
 		ImageView aboutBtn =  btn.getAboutBtn();
@@ -131,6 +132,12 @@ public class Main extends Application{
 		ImageView refreeBtn =  btn.getRefreeBtn();
 		refreeBtn.setOnMouseClicked(e -> {
 //			root.getChildren().add(refree);
+			root.getChildren().remove(btn);
+		});
+		
+		ImageView stadiumBtn =  btn.getStadiumBtn();
+		stadiumBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(stadium);
 			root.getChildren().remove(btn);
 		});
 		
@@ -155,11 +162,11 @@ public class Main extends Application{
 			root.getChildren().remove(table);
 		});
 		
-//		ImageView mhomeBtn =  manager.getGoHome();
-//		mhomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(manager);
-//		});
+		ImageView mhomeBtn =  managerscreen.getGoHome();
+		mhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(managerscreen);
+		});
 		
 //		ImageView phomeBtn =  playerS.getGoHome();
 //		phomeBtn.setOnMouseClicked(e -> {
@@ -177,6 +184,12 @@ public class Main extends Application{
 //		rhomeBtn.setOnMouseClicked(e -> {
 //			root.getChildren().add(btn);
 //			root.getChildren().remove(refree);
+//		});
+		
+//		ImageView shomeBtn =  stadium.getGoHome();
+//		shomeBtn.setOnMouseClicked(e -> {
+//			root.getChildren().add(btn);
+//			root.getChildren().remove(stadium);
 //		});
 		
 		//-------------------------------------------------------------

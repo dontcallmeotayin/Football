@@ -2,9 +2,13 @@ package application;
 
 import java.awt.Color;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -40,6 +44,7 @@ public class About extends Pane{
 	private Text data17;
 	private Text data18;
 	private ImageView home;
+	private ImageView logo;
 	
 	public About() {
 		
@@ -65,7 +70,7 @@ public class About extends Pane{
 		
 		lion = new ImageView(new Image(ClassLoader.getSystemResource("pl-large.png").toString()));
 		lion.setFitHeight(200);
-		lion.setFitWidth(500);
+		lion.setFitWidth(530);
 		
 		head = new Text("Discover the origins and history of the top tier of English football");
 		head.setFont(new Font(20));
@@ -242,6 +247,24 @@ public class About extends Pane{
 		
 		this.setPrefSize(700, 675);
 		
+//		logo = new ImageView(new Image(ClassLoader.getSystemResource("premier-logo.png").toString()));
+//		logo.setFitHeight(30);
+//		logo.setFitWidth(100);
+//		logo.setLayoutX(50);
+//		logo.setLayoutY(2210);
+//		
+//		Hyperlink hpl = new Hyperlink();
+//		hpl.setGraphic(logo);
+//		hpl.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent e) {
+//            	getHostServices().showDocument(hpl.getText());
+//            }
+//        });
+//		
+//		ListView listView = new ListView();
+//		listView.getItems().add(hpl);
+		
 		Btn b = new Btn();
 		home = b.getHome();
 		home.setLayoutX(615);
@@ -254,6 +277,7 @@ public class About extends Pane{
 		scrollPane.setContent(pane);
 		this.getChildren().addAll(scrollPane);
 		// .addAll(vv, v, head, data, data2, data3, photo1;
+		
 	}
 	
 	public ImageView getGoHome() {

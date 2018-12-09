@@ -127,10 +127,19 @@
 /mci1.png
 /mci2.png
 /calendar2.png
+<<<<<<< HEAD
+/stadium.png
+||||||| merged common ancestors
+=======
 >>>>>>> refs/remotes/origin/master
+<<<<<<< HEAD
 /ARSplayer.csv
 /CHEplayer.csv
 /LIVplayer.csv
 /MCIplayer.csv
 /MUNplayer.csv
 /TOTplayer.csv
+=======
+>>>>>>> 312658b12d6125ccc5b26487416f920e3f7cffdb
+/premier-logo.png
+>>>>>>> d2ca2d4e306b76467d25d65d1ee838ff0dd623d7
