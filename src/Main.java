@@ -77,6 +77,9 @@ public class Main extends Application{
 		
 		//Stadium
 		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
+		
+		//Credit
+		Credit creditScreen = new Credit();
 				
 	//-------------------------------------------------------------
 		
@@ -173,6 +176,12 @@ public class Main extends Application{
 			root.getChildren().remove(btn);
 		});
 		
+		ImageView creditBtn =  btn.getCreditBtn();
+		creditBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(creditScreen);
+			root.getChildren().remove(btn);
+		});
+		
 	//-------------------------------------------------------------
 			// back home button
 		
@@ -222,6 +231,12 @@ public class Main extends Application{
 		shomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(stadiumScreen);
+		});
+		
+		ImageView crhomeBtn =  creditScreen.getHome();
+		crhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(creditScreen);
 		});
 		
 	//-------------------------------------------------------------

@@ -21,6 +21,7 @@ public class Btn extends Pane {
 	private Label name;
 	private ImageView box;
 	private ImageView rec;
+	private ImageView creditBtn;
 	
 	public Btn() {
 		
@@ -32,6 +33,7 @@ public class Btn extends Pane {
 		playerBtn = new ImageView(new Image(ClassLoader.getSystemResource("football-player.png").toString()));
 		refreeBtn = new ImageView(new Image(ClassLoader.getSystemResource("whistle.png").toString()));
 		stadiumBtn = new ImageView(new Image(ClassLoader.getSystemResource("stadium.png").toString()));
+		creditBtn = new ImageView(new Image(ClassLoader.getSystemResource("credit.png").toString()));
 		
 		calendarBtn.setFitHeight(80);
 		calendarBtn.setFitWidth(80);
@@ -73,6 +75,11 @@ public class Btn extends Pane {
 		stadiumBtn.setLayoutX(308);
 		stadiumBtn.setLayoutY(508);
 		
+		creditBtn.setFitHeight(70);
+		creditBtn.setFitWidth(90);
+		creditBtn.setLayoutX(480);
+		creditBtn.setLayoutY(508);
+		
 		home = new ImageView(new Image(ClassLoader.getSystemResource("ball.png").toString()));
 		home.setFitHeight(50);
 		home.setFitWidth(50);
@@ -95,7 +102,7 @@ public class Btn extends Pane {
 		rec.setLayoutY(74.5);
 		
 		this.getChildren().addAll(box, rec, name, calendarBtn, clubBtn, tableBtn, managerBtn, 
-				aboutBtn, playerBtn, refreeBtn, stadiumBtn);
+				aboutBtn, playerBtn, refreeBtn, stadiumBtn, creditBtn);
 		
 	}
 
@@ -133,6 +140,10 @@ public class Btn extends Pane {
 
 	public ImageView getHome() {
 		return home;
+	}
+
+	public ImageView getCreditBtn() {
+		return creditBtn;
 	}
 	
 }
