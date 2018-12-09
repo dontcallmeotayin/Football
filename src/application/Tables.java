@@ -41,21 +41,21 @@ public class Tables extends Pane {
 		VBox v = new VBox();
 		v.setPrefSize(700, 675);
 		v.setAlignment(Pos.CENTER);
-		v.setPadding(new Insets(-10, 22, 0, 22));
+		v.setPadding(new Insets(-15, 22, 0, 22));
 		v.setSpacing(10);
-		v.setStyle("-fx-background-color: #5D3761;"); // 5A335D , 6E4B71 , 5D3761
+		v.setStyle("-fx-background-color: #643D68;"); // 5A335D , 6E4B71 , 5D3761
 		
 		cup = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup.setFitHeight(50);
 		cup.setFitWidth(50);
 		cup.setLayoutX(180);
-		cup.setLayoutY(20);
+		cup.setLayoutY(22);
 		
 		cup2 = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup2.setFitHeight(50);
 		cup2.setFitWidth(50);
 		cup2.setLayoutX(470);
-		cup2.setLayoutY(20);
+		cup2.setLayoutY(22);
 		
 		topic = new Label("RANKING");
 		topic.setFont(new Font(50));

@@ -165,6 +165,8 @@ public class Main extends Application{
 		Club c7 = new Club("EVE"); 
 		Club c8 = new Club("BOU"); 
 		Match match = new Match(c7,2, c8, 0, LocalDateTime.now());
+		match.setStadium(new Stadium("Langear"));
+		System.out.println(match.getStadium().getName());
 		MatchPane m1 = new MatchPane(match);
 		ArrayList<MatchPane> matches = new ArrayList<MatchPane>();
 		matches.add(m1);
