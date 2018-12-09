@@ -30,12 +30,12 @@ public class PremierLeagueLogic {
 		
 		//Club
 		clubs = new ArrayList<Club>();
-		Club c1 = new Club("ARS",(Manager)(allmng.get(0)),em); clubs.add(c1);
-		Club c2 = new Club("MCI",(Manager)(allmng.get(3)),et); clubs.add(c2); 
-		Club c3 = new Club("LIV",(Manager)(allmng.get(5)),a); clubs.add(c3);
-		Club c4 = new Club("TOT",(Manager)(allmng.get(2)),w); clubs.add(c4);
-		Club c5 = new Club("MUN",(Manager)(allmng.get(4)),o); clubs.add(c5);
-		Club c6 = new Club("CHE",(Manager)(allmng.get(1)),stf); clubs.add(c6);
+		Club c1 = new Club("ARS",allmng.get(0),em); clubs.add(c1);
+		Club c2 = new Club("MCI",allmng.get(3),et); clubs.add(c2); 
+		Club c3 = new Club("LIV",allmng.get(5),a); clubs.add(c3);
+		Club c4 = new Club("TOT",allmng.get(2),w); clubs.add(c4);
+		Club c5 = new Club("MUN",allmng.get(4),o); clubs.add(c5);
+		Club c6 = new Club("CHE",allmng.get(1),stf); clubs.add(c6);
 		//-----------------------------------------
 		Club c7 = new Club("EVE"); clubs.add(c7);
 		Club c8 = new Club("BOU"); clubs.add(c8);

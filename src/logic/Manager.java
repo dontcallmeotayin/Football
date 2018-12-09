@@ -37,6 +37,14 @@ public class Manager extends Person implements CsvAvailable {
 		this.seasons = seasons;
 	}
 
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
 	@Override
 	public String getCsv() {
 		return "res/Manager.csv";

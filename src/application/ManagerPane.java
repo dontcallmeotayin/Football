@@ -11,25 +11,27 @@ import javafx.scene.text.Text;
 import logic.Manager;
 import logic.Person;
 
-public class ManagerPane extends VBox{
-	private HBox head;
+public class ManagerPane extends HBox{
 	
 	public ManagerPane(Manager mng) {
-		ImageView club = new ImageView(new Image(ClassLoader.getSystemResource("ars0m.png").toString()));
-		club.setFitHeight(50); 
-		club.setFitWidth(50);
+		super(10);
+		setAlignment(Pos.CENTER_LEFT);
+		setMinWidth(350);
+		setMaxWidth(350);
+		setPrefHeight(100);
+		setStyle("-fx-background-color: #ffffff;-fx-border-color : #000000");			
+
+		ImageView club = new ImageView(new Image(ClassLoader.getSystemResource(mng.getTeam().toLowerCase()+"00.png").toString()));
+		club.setFitHeight(20); 
+		club.setFitWidth(20);
 		club.setPreserveRatio(true);
 		ImageView img = new ImageView(mng.getImage());
-		img.setFitHeight(150); 
-		img.setFitWidth(150);
+		img.setFitHeight(70); 
+		img.setFitWidth(70);
 		img.setPreserveRatio(true);
 		Label name = new Label(mng.getName());
-		name.setFont(new Font(30));
-		head = new HBox(30);
-		head.setAlignment(Pos.CENTER_LEFT);
-		head.setMinWidth(650);
-		head.setPrefHeight(200);
-		head.getChildren().addAll(club,img,name);
-		head.setStyle("-fx-background-color: #ffffff");
+		name.setFont(new Font(20));
+		
+		getChildren().addAll(club,img,name);
 	}
 }
