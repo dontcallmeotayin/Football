@@ -9,13 +9,13 @@ public class Standings {
 	private int points = 0;
 	private int gf = 0;
 	private int ga = 0;
-	private String gd = "+0";
+	private String gd = "";
 	
 	public Standings(Club team) {
 		this.team = team;
 	}
 	
-	public Standings(Club team,int pg,int w,int l,int d,int gf, int ga) {
+	public Standings(Club team,int pg,int w,int d,int l,int gf, int ga) {
 		this.team = team;
 		this.playedGames = pg;
 		this.win = w;
@@ -72,10 +72,6 @@ public class Standings {
 		return points;
 	}
 
-	public void setPoints(int points) {
-		this.points = points;
-	}
-
 	public int getGf() {
 		return gf;
 	}
@@ -95,9 +91,4 @@ public class Standings {
 	public String getGd() {
 		return gd;
 	}
-
-	public void setGd(String gd) {
-		this.gd = gd;
-	}
-
 }

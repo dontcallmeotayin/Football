@@ -11,7 +11,6 @@ public class Club extends IncludeImage {
 	private ArrayList<Player> Players;
 	private ArrayList<String> Colors;
 	private Manager manager;
-	private Image image;
 	
 	public Club(String code,ArrayList<Player> players,ArrayList<String> colors,
 			Manager mng,Stadium stadium) {
@@ -103,14 +102,6 @@ public class Club extends IncludeImage {
 
 	public void setManager(Manager manager) {
 		this.manager = manager;
-	}
-
-	public Image getImage() {
-		return image;
-	}
-
-	public void setImage(Image image) {
-		this.image = image;
 	}
 
 	public Stadium getStadium() {

@@ -36,14 +36,17 @@ public class Tables extends Pane {
 	private ImageView cup;
 	private ImageView cup2;
 	private ImageView home;
+	private ObservableList<Standings> std;
 	
-	public Tables() {
+	public Tables(ObservableList<Standings> std) {
 		VBox v = new VBox();
 		v.setPrefSize(700, 675);
 		v.setAlignment(Pos.CENTER);
 		v.setPadding(new Insets(-15, 22, 0, 22));
 		v.setSpacing(10);
 		v.setStyle("-fx-background-color: #643D68;"); // 5A335D , 6E4B71 , 5D3761
+		
+		this.std = std;
 		
 		cup = new ImageView(new Image(ClassLoader.getSystemResource("cup.png").toString()));
 		cup.setFitHeight(50);
@@ -169,30 +172,8 @@ public class Tables extends Pane {
 	}
 	
 	public ObservableList<Standings> getDate() {
-		ObservableList<Standings> data = FXCollections.observableArrayList(
-				new Standings(new Club("ARS"), 16, 10, 4, 2, 35, 20),
-				new Standings(new Club("MCI"), 16, 13, 2, 1, 45, 9),
-				new Standings(new Club("LIV"), 16, 13, 3, 0, 34, 6),
-				new Standings(new Club("TOT"), 16, 12, 0, 4, 30, 16),
-				new Standings(new Club("MUN"), 16, 7, 5, 4, 28, 26),
-				new Standings(new Club("CHE"), 16, 10, 4, 2, 33, 13),
-				new Standings(new Club("EVE"), 15, 6, 5, 4, 21, 17),
-				new Standings(new Club("BOU"), 16, 7, 2, 7, 25, 26),
-				new Standings(new Club("LEI"), 16, 6, 4, 6, 21, 20),
-				new Standings(new Club("BHA"), 16, 6, 3, 7, 19, 22),
-				new Standings(new Club("WAT"), 15, 6, 2, 7, 18, 21),
-				new Standings(new Club("WOL"), 15, 5, 4, 6, 15, 18),
-				new Standings(new Club("WHU"), 16, 6, 3, 7, 23, 25),
-				new Standings(new Club("NEW"), 15, 3, 4, 8, 12, 20),
-				new Standings(new Club("CRY"), 16, 3, 3, 10, 13, 23),
-				new Standings(new Club("CAR"), 16, 4, 2, 10, 15, 30),
-				new Standings(new Club("HUD"), 16, 2, 4, 10, 10, 27),
-				new Standings(new Club("SOU"), 16, 1, 6, 9, 13, 30),
-				new Standings(new Club("BUR"), 16, 3, 3, 10, 15, 32),
-				new Standings(new Club("FUL"), 16, 2, 3, 11, 16, 40)
-		);
+		return this.std;
 //		table.sort();
-		return data;
 	}
 	
 	public ImageView getGoHome() {

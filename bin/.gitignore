@@ -94,6 +94,11 @@
 /whistle.png
 /Manager.xlsx
 /Manager.csv
+<<<<<<< HEAD
+/matchthisweek.csv
+/refree.csv
+/a
+=======
 /Player.csv
 /ars1.png
 /ars2.png
@@ -122,4 +127,10 @@
 /mci1.png
 /mci2.png
 /calendar2.png
+<<<<<<< HEAD
 /stadium.png
+||||||| merged common ancestors
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 312658b12d6125ccc5b26487416f920e3f7cffdb
+/premier-logo.png

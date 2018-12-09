@@ -53,103 +53,7 @@ public class Main extends Application{
 		bgm.setVolume(0.2);
 		bgm.setAutoPlay(true);
 		bgm.setCycleCount(MediaPlayer.INDEFINITE);
-		
-//        String csvFile = "res/match.csv";
-//        BufferedReader br = null;
-//        String line = "";
-//        String cvsSplitBy = ",";
-//        
-//    	ArrayList<Match> matches = new ArrayList<Match>();
-//
-//        try {
-//            br = new BufferedReader(new FileReader(csvFile));
-//            while ((line = br.readLine()) != null) {
-//                String[] matchdata = line.split(cvsSplitBy);
-//                Club h = new Club(matchdata[1]);
-//                int hg = Integer.parseInt(matchdata[3]);
-//                Pair<Club,Integer> home = new Pair<Club, Integer>(h, hg);
-//                Club a = new Club(matchdata[2]);
-//                Pair<Club,Integer> away = new Pair<Club, Integer>(h, Integer.valueOf(matchdata[4]));
-//                String[] date = matchdata[0].split("/");
-//                LocalDateTime start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
-//                Match match = new Match(home, away, start);
-//                matches.add(match);
-//                System.out.println(match.getHomeTeam().getKey().getCode());
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (br != null) {
-//                try {
-//                    br.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        
-//        for(int i=10;i<15;i++) {
-//        	MatchPane matchpane = new MatchPane(matches.get(i));
-//        	root.getChildren().add(matchpane);
-//        }
-//
-//		
-//		Club ars = new Club("ARS");
-//		Club che = new Club("CHE");
-//		Pair<Club,Integer> a = new Pair<>(ars,1);
-//		Pair<Club,Integer> c = new Pair<>(che,1);
-//		Stadium stamford = new Stadium("stamford");
-//		che.setStadium(stamford);
-//		LocalDateTime date = LocalDateTime.now();
-//		Match test = new Match(c,a,date);
-//		MatchPane testpane = new MatchPane(test);
-//		root.getChildren().add(testpane);
-//        String csvFile = "res/match.csv";
-//        BufferedReader br = null;
-//        String line = "";
-//        String cvsSplitBy = ",";
-//        
-//    	ArrayList<Match> matches = new ArrayList<Match>();
-//
-//        try {
-//            br = new BufferedReader(new FileReader(csvFile));
-//            while ((line = br.readLine()) != null) {
-//                String[] matchdata = line.split(cvsSplitBy);
-//                Club h = new Club(matchdata[1]);
-//                int hg = Integer.parseInt(matchdata[3]);
-//                Pair<Club,Integer> home = new Pair<Club, Integer>(h, hg);
-//                Club a = new Club(matchdata[2]);
-//                Pair<Club,Integer> away = new Pair<Club, Integer>(h, Integer.valueOf(matchdata[4]));
-//                String[] date = matchdata[0].split("/");
-//                LocalDateTime start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
-//                Match match = new Match(home, away, start);
-//                matches.add(match);
-//                System.out.println(match.getHomeTeam().getKey().getCode());
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (br != null) {
-//                try {
-//                    br.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-        
-//        for(int i=10;i<15;i++) {
-//        	MatchPane matchpane = new MatchPane(matches.get(i));
-//        	root.getChildren().add(matchpane);
-//        }
-
-		
+				
 //		Club ars = new Club("ARS");
 //		Club che = new Club("CHE");
 //		Pair<Club,Integer> a = new Pair<>(ars,1);
@@ -175,25 +79,19 @@ public class Main extends Application{
 		days.add(day);
 		Calendar calendar = new Calendar(days);
 		/****************/
-		
-//		BorderPane temp = new BorderPane();
-//		PremierLeagueLogic logic = new PremierLeagueLogic();
-//		logic.getAllplayers();
-//			Player p = new Player("Petr","Cech",1,"ARS","GOAL");
-//			PlayerPane player = new PlayerPane(p);
-//			System.out.println(p.getImagePath());
-//			temp.getChildren().add(player);
-//		root.getChildren().add(temp);
-		
-//		ClubScreen clubS = new ClubScreen(club);
-		Tables table = new Tables();
-//		ManagerScreen manager = new ManagerScreen(mng);
-//		PlayerScreen playerS = new PlayerScreen(player);
+		PremierLeagueLogic logic = new PremierLeagueLogic();
+
+		Tables table = new Tables(logic.getPml().getStandings());
 		About about = new About();
-//		RefreeScreen refree = new RefreeScreen(rf);
 		
 		Btn btn = new Btn();
-		
+
+//		ArrayList<Player> players = new ArrayList<Player>();
+//		Player p = new Player("Petr","Cech",1,"ARS","GOAL");
+//		Player p2 = new Player("Hecter","Bellerin",2,"ARS","DEFENDER");
+//		players.add(p); players.add(p2);
+		PlayerScreen temp = new PlayerScreen(logic.getAllplayers());
+				
 		//-------------------------------------------------------------
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
@@ -222,7 +120,7 @@ public class Main extends Application{
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(playerS);
+			root.getChildren().add(temp);
 			root.getChildren().remove(btn);
 		});
 		
