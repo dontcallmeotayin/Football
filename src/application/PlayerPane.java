@@ -1,26 +1,21 @@
 package application;
 
 import javafx.geometry.Insets;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import logic.Manager;
-import logic.Person;
 import logic.Player;
-import logic.Refree;
 
 public class PlayerPane extends HBox{
 		
 	public PlayerPane(Player p) {
 		super(10);
 		setAlignment(Pos.CENTER_LEFT);
-		setMinWidth(340);
-		setMaxWidth(340);
+		setMinWidth(540);
+		setMaxWidth(540);
 		setPrefHeight(100);
 		setStyle("-fx-background-color: #f5f5f5;-fx-border-color : #9e9e9e");
 		setPadding(new Insets(10));

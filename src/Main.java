@@ -122,52 +122,7 @@ public class Main extends Application{
 		root.getChildren().add(playerTeamSelection);
 		root.getChildren().remove(btn);
 		});
-		
-		//.......................................................//
-		ImageView ars = playerTeamSelection.getArsenal();
-		ImageView che = playerTeamSelection.getChelsea();
-		ImageView spur = playerTeamSelection.getSpur();
-		ImageView mci = playerTeamSelection.getMancity();
-		ImageView mun = playerTeamSelection.getManu();
-		ImageView liv = playerTeamSelection.getLiverpool();
-		ars.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("ARS")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});
-		che.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("CHE")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});		
-		spur.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("TOT")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});		
-		mci.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("MCI")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});		
-		mun.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("MUN")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});		
-		liv.setOnMouseClicked(e -> {
-			ArrayList<Player> p = (new Player("LIV")).makeList();
-			PlayerScreen ps = new PlayerScreen(p);
-			root.getChildren().add(ps);
-			root.getChildren().remove(playerTeamSelection);
-		});
-		//.......................................................//
-		
+				
 		ImageView aboutBtn =  btn.getAboutBtn();
 		aboutBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(about);
