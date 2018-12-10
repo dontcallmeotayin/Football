@@ -16,11 +16,10 @@ public class PlayerScreen extends Pane{
 	public PlayerScreen(ArrayList<Player> players) {
 		
 		ScrollPane scrollPane = new ScrollPane();
-		scrollPane.setPrefSize(540, 675);
+		scrollPane.setPrefSize(540, 660);
 		
 		tpane = new TilePane();
-		tpane.setPrefColumns(1);
-		tpane.setPadding(new Insets(1));
+		tpane.setPrefColumns(0);
 		tpane.setStyle("-fx-background-color: #643D68;");
 
 		for(Player player:players) {
@@ -30,7 +29,7 @@ public class PlayerScreen extends Pane{
 		
 		scrollPane.setContent(tpane);
 		getChildren().addAll(scrollPane);
-		setPadding(new Insets(5));
+		setStyle("-fx-background-color: #643D68;");
 
 	}
 	

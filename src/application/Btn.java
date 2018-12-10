@@ -33,7 +33,7 @@ public class Btn extends Pane {
 		playerBtn = new ImageView(new Image(ClassLoader.getSystemResource("football-player.png").toString()));
 		refreeBtn = new ImageView(new Image(ClassLoader.getSystemResource("whistle.png").toString()));
 		stadiumBtn = new ImageView(new Image(ClassLoader.getSystemResource("stadium.png").toString()));
-		creditBtn = new ImageView(new Image(ClassLoader.getSystemResource("credit.png").toString()));
+		creditBtn = new ImageView(new Image(ClassLoader.getSystemResource("laptop.png").toString()));
 		
 		calendarBtn.setFitHeight(80);
 		calendarBtn.setFitWidth(80);
@@ -75,8 +75,8 @@ public class Btn extends Pane {
 		stadiumBtn.setLayoutX(308);
 		stadiumBtn.setLayoutY(508);
 		
-		creditBtn.setFitHeight(70);
-		creditBtn.setFitWidth(90);
+		creditBtn.setFitHeight(80);
+		creditBtn.setFitWidth(80);
 		creditBtn.setLayoutX(480);
 		creditBtn.setLayoutY(508);
 		

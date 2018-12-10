@@ -129,33 +129,13 @@ public class Tables extends Pane {
 		table.getColumns().addAll(posCol, clubCol, gameCol, winCol, drawCol, loseCol,
 				gfCol, gaCol, gdCol, pointCol);
 		table.getSortOrder().add(pointCol);
-//		table.sort();
-		
-//		table.setStyle("-fx-background-color: #EDEDED;");
-		
-		// try to sort
-//		Callback<Standings,Observable[]> cb =(Standings stock) -> new Observable[]{
-//		        stock.percentChangeProperty(),
-//		    };
-//		SortedList<Standings> sortedItems = new SortedList<>( getDate(), 
-//	      (Standings stan1, Standings stan2) -> {
-//	          if( stan1.getPoints() < stan2.getPoints() ) {
-//	              return -1;
-//	          } else if( stan1.getPoints() > stan2.getPoints() ) {
-//	              return 1;
-//	          } else {
-//	              return 0;
-//	          }
-//	      });
-//		table.setItems(sortedItems);
-//		sortedItems.comparatorProperty().bind(table.comparatorProperty());
 		
 		table.setItems(getDate());
 
 		Btn b = new Btn();
 		home = b.getHome();
 		home.setLayoutX(640);
-		home.setLayoutY(10);
+		home.setLayoutY(615);
 		
 		v.getChildren().addAll(topic, table);
 		this.getChildren().addAll(v, cup, cup2, home);

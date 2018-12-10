@@ -2,6 +2,7 @@ package application;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -24,11 +25,7 @@ public class Credit extends Pane {
 
 	public Credit() {
 		
-		Pane p = new Pane();
-		p.setPrefSize(750, 675);
-		
 		HBox pane = new HBox();
-		pane.setStyle("-fx-background-color: #643D68;");
 		pane.setPrefSize(700, 675);
 		pane.setAlignment(Pos.CENTER);
 		
@@ -85,12 +82,11 @@ public class Credit extends Pane {
 		v.getChildren().addAll(v1,v2,h);
 		pane.getChildren().addAll(v);
 		
-		p.getChildren().addAll(pane,home);
-		
-		getChildren().add(p);
+		getChildren().addAll(pane,home);
+		setStyle("-fx-background-color: #643D68;");
 	}
 
-	public ImageView getHome() {
+	public ImageView getGoHome() {
 		return home;
 	}
 	

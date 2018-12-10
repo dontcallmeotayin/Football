@@ -6,11 +6,12 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import logic.Player;
 
-public class PlayerTeamSelection extends HBox {
+public class PlayerTeamSelection extends Pane {
 	
 	private ImageView arsenal;
 	private ImageView chelsea;
@@ -47,8 +48,8 @@ public class PlayerTeamSelection extends HBox {
 		liv.setVisible(false);
 
 		arsenal = new ImageView(new Image(ClassLoader.getSystemResource("ars00.png").toString()));
-		arsenal.setFitHeight(85); 
-		arsenal.setFitWidth(85);
+		arsenal.setFitHeight(90); 
+		arsenal.setFitWidth(90);
 		arsenal.setPreserveRatio(true);
 		arsenal.setOnMouseClicked(e->{
 			ars.setVisible(true);
@@ -59,8 +60,8 @@ public class PlayerTeamSelection extends HBox {
 			liv.setVisible(false);
 		});
 		chelsea = new ImageView(new Image(ClassLoader.getSystemResource("che00.png").toString()));
-		chelsea.setFitHeight(85); 
-		chelsea.setFitWidth(85);
+		chelsea.setFitHeight(90); 
+		chelsea.setFitWidth(90);
 		chelsea.setPreserveRatio(true);
 		chelsea.setOnMouseClicked(e->{
 			ars.setVisible(false);
@@ -71,8 +72,8 @@ public class PlayerTeamSelection extends HBox {
 			liv.setVisible(false);
 		});
 		spur = new ImageView(new Image(ClassLoader.getSystemResource("tot00.png").toString()));
-		spur.setFitHeight(85); 
-		spur.setFitWidth(85);
+		spur.setFitHeight(90); 
+		spur.setFitWidth(90);
 		spur.setPreserveRatio(true);
 		spur.setOnMouseClicked(e->{
 			ars.setVisible(false);
@@ -83,8 +84,8 @@ public class PlayerTeamSelection extends HBox {
 			liv.setVisible(false);
 		});
 		mancity = new ImageView(new Image(ClassLoader.getSystemResource("mci00.png").toString()));
-		mancity.setFitHeight(85); 
-		mancity.setFitWidth(85);
+		mancity.setFitHeight(90); 
+		mancity.setFitWidth(90);
 		mancity.setPreserveRatio(true);
 		mancity.setOnMouseClicked(e->{
 			ars.setVisible(false);
@@ -95,8 +96,8 @@ public class PlayerTeamSelection extends HBox {
 			liv.setVisible(false);
 		});
 		manu = new ImageView(new Image(ClassLoader.getSystemResource("mun00.png").toString()));
-		manu.setFitHeight(85); 
-		manu.setFitWidth(85);
+		manu.setFitHeight(90); 
+		manu.setFitWidth(90);
 		manu.setPreserveRatio(true);
 		manu.setOnMouseClicked(e->{
 			ars.setVisible(false);
@@ -107,8 +108,8 @@ public class PlayerTeamSelection extends HBox {
 			liv.setVisible(false);
 		});
 		liverpool = new ImageView(new Image(ClassLoader.getSystemResource("liv00.png").toString()));
-		liverpool.setFitHeight(85); 
-		liverpool.setFitWidth(85);
+		liverpool.setFitHeight(90); 
+		liverpool.setFitWidth(90);
 		liverpool.setPreserveRatio(true);
 		liverpool.setOnMouseClicked(e->{
 			ars.setVisible(false);
@@ -121,16 +122,23 @@ public class PlayerTeamSelection extends HBox {
 		
 		Btn b = new Btn();
 		home = b.getHome();
-
+		home.setLayoutX(635);
+		home.setLayoutY(610);
+		
+		HBox h =new HBox();
+		
 		VBox v = new VBox();
-		v.getChildren().addAll(arsenal, chelsea, spur,manu, mancity, liverpool,home);
+		v.getChildren().addAll(arsenal, chelsea, spur,manu, mancity, liverpool);
 		v.setPrefSize(150, 675);
 		v.setAlignment(Pos.TOP_CENTER);
 		v.setSpacing(20);
+		v.setPadding(new Insets(10));
 						
-		this.setPadding(new Insets(10));
-		getChildren().addAll(v,pane);
+		h.setPadding(new Insets(8,30,0,0));
+		h.getChildren().addAll(v,pane);
+		
 		setStyle("-fx-background-color: #754A79;");
+		getChildren().addAll(h,home);
 		
 		
 	}

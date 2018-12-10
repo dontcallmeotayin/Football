@@ -36,8 +36,8 @@ public class StadiumScreen extends Pane {
 	getChildren().addAll(bg,vpane,home);
 }
 
-public ImageView getHome() {
-	return home;
-}
+	public ImageView getHome() {
+		return home;
+	}
 
 }

@@ -43,8 +43,6 @@ public class Main extends Application{
 		//Home
 		Btn btn = new Btn();
 		
-		//Credit
-		Credit credit = new Credit();
 				
 		//Calendar
 		Club c7 = new Club("EVE"); 
@@ -88,8 +86,8 @@ public class Main extends Application{
 		// Stadium
 		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
 		
-		// Credit
-		Credit creditScreen = new Credit();
+		//Credit
+		Credit credit = new Credit();
 		
 		// Refree
 		RefreeScreen refreeScreen = new RefreeScreen(logic.getRefree());
@@ -189,11 +187,11 @@ public class Main extends Application{
 			root.getChildren().remove(about);
 		});
 		
-//		ImageView rhomeBtn =  refree.getGoHome();
-//		rhomeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(btn);
-//			root.getChildren().remove(refree);
-//		});
+		ImageView rhomeBtn =  refreeScreen.getHome();
+		rhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(refreeScreen);
+		});
 		
 		ImageView shomeBtn =  stadiumScreen.getHome();
 		shomeBtn.setOnMouseClicked(e -> {
@@ -201,10 +199,10 @@ public class Main extends Application{
 			root.getChildren().remove(stadiumScreen);
 		});
 		
-		ImageView crhomeBtn =  creditScreen.getHome();
-		crhomeBtn.setOnMouseClicked(e -> {
+		ImageView crehomeBtn =  credit.getGoHome();
+		crehomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
-			root.getChildren().remove(creditScreen);
+			root.getChildren().remove(credit);
 		});
 		
 	//-------------------------------------------------------------
