@@ -9,8 +9,8 @@ import application.Credit;
 import application.Day;
 import application.ManagerScreen;
 import application.MatchPane;
-import application.PlayerScreen;
 import application.PlayerTeamSelection;
+import application.RefreeScreen;
 import application.StadiumScreen;
 import application.Tables;
 import javafx.application.Application;
@@ -22,7 +22,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import logic.Club;
 import logic.Match;
-import logic.Player;
 import logic.PremierLeagueLogic;
 import logic.Stadium;
 
@@ -54,7 +53,6 @@ public class Main extends Application{
 		Match match2 = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
 		match.setStadium(new Stadium("Langear"));
 		match2.setStadium(new Stadium("Langear"));
-		System.out.println(match.getStadium().getName());
 		MatchPane m1 = new MatchPane(match);
 		MatchPane m2 = new MatchPane(match2);
 		MatchPane m3 = new MatchPane(match2);
@@ -74,23 +72,28 @@ public class Main extends Application{
 		
 		// Tables
 		Tables table = new Tables(logic.getPml().getStandings());
+		
+		// About
 		About about = new About();
 		
-		//Club
+		// Club
 		ClubScreen clubScreen = new ClubScreen();
 		
-		//Player
+		// Player
 		PlayerTeamSelection playerTeamSelection = new PlayerTeamSelection();
 		
-		//Manager
+		// Manager
 		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
 		
-		//Stadium
+		// Stadium
 		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
 		
-		//Credit
+		// Credit
 		Credit creditScreen = new Credit();
-				
+		
+		// Refree
+		RefreeScreen refreeScreen = new RefreeScreen(logic.getRefree());
+		
 	//-------------------------------------------------------------
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
@@ -131,7 +134,7 @@ public class Main extends Application{
 		
 		ImageView refreeBtn =  btn.getRefreeBtn();
 		refreeBtn.setOnMouseClicked(e -> {
-//			root.getChildren().add(refree);
+			root.getChildren().add(refreeScreen);
 			root.getChildren().remove(btn);
 		});
 		
@@ -143,7 +146,7 @@ public class Main extends Application{
 		
 		ImageView creditBtn =  btn.getCreditBtn();
 		creditBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(creditScreen);
+			root.getChildren().add(credit);
 			root.getChildren().remove(btn);
 		});
 		
@@ -214,7 +217,7 @@ public class Main extends Application{
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setResizable(true);
+		stage.setResizable(false);
 		stage.show();
 	}
 		

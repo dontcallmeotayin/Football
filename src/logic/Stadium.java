@@ -1,8 +1,5 @@
 package logic;
 
-import javafx.scene.image.Image;
-import javafx.util.Pair;
-
 public class Stadium {
 	private String name;
 	private int cap;

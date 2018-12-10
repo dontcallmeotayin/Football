@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Manager extends Person implements CsvAvailable {
@@ -13,17 +12,14 @@ public class Manager extends Person implements CsvAvailable {
 	
 	public Manager() {
 		super();
-//		this.setAge(calAge());
 	}
 	
 	public Manager(String f, String l) {
 		super(f, l);
-//		this.setAge(calAge());
 	}
 	
 	public Manager(String f, String l,String t,int s) {
 		super(f, l);
-//		this.setAge(calAge());
 		this.seasons = s;
 		this.team = t;
 		setImage(team.toLowerCase()+"0m.png");

@@ -5,25 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import javafx.util.Pair;
-
 public class Player extends Person implements CsvAvailable {
-//	private double height=0;
+	private double height=0;
 	private String pos="";
 	private int number=0;
-//	private boolean isCap=false;
-//	private int goals=0;
-//	private int cleansheets = 0;
-//	private int appearance = 0;
-//	private int assists = 0;
+	private int goals=0;
+	private int cleansheets = 0;
+	private int appearance = 0;
+	private int assists = 0;
 	private String team;
 	
 	public Player() {
 		super();
-//		this.setAge(calAge());
 		setImagetoBasic();
 	}
 	
@@ -35,13 +30,14 @@ public class Player extends Person implements CsvAvailable {
 	
 	public Player(String f, String l) {
 		super(f, l);
-//		this.setAge(calAge());
 		setImagetoBasic();
 	}
 	
 	public Player(String f,String l,int n,String t,String pos) {
 		this.setFirstName(f);
 		this.setLastName(l);
+		this.setBd(LocalDate.now());
+		this.setAge(calAge());
 		this.number = n;
 		this.team = t;
 		this.pos = pos;
@@ -52,31 +48,29 @@ public class Player extends Person implements CsvAvailable {
 		}
 	}
 
-//	public Player(String f, String l, String n, LocalDate d,
-//			double h,String p,int no,boolean cap,int g,int c,int ap,int as,String t) {
-//		this.setFirstName(f);
-//		this.setLastName(l);
-//		this.setNationality(n);
-//		this.setBd(d);
-//		this.setAge(calAge());
-//		this.height = h;
-//		this.number = no;
-//		this.isCap = cap;
-//		this.goals = g;
-//		this.cleansheets = c;
-//		this.appearance = ap;
-//		this.assists = as;
-//		this.team = t;
-//		setImage(team.toLowerCase()+number+".png");
-//	}
+	public Player(String f, String l, String n, LocalDate d,
+			double h,String p,int no,boolean cap,int g,int c,int ap,int as,String t) {
+		this.setFirstName(f);
+		this.setLastName(l);
+		this.setBd(d);
+		this.setAge(calAge());
+		this.height = h;
+		this.number = no;
+		this.goals = g;
+		this.cleansheets = c;
+		this.appearance = ap;
+		this.assists = as;
+		this.team = t;
+		setImage(team.toLowerCase()+number+".png");
+	}
 
-//	public double getHeight() {
-//		return height;
-//	}
-//
-//	public void setHeight(double height) {
-//		this.height = height;
-//	}
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
 
 	public String getPos() {
 		return pos;
@@ -94,45 +88,37 @@ public class Player extends Person implements CsvAvailable {
 		this.number = number;
 	}
 
-//	public boolean isCap() {
-//		return isCap;
-//	}
-//
-//	public void setCap(boolean isCap) {
-//		this.isCap = isCap;
-//	}
-//
-//	public int getGoals() {
-//		return goals;
-//	}
-//
-//	public void setGoals(int goals) {
-//		this.goals = goals;
-//	}
-//
-//	public int getCleansheets() {
-//		return cleansheets;
-//	}
-//
-//	public void setCleansheets(int cleansheets) {
-//		this.cleansheets = cleansheets;
-//	}
-//
-//	public int getAppearance() {
-//		return appearance;
-//	}
-//
-//	public void setAppearance(int appearance) {
-//		this.appearance = appearance;
-//	}
-//
-//	public int getAssists() {
-//		return assists;
-//	}
-//
-//	public void setAssists(int assists) {
-//		this.assists = assists;
-//	}
+	public int getGoals() {
+		return goals;
+	}
+
+	public void setGoals(int goals) {
+		this.goals = goals;
+	}
+
+	public int getCleansheets() {
+		return cleansheets;
+	}
+
+	public void setCleansheets(int cleansheets) {
+		this.cleansheets = cleansheets;
+	}
+
+	public int getAppearance() {
+		return appearance;
+	}
+
+	public void setAppearance(int appearance) {
+		this.appearance = appearance;
+	}
+
+	public int getAssists() {
+		return assists;
+	}
+
+	public void setAssists(int assists) {
+		this.assists = assists;
+	}
 
 	public String getTeam() {
 		return team;

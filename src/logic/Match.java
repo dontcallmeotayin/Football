@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import javafx.util.Pair;
-
 public class Match implements CsvAvailable{
 	private int totalGoals;
 	private Club homeTeam;

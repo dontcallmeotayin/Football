@@ -18,6 +18,10 @@ public abstract class IncludeImage {
 	public Image getImage() {
 		return image;
 	}
+	
+	public String getImagename() {
+		return imagename;
+	}
 
 	public void setImage(String imagename) {
 		this.imagename = imagename;
