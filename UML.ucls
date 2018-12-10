@@ -1,216 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
-  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="logic.Person" project="Premier League" 
-    file="/Premier League/src/logic/Person.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="551" y="230"/>    
+  realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="application.StadiumScreen" project="Premier League" 
+    file="/Premier League/src/application/StadiumScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="222" x="43" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="logic.Refree" project="Premier League" 
-    file="/Premier League/src/logic/Refree.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="831" y="198"/>    
+  <class id="2" language="java" name="application.About" project="Premier League" 
+    file="/Premier League/src/application/About.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="605" width="162" x="305" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="logic.Manager" project="Premier League" 
-    file="/Premier League/src/logic/Manager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="840" y="557"/>    
+  <class id="3" language="java" name="application.Menu" project="Premier League" 
+    file="/Premier League/src/application/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="497" width="180" x="507" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="logic.Player" project="Premier League" 
-    file="/Premier League/src/logic/Player.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="587" y="1083"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="logic.Stadium" project="Premier League" 
+  <class id="4" language="java" name="logic.Stadium" project="Premier League" 
     file="/Premier League/src/logic/Stadium.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1123" y="1852"/>    
+    <position height="335" width="195" x="727" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="logic.Standings" project="Premier League" 
-    file="/Premier League/src/logic/Standings.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1416" y="1807"/>    
+  <class id="5" language="java" name="application.MatchPane" project="Premier League" 
+    file="/Premier League/src/application/MatchPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="137" width="128" x="962" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="logic.Match" project="Premier League" file="/Premier League/src/logic/Match.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="741" y="1852"/>    
+  <class id="6" language="java" name="logic.Manager" project="Premier League" 
+    file="/Premier League/src/logic/Manager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="263" width="199" x="2022" y="1064"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="logic.Club" project="Premier League" file="/Premier League/src/logic/Club.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1261" y="1219"/>    
+  <class id="7" language="java" name="application.ClubScreen" project="Premier League" 
+    file="/Premier League/src/application/ClubScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="407" width="234" x="1130" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="logic.Competition" project="Premier League" 
-    file="/Premier League/src/logic/Competition.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1284" y="2305"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="10" language="java" name="logic.CsvAvailable" project="Premier League" 
+  <interface id="8" language="java" name="logic.CsvAvailable" project="Premier League" 
     file="/Premier League/src/logic/CsvAvailable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="464" y="587"/>    
+    <position height="83" width="114" x="2508" y="1763"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="11" language="java" name="logic.IncludeImage" project="Premier League" 
-    file="/Premier League/src/logic/IncludeImage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1156" y="798"/>    
+  <class id="9" language="java" name="logic.Player" project="Premier League" 
+    file="/Premier League/src/logic/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="623" width="461" x="2261" y="1064"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="application.About" project="Premier League" 
-    file="/Premier League/src/application/About.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1390" y="641"/>    
+  <class id="10" language="java" name="logic.PremierLeagueLogic" project="Premier League" 
+    file="/Premier League/src/logic/PremierLeagueLogic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="353" width="215" x="1404" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="application.Menu" project="Premier League" 
-    file="/Premier League/src/application/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1152" y="300"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="application.Calendar" project="Premier League" 
-    file="/Premier League/src/application/Calendar.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1930" y="601"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="application.ClubScreen" project="Premier League" 
-    file="/Premier League/src/application/ClubScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="468" width="295" x="1509" y="18"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="16" language="java" name="application.Credit" project="Premier League" 
-    file="/Premier League/src/application/Credit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1659" y="915"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="17" language="java" name="application.Day" project="Premier League" 
-    file="/Premier League/src/application/Day.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1992" y="754"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="18" language="java" name="application.DetailsData" project="Premier League" 
-    file="/Premier League/src/application/DetailsData.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1392" y="241"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="19" language="java" name="application.ManagerPane" project="Premier League" 
-    file="/Premier League/src/application/ManagerPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1661" y="691"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="20" language="java" name="application.ManagerScreen" project="Premier League" 
+  <class id="11" language="java" name="application.ManagerScreen" project="Premier League" 
     file="/Premier League/src/application/ManagerScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1654" y="563"/>    
+    <position height="119" width="229" x="1659" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="application.MatchPane" project="Premier League" 
-    file="/Premier League/src/application/MatchPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1901" y="900"/>    
+  <class id="12" language="java" name="logic.IncludeImage" project="Premier League" 
+    file="/Premier League/src/logic/IncludeImage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="165" x="2099" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="application.PlayerPane" project="Premier League" 
+  <class id="13" language="java" name="application.PlayerPane" project="Premier League" 
     file="/Premier League/src/application/PlayerPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1907" y="68"/>    
+    <position height="83" width="131" x="1928" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="application.PlayerScreen" project="Premier League" 
+  <class id="14" language="java" name="application.ManagerPane" project="Premier League" 
+    file="/Premier League/src/application/ManagerPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="157" x="2304" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="application.RefreeScreen" project="Premier League" 
+    file="/Premier League/src/application/RefreeScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="206" x="2501" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="main.Main" project="Premier League" file="/Premier League/src/main/Main.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="124" x="2747" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="application.DetailsData" project="Premier League" 
+    file="/Premier League/src/application/DetailsData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="151" x="2911" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="logic.Competition" project="Premier League" 
+    file="/Premier League/src/logic/Competition.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="353" width="493" x="3102" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="application.ClubPane" project="Premier League" 
+    file="/Premier League/src/application/ClubPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="112" x="3635" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="logic.Match" project="Premier League" file="/Premier League/src/logic/Match.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="659" width="321" x="2987" y="1064"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="application.PlayerScreen" project="Premier League" 
     file="/Premier League/src/application/PlayerScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1955" y="179"/>    
+    <position height="101" width="202" x="3787" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="application.PlayerTeamSelection" project="Premier League" 
-    file="/Premier League/src/application/PlayerTeamSelection.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1932" y="370"/>    
+  <class id="22" language="java" name="application.Calendar" project="Premier League" 
+    file="/Premier League/src/application/Calendar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="166" x="4029" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="logic.Refree" project="Premier League" 
+    file="/Premier League/src/logic/Refree.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="317" width="185" x="2762" y="1064"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="logic.Standings" project="Premier League" 
+    file="/Premier League/src/logic/Standings.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="551" width="209" x="4235" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,220 +219,112 @@
   </class>  
   <class id="25" language="java" name="application.RefreePane" project="Premier League" 
     file="/Premier League/src/application/RefreePane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1655" y="1282"/>    
+    <position height="101" width="135" x="4484" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="application.RefreeScreen" project="Premier League" 
-    file="/Premier League/src/application/RefreeScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1657" y="1147"/>    
+  <class id="26" language="java" name="logic.Club" project="Premier League" file="/Premier League/src/logic/Club.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="425" width="287" x="1934" y="599"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="application.StadiumPane" project="Premier League" 
+  <class id="27" language="java" name="application.PlayerTeamSelection" project="Premier League" 
+    file="/Premier League/src/application/PlayerTeamSelection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="164" x="4659" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="application.Credit" project="Premier League" 
+    file="/Premier League/src/application/Credit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="263" width="162" x="4863" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="logic.Person" project="Premier League" 
+    file="/Premier League/src/logic/Person.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="371" width="196" x="2261" y="599"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="application.Day" project="Premier League" 
+    file="/Premier League/src/application/Day.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="101" width="261" x="5065" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="application.StadiumPane" project="Premier League" 
     file="/Premier League/src/application/StadiumPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1914" y="1038"/>    
+    <position height="83" width="151" x="5366" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="application.StadiumScreen" project="Premier League" 
-    file="/Premier League/src/application/StadiumScreen.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1957" y="1164"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="29" language="java" name="application.Tables" project="Premier League" 
+  <class id="32" language="java" name="application.Tables" project="Premier League" 
     file="/Premier League/src/application/Tables.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1957" y="1382"/>    
+    <position height="245" width="227" x="5557" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="30">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="10"/>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="8"/>  
   </realization>  
-  <association id="31">    
-    <bendpoint x="1438" y="1438"/>    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="32" name="team">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="33" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="35" name="refree">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="36" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="38" name="Std">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="39" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <realization id="38">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
   <realization id="40">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="10"/>  
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
   </realization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <realization id="44">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="10"/>  
+  <realization id="41">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="8"/>  
   </realization>  
-  <realization id="45">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="10"/>  
-  </realization>  
-  <association id="46">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="47" name="stadium">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="50" name="Players">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="51" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="52">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="53" name="Matches">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="54" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="55">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="56" name="stadium">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="57" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="58">    
-    <bendpoint x="663" y="632"/>    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="60">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="61" name="homeTeam">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="62" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="63">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="64" name="manager">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="65" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="66">    
-    <bendpoint x="1325" y="1565"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="67" name="awayTeam">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="68" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="69">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="70" name="std">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="71" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
