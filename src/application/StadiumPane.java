@@ -33,21 +33,21 @@ public class StadiumPane extends HBox {
 		HBox v2 = new HBox(5);
 		HBox v3 = new HBox(5);
 		Label t = new Label("Team");
-		t.setStyle("-fx-font-weight: bold,-fx-font-size 30");
+		t.setStyle("-fx-font-weight: bold;-fx-font-size: 30;");
 		Label team = new Label(stadium.getTeam());
 		v1.getChildren().addAll(t,team);
 		v1.setPrefSize(5,50);
 		v1.setAlignment(Pos.CENTER_LEFT);
 		
 		Label c = new Label("Capacity");
-		c.setStyle("-fx-font-weight: bold,-fx-font-size 30");
+		c.setStyle("-fx-font-weight: bold;-fx-font-size: 30;");
 		Label cap = new Label(String.valueOf(stadium.getCap()));
 		v2.getChildren().addAll(c,cap);
 		v2.setPrefSize(5,50);
 		v2.setAlignment(Pos.CENTER_LEFT);
 		
 		Text address = new Text(stadium.getAddress());
-		address.setStyle("-fx-font-size 20");
+		address.setStyle("-fx-font-size: 20;");
 		v3.getChildren().addAll(address);
 		v3.setPrefSize(5,350);
 		v3.setAlignment(Pos.CENTER_LEFT);

@@ -36,8 +36,6 @@ public class Main extends Application{
 		//Home
 		Btn btn = new Btn();
 		
-		//Credit
-		Credit credit = new Credit();
 				
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
@@ -60,8 +58,8 @@ public class Main extends Application{
 		// Stadium
 		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
 		
-		// Credit
-		Credit creditScreen = new Credit();
+		//Credit
+		Credit credit = new Credit();
 		
 		// Refree
 		RefreeScreen refreeScreen = new RefreeScreen(logic.getRefree());
@@ -251,18 +249,18 @@ public class Main extends Application{
 			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
-//		ImageView rhomeBtn =  refreeScreen.getGoHome();
-////		rhomeBtn.setOnMouseClicked(e -> {
-////			root.getChildren().add(btn);
-////			root.getChildren().remove(refree);
-////		});
-//		rhomeBtn.setOnMouseEntered(e->{
-//			root.setCursor(javafx.scene.Cursor.HAND);
-//		});
-//		rhomeBtn.setOnMouseExited(e->{
-//			root.setCursor(javafx.scene.Cursor.DEFAULT);
-//		});
-
+		ImageView rhomeBtn =  refreeScreen.getHome();
+		rhomeBtn.setOnMouseClicked(e -> {
+			root.getChildren().add(btn);
+			root.getChildren().remove(refreeScreen);
+		});
+		rhomeBtn.setOnMouseEntered(e->{
+			root.setCursor(javafx.scene.Cursor.HAND);
+		});
+		rhomeBtn.setOnMouseExited(e->{
+			root.setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		
 		ImageView shomeBtn =  stadiumScreen.getHome();
 		shomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
@@ -275,15 +273,15 @@ public class Main extends Application{
 			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
-		ImageView crhomeBtn =  creditScreen.getHome();
-		crhomeBtn.setOnMouseClicked(e -> {
+		ImageView crehomeBtn =  credit.getGoHome();
+		crehomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
-			root.getChildren().remove(creditScreen);
+			root.getChildren().remove(credit);
 		});
-		crhomeBtn.setOnMouseEntered(e->{
+		crehomeBtn.setOnMouseEntered(e->{
 			root.setCursor(javafx.scene.Cursor.HAND);
 		});
-		crhomeBtn.setOnMouseExited(e->{
+		crehomeBtn.setOnMouseExited(e->{
 			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		

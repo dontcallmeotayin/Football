@@ -22,10 +22,10 @@ public class MatchPane extends HBox{
 		setPadding(new Insets(7));
 		setStyle("-fx-background-color: #E4D7F0;");			// box color
 		
-		setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
-		setPrefWidth(610);
-		setPrefHeight(53);
-		setLayoutX(45);
+//		setBackground(new Background(new BackgroundFill(Color.BLANCHEDALMOND, CornerRadii.EMPTY, Insets.EMPTY)));
+		setMinSize(602, 53);
+		setMaxSize(602, 53);
+		setLayoutX(50);
 		setLayoutY(172);
 		
 		if(!match.isDone()) {
@@ -38,7 +38,7 @@ public class MatchPane extends HBox{
 				startM = "0"+startM;
 			}
 			String start = startH + " : " + startM;
-			time = new Label("         "+start+"          ");
+			time = new Label("        "+start+"          ");
 			time.setFont(new Font(15));
 			time.setMinHeight(40);
 			time.setAlignment(Pos.CENTER);
@@ -67,8 +67,7 @@ public class MatchPane extends HBox{
 		String hometeam = match.getHomeTeam().getName();  
 		String awayteam = match.getAwayTeam().getName();
 		String stadium = match.getStadium().getName();
-
-		place = new Label("                              "+stadium);
+		place = new Label("                "+stadium);
 		place.setFont(new Font(15));
 		
 		teams = new VBox();

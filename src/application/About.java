@@ -335,8 +335,8 @@ public class About extends Pane{
 		
 		Btn b = new Btn();
 		home = b.getHome();
-		home.setLayoutX(620);
-		home.setLayoutY(610);
+		home.setLayoutX(622);
+		home.setLayoutY(615);
 		
 		v.getChildren().addAll(lion);
 		pane.getChildren().addAll(vv, v, link, linklogo, linkface, linktwit, linkin,
@@ -345,16 +345,11 @@ public class About extends Pane{
 				photo2, data15, data16, data17, data18);
 		scrollPane.setContent(pane);
 		this.getChildren().addAll(scrollPane, home);
-		// .addAll(vv, v, head, data, data2, data3, photo1;
 		
 	}
 	
 	public ImageView getGoHome() {
 		return home;
 	}
-	
-    private void openBrowser(final String url) {
-//        getHostServices().showDocument(url);
-    }
 	
 }

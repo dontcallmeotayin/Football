@@ -38,19 +38,20 @@ public class Calendar extends Pane {
 		
 		HBox h = new HBox(20);
 		h.getChildren().addAll(cal,calendar);
-		h.setPrefHeight(50);
-		h.setPadding(new Insets(10));
+//		h.setPrefHeight(50);
+//		h.setPadding(new Insets(10));
 		h.setAlignment(Pos.CENTER);
 
 		Btn b = new Btn();
 		home = b.getHome();
-		home.setLayoutX(635);
-		home.setLayoutY(610);
+		home.setLayoutX(622);
+		home.setLayoutY(615);
 		
-		VBox v = new VBox(5);
-		v.setPrefHeight(500+(size*150));
+		VBox v = new VBox();
+		v.setPrefHeight(450+(size*150));
+		v.setPadding(new Insets(5, -10, 30, 10));
 		v.setStyle("-fx-background-color: #643D68;");
-//		v.getChildren().addAll(h);
+		v.getChildren().addAll(h);
 		
 		for(Day day:days) {
 			v.getChildren().addAll(day);
