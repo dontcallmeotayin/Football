@@ -178,8 +178,10 @@ public class ClubScreen  extends Pane{
 		setStyle("-fx-background-color: #643D68;");
 		
 		Hyperlink link = new Hyperlink();
+		link.setLayoutX(50);
+		link.setLayoutY(100);
 		
-		getChildren().addAll(v, home, link, p);
+		getChildren().addAll(link, v, home, p);
 	}
 
 	public ImageView getGoHome() {

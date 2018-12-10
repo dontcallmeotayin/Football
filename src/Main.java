@@ -15,6 +15,7 @@ import application.StadiumScreen;
 import application.Tables;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene  .media.Media;
@@ -32,17 +33,22 @@ public class Main extends Application{
 		VBox root = new VBox();
 		root.setPrefSize(700, 675);
 		
-		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
-		MediaPlayer bgm = new MediaPlayer(song);
-		bgm.setVolume(0.2);
-		bgm.setAutoPlay(true);
-		bgm.setCycleCount(MediaPlayer.INDEFINITE);
+		Thread t = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
+				MediaPlayer bgm = new MediaPlayer(song);
+				bgm.setVolume(0.2);
+				bgm.setAutoPlay(true);
+				bgm.setCycleCount(MediaPlayer.INDEFINITE);
+			}
+		});
+		t.start();
 				
 		PremierLeagueLogic logic = new PremierLeagueLogic();
 		
 		//Home
 		Btn btn = new Btn();
-		
 				
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
@@ -189,6 +195,9 @@ public class Main extends Application{
 		root.getChildren().addAll(btn);
 		
 		root.setStyle("-fx-background-color: #EDEDED;");
+		
+//		stage.setTitle("NAME");
+		stage.getIcons().add(new Image(ClassLoader.getSystemResource("football.png").toString()));
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);

@@ -339,7 +339,7 @@ public class About extends Pane{
 		home.setLayoutY(615);
 		
 		v.getChildren().addAll(lion);
-		pane.getChildren().addAll(vv, v, link, linklogo, linkface, linktwit, linkin,
+		pane.getChildren().addAll(link, vv, v, linklogo, linkface, linktwit, linkin,
 				head, data, data2, data3, photo1, data4, data5,
 				head2, data6, data7, data8, data9, data10, data11, data12, data13, data14,
 				photo2, data15, data16, data17, data18);
