@@ -84,10 +84,10 @@ public class Btn extends Pane {
 		home.setFitHeight(50);
 		home.setFitWidth(50);
 		
-		name = new Label("NAME OF APP");
+		name = new Label("LITTLE  LION");
 		name.setFont(new Font(70));
 		name.setTextFill(Color.WHITESMOKE);
-		name.setLayoutX(110);
+		name.setLayoutX(132);
 		name.setLayoutY(35);
 		
 		box = new ImageView(new Image(ClassLoader.getSystemResource("box.png").toString()));

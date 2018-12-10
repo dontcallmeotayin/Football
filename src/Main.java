@@ -45,28 +45,7 @@ public class Main extends Application{
 		
 				
 		//Calendar
-		Club c7 = new Club("EVE"); 
-		Club c8 = new Club("BOU"); 
-		Match match = new Match(c7,2, c8, 0, LocalDateTime.now(),true);
-		Match match2 = new Match(c7,2, c8, 0, LocalDateTime.now(),false);
-		match.setStadium(new Stadium("Langear"));
-		match2.setStadium(new Stadium("Langear"));
-		MatchPane m1 = new MatchPane(match);
-		MatchPane m2 = new MatchPane(match2);
-		MatchPane m3 = new MatchPane(match2);
-		MatchPane m4 = new MatchPane(match);
-		ArrayList<MatchPane> matches = new ArrayList<MatchPane>();
-		matches.add(m1);
-		matches.add(m2);
-		matches.add(m4);
-		matches.add(m3);
-		Day day = new Day(LocalDate.now(), matches);
-		Day day2 = new Day(LocalDate.now(), matches);
-		ArrayList<Day> days = new ArrayList<Day>();
-		days.add(day);
-		days.add(day2);
-		Calendar calendar = new Calendar(days);
-		/****************/
+		Calendar calendar = new Calendar(logic.getDays());
 		
 		// Tables
 		Tables table = new Tables(logic.getPml().getStandings());
@@ -206,16 +185,14 @@ public class Main extends Application{
 		});
 		
 	//-------------------------------------------------------------
-				
-	//-------------------------------------------------------------
-		
+						
 		root.getChildren().addAll(btn);
 		
 		root.setStyle("-fx-background-color: #EDEDED;");
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setResizable(false);
+		stage.setResizable(true);
 		stage.show();
 	}
 		
