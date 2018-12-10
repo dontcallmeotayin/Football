@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -19,8 +20,8 @@ public class PlayerPane extends HBox{
 		setPrefHeight(100);
 		setStyle("-fx-background-color: #f5f5f5;-fx-border-color : #9e9e9e");
 		setPadding(new Insets(12));
-		
-		ImageView club = new ImageView(p.getTeam()+"00.png");
+
+		ImageView club = new ImageView(new Image(ClassLoader.getSystemResource(p.getTeam().toLowerCase()+"00.png").toString()));
 		club.setFitHeight(25); 
 		club.setFitWidth(25);
 		club.setPreserveRatio(true);

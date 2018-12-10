@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Cursor;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -59,6 +60,13 @@ public class PlayerTeamSelection extends Pane {
 			tot.setVisible(false);
 			liv.setVisible(false);
 		});
+		arsenal.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		arsenal.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+		
 		chelsea = new ImageView(new Image(ClassLoader.getSystemResource("che00.png").toString()));
 		chelsea.setFitHeight(90); 
 		chelsea.setFitWidth(90);
@@ -71,6 +79,13 @@ public class PlayerTeamSelection extends Pane {
 			tot.setVisible(false);
 			liv.setVisible(false);
 		});
+		chelsea.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		chelsea.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+
 		spur = new ImageView(new Image(ClassLoader.getSystemResource("tot00.png").toString()));
 		spur.setFitHeight(90); 
 		spur.setFitWidth(90);
@@ -83,6 +98,13 @@ public class PlayerTeamSelection extends Pane {
 			tot.setVisible(true);
 			liv.setVisible(false);
 		});
+		spur.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		spur.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+
 		mancity = new ImageView(new Image(ClassLoader.getSystemResource("mci00.png").toString()));
 		mancity.setFitHeight(90); 
 		mancity.setFitWidth(90);
@@ -94,6 +116,12 @@ public class PlayerTeamSelection extends Pane {
 			mun.setVisible(false);
 			tot.setVisible(false);
 			liv.setVisible(false);
+		});
+		mancity.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		mancity.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
 		});
 		manu = new ImageView(new Image(ClassLoader.getSystemResource("mun00.png").toString()));
 		manu.setFitHeight(90); 
@@ -107,6 +135,13 @@ public class PlayerTeamSelection extends Pane {
 			tot.setVisible(false);
 			liv.setVisible(false);
 		});
+		manu.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		manu.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+
 		liverpool = new ImageView(new Image(ClassLoader.getSystemResource("liv00.png").toString()));
 		liverpool.setFitHeight(90); 
 		liverpool.setFitWidth(90);
@@ -119,11 +154,25 @@ public class PlayerTeamSelection extends Pane {
 			tot.setVisible(false);
 			liv.setVisible(true);
 		});
+		liverpool.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		liverpool.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+
 		
 		Btn b = new Btn();
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+
 		
 		HBox h =new HBox();
 		

@@ -2,8 +2,9 @@ package logic;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -128,7 +129,7 @@ public class Match implements CsvAvailable{
 
 	@Override
 	public String getCsv() {
-		return "res/matchthisweek.csv";
+		return "matchthisweek.csv";
 	}
 	
 	public ArrayList<Match> makeList() {
@@ -137,7 +138,8 @@ public class Match implements CsvAvailable{
 		  String cvsSplitBy = ",";
 		  ArrayList<Match> data = new ArrayList<Match>();
 		  try {
-		      br = new BufferedReader(new FileReader(this.getCsv()));
+			  InputStream in = ClassLoader.getSystemResourceAsStream(this.getCsv());
+		      br = new BufferedReader(new InputStreamReader(in));
 		      while ((line = br.readLine()) != null) {
 		          String[] csvdata = line.split(cvsSplitBy);
 		          //----------------------

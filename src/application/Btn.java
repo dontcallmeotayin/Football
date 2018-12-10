@@ -1,5 +1,6 @@
 package application;
 
+import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,6 +35,66 @@ public class Btn extends Pane {
 		refreeBtn = new ImageView(new Image(ClassLoader.getSystemResource("whistle.png").toString()));
 		stadiumBtn = new ImageView(new Image(ClassLoader.getSystemResource("stadium.png").toString()));
 		creditBtn = new ImageView(new Image(ClassLoader.getSystemResource("laptop.png").toString()));
+		calendarBtn.setOnMouseEntered(e->{
+			setCursor(Cursor.HAND);
+		});
+		calendarBtn.setOnMouseExited(e->{
+			setCursor(Cursor.DEFAULT);
+		});
+		clubBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		clubBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		tableBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		tableBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		managerBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		managerBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		playerBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		playerBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		aboutBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		aboutBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		aboutBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		aboutBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		refreeBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		refreeBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		stadiumBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		stadiumBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+		creditBtn.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		creditBtn.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});		
 		
 		calendarBtn.setFitHeight(80);
 		calendarBtn.setFitWidth(80);
@@ -83,7 +144,7 @@ public class Btn extends Pane {
 		home = new ImageView(new Image(ClassLoader.getSystemResource("ball.png").toString()));
 		home.setFitHeight(50);
 		home.setFitWidth(50);
-		
+				
 		name = new Label("LITTLE  LION");
 		name.setFont(new Font(70));
 		name.setTextFill(Color.WHITESMOKE);

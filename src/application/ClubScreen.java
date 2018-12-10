@@ -174,6 +174,12 @@ public class ClubScreen  extends Pane{
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
 		
 		setStyle("-fx-background-color: #643D68;");
 		

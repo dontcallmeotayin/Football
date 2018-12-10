@@ -2,8 +2,9 @@ package logic;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Refree extends Person implements CsvAvailable{
@@ -52,7 +53,7 @@ public class Refree extends Person implements CsvAvailable{
 
 	@Override
 	public String getCsv() {
-		return "res/refree.csv";
+		return "refree.csv";
 	}
 	
 	public ArrayList<Refree> makeList() {
@@ -61,7 +62,8 @@ public class Refree extends Person implements CsvAvailable{
 		  String cvsSplitBy = ",";
 		  ArrayList<Refree> data = new ArrayList<Refree>();
 		  try {
-		      br = new BufferedReader(new FileReader(this.getCsv()));
+			  InputStream in = ClassLoader.getSystemResourceAsStream(this.getCsv());
+		      br = new BufferedReader(new InputStreamReader(in));
 		      while ((line = br.readLine()) != null) {
 		          String[] csvdata = line.split(cvsSplitBy);
 		          //----------------------

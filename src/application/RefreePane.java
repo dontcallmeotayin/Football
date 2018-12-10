@@ -18,7 +18,7 @@ public class RefreePane extends HBox {
 		setAlignment(Pos.CENTER);
 		setMinSize(520, 70);
 		setMaxSize(520, 70);
-		setStyle("-fx-background-color: #F3F3F3");
+		setStyle("-fx-background-color: #F3F3F3;");
 		
 		Label name = new Label(rf.getName());
 		name.setFont(new Font(27));
@@ -28,7 +28,7 @@ public class RefreePane extends HBox {
 		match.setFont(new Font(13));
 		Text m = new Text(String.valueOf(rf.getMatches()));
 			DetailsData d1 = new DetailsData(match,m);
-		Label red = new Label("Red cards		");
+		Label red = new Label("Red cards			");
 		red.setFont(new Font(13));
 		Text r = new Text(String.valueOf(rf.getRed()));
 			DetailsData d2 = new DetailsData(red,r);

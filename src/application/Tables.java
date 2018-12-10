@@ -136,6 +136,13 @@ public class Tables extends Pane {
 		home = b.getHome();
 		home.setLayoutX(640);
 		home.setLayoutY(615);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+
 		
 		v.getChildren().addAll(topic, table);
 		this.getChildren().addAll(v, cup, cup2, home);
@@ -157,17 +164,6 @@ public class Tables extends Pane {
 		return table;
 	}
 	
-//	public Object sortTable() {
-//		return getTable().sort();
-//	}
-	
-//	public ObservableList<Standings> getOrder() {
-//		ObservableList<> oder = FXCollections.observableArrayList(
-//			1,2,3
-//		);
-//		return oder;
-//	}
-
 }
 
 //	new Standings(new Club("LIV"), 16, 13, 3, 0, 34, 6),

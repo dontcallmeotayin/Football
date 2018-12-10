@@ -1,16 +1,12 @@
 package application;
 
-import java.awt.Color;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -150,7 +146,7 @@ public class About extends Pane{
 		data7.setLayoutY(986);
 		
 		data8 = new Text("Apart from the opening campaign in 1992/93, every season of the Premier League has had a title  \n"
-				+ "sponsor. From the 1993/94 season, England’s top flight was known as the FA Carling Premiership,\n"
+				+ "sponsor. From the 1993/94 season, England's top flight was known as the FA Carling Premiership,\n"
 				+ "before the sponsorship changed in 2001 to Barclaycard until 2004.\n");
 		data8.setFont(new Font(13));
 		data8.setFill(javafx.scene.paint.Color.WHITESMOKE);
@@ -337,6 +333,13 @@ public class About extends Pane{
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);
+		
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
 		
 		v.getChildren().addAll(lion);
 		pane.getChildren().addAll(link, vv, v, linklogo, linkface, linktwit, linkin,

@@ -1,6 +1,13 @@
 /Main.class
 /application/
 /logic/
+/mci19.png
+/mci2.png
+/mci20.png
+/mci21.png
+/mci22.png
+/mci25.png
+/mci26.png
 /mci3.png
 /mci30.png
 /mci31.png
@@ -57,9 +64,13 @@
 /pl-large.png
 /pre-1.jpg
 /pre-2.jpg
+/premier-logo.png
 /premier.png
 /ranking.png
 /rectangle.png
+/refree.csv
+/stad.png
+/stadium.png
 /tot00.png
 /tot0m.png
 /tot1.png
@@ -91,74 +102,20 @@
 /tot7.png
 /tot8.png
 /tot9.png
-/whistle.png
-/Manager.xlsx
-/Manager.csv
-<<<<<<< HEAD
-/matchthisweek.csv
-/refree.csv
-/a
-=======
-/Player.csv
-/ars1.png
-/ars2.png
-/ars4.png
-/ars5.png
-/ars6.png
-/ars7.png
-/ars8.png
-/ars9.png
-/che1.png
-/che2.png
-/che3.png
-/che4.png
-/che5.png
-/che6.png
-/che7.png
-/che8.png
-/liv2.png
-/liv3.png
-/liv4.png
-/liv5.png
-/liv6.png
-/liv7.png
-/liv8.png
-/liv9.png
-/mci1.png
-/mci2.png
-/calendar2.png
-<<<<<<< HEAD
-/stadium.png
-||||||| merged common ancestors
-=======
->>>>>>> refs/remotes/origin/master
-<<<<<<< HEAD
-/ARSplayer.csv
-/CHEplayer.csv
-/LIVplayer.csv
-/MCIplayer.csv
-/MUNplayer.csv
-/TOTplayer.csv
-=======
->>>>>>> 312658b12d6125ccc5b26487416f920e3f7cffdb
-/premier-logo.png
-<<<<<<< HEAD
-/facebook.png
 /twitter.png
-/instagram.png
-/in.png
-||||||| merged common ancestors
-=======
->>>>>>> d2ca2d4e306b76467d25d65d1ee838ff0dd623d7
->>>>>>> 5f2dee1b895aa1fed9e4c84c2cb7daf2b1c46241
-/fb.png
-/field.png
-/ig.png
 /twt.png
+/whistle.png
 /yb.png
+<<<<<<< HEAD
+=======
 /icon.png
 /stad.png
 /credit.png
 /laptop.png
+<<<<<<< HEAD
 /football.png
 /Main$1.class
+||||||| merged common ancestors
+=======
+>>>>>>> c59582d9faabe39aaef3285c47305ea30c54857a
+>>>>>>> ec6fb81ef1e1a3319a1252721d159fe58c302946

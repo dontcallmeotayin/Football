@@ -1,19 +1,15 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import application.About;
 import application.Btn;
 import application.Calendar;
 import application.ClubScreen;
 import application.Credit;
-import application.Day;
 import application.ManagerScreen;
-import application.MatchPane;
 import application.PlayerTeamSelection;
 import application.RefreeScreen;
 import application.StadiumScreen;
 import application.Tables;
 import javafx.application.Application;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,10 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene  .media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import logic.Club;
-import logic.Match;
 import logic.PremierLeagueLogic;
-import logic.Stadium;
 
 public class Main extends Application{
 
@@ -32,6 +25,7 @@ public class Main extends Application{
 	public void start(Stage stage) {
 		VBox root = new VBox();
 		root.setPrefSize(700, 675);
+<<<<<<< HEAD
 		
 		Thread t = new Thread(new Runnable() {
 			@Override
@@ -44,12 +38,34 @@ public class Main extends Application{
 			}
 		});
 		t.start();
+||||||| merged common ancestors
+		
+		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
+		MediaPlayer bgm = new MediaPlayer(song);
+		bgm.setVolume(0.2);
+		bgm.setAutoPlay(true);
+		bgm.setCycleCount(MediaPlayer.INDEFINITE);
+=======
+		root.setCursor(Cursor.DEFAULT);
+		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
+		MediaPlayer bgm = new MediaPlayer(song);
+		bgm.setVolume(0.2);
+		bgm.setAutoPlay(true);
+		bgm.setCycleCount(MediaPlayer.INDEFINITE);
+>>>>>>> ec6fb81ef1e1a3319a1252721d159fe58c302946
 				
 		PremierLeagueLogic logic = new PremierLeagueLogic();
 		
 		//Home
 		Btn btn = new Btn();
+<<<<<<< HEAD
 				
+||||||| merged common ancestors
+		
+				
+=======
+					
+>>>>>>> ec6fb81ef1e1a3319a1252721d159fe58c302946
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
 		
@@ -77,7 +93,7 @@ public class Main extends Application{
 		// Refree
 		RefreeScreen refreeScreen = new RefreeScreen(logic.getRefree());
 		
-	//-------------------------------------------------------------
+		//-------------------------------------------------------------
 		
 		ImageView calendarBtn =  btn.getCalendarBtn();
 		calendarBtn.setOnMouseClicked(e -> {
@@ -141,7 +157,7 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(calendar);
 		});
-		
+
 		ImageView clhomeBtn =  clubScreen.getGoHome();
 		clhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
@@ -153,13 +169,13 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(table);
 		});
-		
+
 		ImageView mhomeBtn =  managerscreen.getGoHome();
 		mhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(managerscreen);
 		});
-		
+	
 		ImageView phomeBtn =  playerTeamSelection.getHome();
 		phomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
@@ -171,7 +187,7 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(about);
 		});
-		
+
 		ImageView rhomeBtn =  refreeScreen.getHome();
 		rhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
@@ -201,7 +217,8 @@ public class Main extends Application{
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setResizable(true);
+		stage.setResizable(false);
+		stage.setTitle("ESSKEETIT Little Lion");
 		stage.show();
 	}
 		
@@ -209,5 +226,4 @@ public class Main extends Application{
 		launch(args);
 	}
 	
-
 }

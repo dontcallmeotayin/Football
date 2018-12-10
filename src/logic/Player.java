@@ -2,8 +2,9 @@ package logic;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -61,7 +62,11 @@ public class Player extends Person implements CsvAvailable {
 		this.appearance = ap;
 		this.assists = as;
 		this.team = t;
-		setImage(team.toLowerCase()+number+".png");
+		try {
+			setImage(team.toLowerCase()+number+".png");
+		} catch (NullPointerException e) {
+            setImagetoBasic();
+		}
 	}
 
 	public double getHeight() {
@@ -127,14 +132,14 @@ public class Player extends Person implements CsvAvailable {
 	public void setTeam(String team) {
 		this.team = team;
 	}
-	
+		
 	public String getCsv() {
 		String c = this.getTeam();
 		if(c.equals("ARS") || c.equals("MCI") || c.equals("TOT") ||
 		   c.equals("MUN") || c.equals("LIV") || c.equals("CHE")) {
-			return "res/"+c+"player.csv";
+			return c+"player.csv";
 		}
-		return "res/Player.csv";
+		return "Player.csv";
 	}
 
 	public ArrayList<Player> makeList() {
@@ -143,7 +148,8 @@ public class Player extends Person implements CsvAvailable {
 		  String cvsSplitBy = ",";
 		  ArrayList<Player> data = new ArrayList<Player>();
 		  try {
-		      br = new BufferedReader(new FileReader(this.getCsv()));
+			  InputStream in = ClassLoader.getSystemResourceAsStream(this.getCsv());
+		      br = new BufferedReader(new InputStreamReader(in));
 		      while ((line = br.readLine()) != null) {
 		          String[] csvdata = line.split(cvsSplitBy);
 		          //----------------------
