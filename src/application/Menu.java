@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-public class Btn extends Pane {
+public class Menu extends Pane {
 	
 	private ImageView calendarBtn;
 	private ImageView clubBtn;
@@ -24,7 +24,7 @@ public class Btn extends Pane {
 	private ImageView rec;
 	private ImageView creditBtn;
 	
-	public Btn() {
+	public Menu() {
 		
 		calendarBtn = new ImageView(new Image(ClassLoader.getSystemResource("calendar.png").toString()));
 		clubBtn = new ImageView(new Image(ClassLoader.getSystemResource("liverpool.png").toString()));

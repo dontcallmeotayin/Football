@@ -132,7 +132,7 @@ public class Tables extends Pane {
 		
 		table.setItems(getDate());
 
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(640);
 		home.setLayoutY(615);

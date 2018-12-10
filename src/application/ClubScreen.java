@@ -170,7 +170,7 @@ public class ClubScreen  extends Pane{
 				YOU1, YOU2, YOU3, YOU4, YOU5, YOU6,
 				IG1, IG2, IG3, IG4, IG5, IG6);
 
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);

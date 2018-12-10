@@ -1,5 +1,6 @@
+package main;
 import application.About;
-import application.Btn;
+import application.Menu;
 import application.Calendar;
 import application.ClubScreen;
 import application.Credit;
@@ -8,6 +9,7 @@ import application.PlayerTeamSelection;
 import application.RefreeScreen;
 import application.StadiumScreen;
 import application.Tables;
+
 import javafx.application.Application;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
@@ -25,7 +27,6 @@ public class Main extends Application{
 	public void start(Stage stage) {
 		VBox root = new VBox();
 		root.setPrefSize(700, 675);
-<<<<<<< HEAD
 		
 		Thread t = new Thread(new Runnable() {
 			@Override
@@ -38,34 +39,12 @@ public class Main extends Application{
 			}
 		});
 		t.start();
-||||||| merged common ancestors
-		
-		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
-		MediaPlayer bgm = new MediaPlayer(song);
-		bgm.setVolume(0.2);
-		bgm.setAutoPlay(true);
-		bgm.setCycleCount(MediaPlayer.INDEFINITE);
-=======
-		root.setCursor(Cursor.DEFAULT);
-		Media song = new Media(ClassLoader.getSystemResource("fifaSong.mp3").toString());
-		MediaPlayer bgm = new MediaPlayer(song);
-		bgm.setVolume(0.2);
-		bgm.setAutoPlay(true);
-		bgm.setCycleCount(MediaPlayer.INDEFINITE);
->>>>>>> ec6fb81ef1e1a3319a1252721d159fe58c302946
 				
 		PremierLeagueLogic logic = new PremierLeagueLogic();
 		
 		//Home
-		Btn btn = new Btn();
-<<<<<<< HEAD
-				
-||||||| merged common ancestors
+		Menu btn = new Menu();
 		
-				
-=======
-					
->>>>>>> ec6fb81ef1e1a3319a1252721d159fe58c302946
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
 		
@@ -212,7 +191,6 @@ public class Main extends Application{
 		
 		root.setStyle("-fx-background-color: #EDEDED;");
 		
-//		stage.setTitle("NAME");
 		stage.getIcons().add(new Image(ClassLoader.getSystemResource("football.png").toString()));
 		
 		Scene scene = new Scene(root);

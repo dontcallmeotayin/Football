@@ -33,7 +33,7 @@ public class RefreeScreen extends Pane{
 		
 		scrollPane.setContent(v);
 		
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);

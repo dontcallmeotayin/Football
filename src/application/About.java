@@ -329,7 +329,7 @@ public class About extends Pane{
 		
 		Hyperlink link = new Hyperlink();
 		
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);

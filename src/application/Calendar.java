@@ -42,7 +42,7 @@ public class Calendar extends Pane {
 //		h.setPadding(new Insets(10));
 		h.setAlignment(Pos.CENTER);
 
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);

@@ -162,7 +162,7 @@ public class PlayerTeamSelection extends Pane {
 		});
 
 		
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);

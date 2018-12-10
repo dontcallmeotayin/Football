@@ -52,7 +52,7 @@ public class Credit extends Pane {
 		set(data6,12);set(data7,12);
 		v2.getChildren().addAll(data3, data4, data5,data6,data7);
 				
-		Btn b = new Btn();
+		Menu b = new Menu();
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);
