@@ -127,8 +127,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="application.RefreeScreen" project="Premier League" 
-    file="/Premier League/src/application/RefreeScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="application.RefereeScreen" project="Premier League" 
+    file="/Premier League/src/application/RefereeScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="119" width="206" x="2501" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

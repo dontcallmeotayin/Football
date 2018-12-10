@@ -43,7 +43,7 @@ public class About extends Pane{
 	private ImageView home;
 	private ImageView logo;
 	private ImageView fb;
-	private ImageView tw;
+	private ImageView twt;
 	private ImageView in;
 	
 	public About() {
@@ -285,12 +285,12 @@ public class About extends Pane{
 		linkface.setLayoutX(185);
 		linkface.setLayoutY(2213);
 		
-		tw = new ImageView(new Image(ClassLoader.getSystemResource("twitter.png").toString()));
-		tw.setFitHeight(30);
-		tw.setFitWidth(30);
+		twt = new ImageView(new Image(ClassLoader.getSystemResource("twitter.png").toString()));
+		twt.setFitHeight(30);
+		twt.setFitWidth(30);
 		
 		Hyperlink linktwit = new Hyperlink();
-		linktwit.setGraphic(tw);
+		linktwit.setGraphic(twt);
 		linktwit.setOnAction(e -> {
 			if(Desktop.isDesktopSupported())
 		    {
@@ -342,10 +342,11 @@ public class About extends Pane{
 		});
 		
 		v.getChildren().addAll(lion);
-		pane.getChildren().addAll(link, vv, v, linklogo, linkface, linktwit, linkin,
+		pane.getChildren().addAll(link, vv, v,
 				head, data, data2, data3, photo1, data4, data5,
 				head2, data6, data7, data8, data9, data10, data11, data12, data13, data14,
-				photo2, data15, data16, data17, data18);
+				photo2, data15, data16, data17, data18,
+				linklogo, linkface, linktwit, linkin);
 		scrollPane.setContent(pane);
 		this.getChildren().addAll(scrollPane, home);
 		

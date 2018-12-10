@@ -6,7 +6,7 @@ import application.ClubScreen;
 import application.Credit;
 import application.ManagerScreen;
 import application.PlayerTeamSelection;
-import application.RefreeScreen;
+import application.RefereeScreen;
 import application.StadiumScreen;
 import application.Tables;
 
@@ -43,7 +43,7 @@ public class Main extends Application{
 		PremierLeagueLogic logic = new PremierLeagueLogic();
 		
 		//Home
-		Menu btn = new Menu();
+		Menu menu = new Menu();
 		
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
@@ -61,7 +61,7 @@ public class Main extends Application{
 		PlayerTeamSelection playerTeamSelection = new PlayerTeamSelection();
 		
 		// Manager
-		ManagerScreen managerscreen = new ManagerScreen(logic.getAllmng());
+		ManagerScreen managerScreen = new ManagerScreen(logic.getAllmng());
 		
 		// Stadium
 		StadiumScreen stadiumScreen = new StadiumScreen(logic.getStadiums());
@@ -69,63 +69,63 @@ public class Main extends Application{
 		//Credit
 		Credit credit = new Credit();
 		
-		// Refree
-		RefreeScreen refreeScreen = new RefreeScreen(logic.getRefree());
+		// Referee
+		RefereeScreen refreeScreen = new RefereeScreen(logic.getRefree());
 		
 		//-------------------------------------------------------------
 		
-		ImageView calendarBtn =  btn.getCalendarBtn();
+		ImageView calendarBtn =  menu.getCalendarBtn();
 		calendarBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(calendar);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView clubBtn =  btn.getClubBtn();
+		ImageView clubBtn =  menu.getClubBtn();
 		clubBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(clubScreen);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView tableBtn =  btn.getTableBtn();
+		ImageView tableBtn =  menu.getTableBtn();
 		tableBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(table);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView managerBtn =  btn.getManagerBtn();
+		ImageView managerBtn =  menu.getManagerBtn();
 		managerBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(managerscreen);
-			root.getChildren().remove(btn);
+			root.getChildren().add(managerScreen);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView playerBtn =  btn.getPlayerBtn();
+		ImageView playerBtn =  menu.getPlayerBtn();
 		playerBtn.setOnMouseClicked(e -> {
 		root.getChildren().add(playerTeamSelection);
-		root.getChildren().remove(btn);
+		root.getChildren().remove(menu);
 		});
 				
-		ImageView aboutBtn =  btn.getAboutBtn();
+		ImageView aboutBtn =  menu.getAboutBtn();
 		aboutBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(about);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView refreeBtn =  btn.getRefreeBtn();
+		ImageView refreeBtn =  menu.getRefreeBtn();
 		refreeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(refreeScreen);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView stadiumBtn =  btn.getStadiumBtn();
+		ImageView stadiumBtn =  menu.getStadiumBtn();
 		stadiumBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(stadiumScreen);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
-		ImageView creditBtn =  btn.getCreditBtn();
+		ImageView creditBtn =  menu.getCreditBtn();
 		creditBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(credit);
-			root.getChildren().remove(btn);
+			root.getChildren().remove(menu);
 		});
 		
 	//-------------------------------------------------------------
@@ -133,61 +133,61 @@ public class Main extends Application{
 		
 		ImageView cahomeBtn =  calendar.getGoHome();
 		cahomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(calendar);
 		});
 
 		ImageView clhomeBtn =  clubScreen.getGoHome();
 		clhomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(clubScreen);
 		});
 		
 		ImageView thomeBtn =  table.getGoHome();
 		thomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(table);
 		});
 
-		ImageView mhomeBtn =  managerscreen.getGoHome();
+		ImageView mhomeBtn =  managerScreen.getGoHome();
 		mhomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
-			root.getChildren().remove(managerscreen);
+			root.getChildren().add(menu);
+			root.getChildren().remove(managerScreen);
 		});
 	
 		ImageView phomeBtn =  playerTeamSelection.getHome();
 		phomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(playerTeamSelection);
 		});
 		
 		ImageView ahomeBtn =  about.getGoHome();
 		ahomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(about);
 		});
 
 		ImageView rhomeBtn =  refreeScreen.getHome();
 		rhomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(refreeScreen);
 		});
 		
 		ImageView shomeBtn =  stadiumScreen.getHome();
 		shomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(stadiumScreen);
 		});
 		
 		ImageView crehomeBtn =  credit.getGoHome();
 		crehomeBtn.setOnMouseClicked(e -> {
-			root.getChildren().add(btn);
+			root.getChildren().add(menu);
 			root.getChildren().remove(credit);
 		});
 		
 	//-------------------------------------------------------------
 						
-		root.getChildren().addAll(btn);
+		root.getChildren().addAll(menu);
 		
 		root.setStyle("-fx-background-color: #EDEDED;");
 		
