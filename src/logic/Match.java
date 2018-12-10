@@ -142,9 +142,9 @@ public class Match implements CsvAvailable{
 		          String[] csvdata = line.split(cvsSplitBy);
 		          //----------------------
 	              Club h = new Club(csvdata[1]);
-	              int hg = Integer.parseInt(csvdata[3]);
+	              int hg = Integer.valueOf(csvdata[3]);
 	              Club a = new Club(csvdata[2]);
-	              int ag = Integer.parseInt(csvdata[4]);
+	              int ag = Integer.valueOf(csvdata[4]);
 	              String[] date = csvdata[0].split("/");
 	              int check = Integer.parseInt(csvdata[5]);
 	              boolean done = false;
@@ -154,11 +154,12 @@ public class Match implements CsvAvailable{
 		              start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 0, 0);
 	              }
 	              else {
-		              start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), 3, 4);
+		              start = LocalDateTime.of(Integer.valueOf(date[2]),Integer.valueOf(date[1]), Integer.valueOf(date[0]), hg, ag);
 		              hg = -1;
 		              ag = -1;
 	              }
 	              Match newdata = new Match(h,hg,a,ag,start,done);
+	              newdata.setStadium(new Stadium(csvdata[6]));
 		          data.add(newdata);
 		      }
 		   } catch (FileNotFoundException e) {

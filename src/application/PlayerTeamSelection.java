@@ -134,30 +134,6 @@ public class PlayerTeamSelection extends HBox {
 		
 		
 	}
-
-	public ImageView getArsenal() {
-		return arsenal;
-	}
-
-	public ImageView getChelsea() {
-		return chelsea;
-	}
-
-	public ImageView getSpur() {
-		return spur;
-	}
-
-	public ImageView getMancity() {
-		return mancity;
-	}
-
-	public ImageView getManu() {
-		return manu;
-	}
-
-	public ImageView getLiverpool() {
-		return liverpool;
-	}
 	
 	public ImageView getHome() {
 		return home;

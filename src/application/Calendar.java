@@ -1,9 +1,14 @@
 package application;
 
 import java.util.ArrayList;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -17,40 +22,43 @@ public class Calendar extends Pane {
 
 	public Calendar(ArrayList<Day> days) {
 		
-		int count = 0;
+		int size = days.size();
 		
-		Pane bg = new Pane();
+		ScrollPane bg = new ScrollPane();
 		bg.setPrefSize(700, 675);
 		bg.setStyle("-fx-background-color: #643D68;");		// same color with table class   ,  DARKSALMON >> so cute
-		
-		VBox blog = new VBox();
-		for(Day day:days) {
-			double d = day.getScaleY();
-			double l = day.getLayoutY();
-			day.setLayoutY(l+(d*count+5));
-			bg.getChildren().addAll(day);
-			count += 1;
-		}
-		
+				
 		calendar = new Label("CALENDAR");
 		calendar.setFont(new Font(60));
-		calendar.setLayoutX(165);
-		calendar.setLayoutY(20);
 		calendar.setTextFill(Color.WHITESMOKE);
 		
 		cal = new ImageView(new Image(ClassLoader.getSystemResource("calendar2.png").toString()));
 		cal.setFitHeight(50);
 		cal.setFitWidth(50);
-		cal.setLayoutX(95);
-		cal.setLayoutY(31);
+		
+		HBox h = new HBox(20);
+		h.getChildren().addAll(cal,calendar);
+		h.setPrefHeight(50);
+		h.setPadding(new Insets(10));
+		h.setAlignment(Pos.CENTER);
 
 		Btn b = new Btn();
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);
 		
-		this.getChildren().addAll(bg,calendar, home, cal);
-//		this.setStyle("-fx-background-color: #9273AD;");
+		VBox v = new VBox(5);
+		v.setPrefHeight(500+(size*150));
+		v.setStyle("-fx-background-color: #643D68;");
+//		v.getChildren().addAll(h);
+		
+		for(Day day:days) {
+			v.getChildren().addAll(day);
+		}
+		bg.setContent(v);
+				
+		this.getChildren().addAll(bg,home);
+
 		
 	}
 	

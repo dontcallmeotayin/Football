@@ -1,8 +1,11 @@
 package logic;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import application.Day;
+import application.MatchPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -13,6 +16,7 @@ public class PremierLeagueLogic {
 	private ArrayList<Manager> allmng;
 	private ArrayList<Refree> refree;
 	private ArrayList<Stadium> stadiums;
+	private ArrayList<Day> days;
 	
 	public PremierLeagueLogic() {
 		
@@ -32,7 +36,7 @@ public class PremierLeagueLogic {
 		stadiums.add(a);
 		stadiums.add(w);
 		stadiums.add(o);
-		stadiums.add(stf);
+		stadiums.add(stf);		
 		
 		//Club
 		clubs = new ArrayList<Club>();
@@ -43,7 +47,7 @@ public class PremierLeagueLogic {
 		Club c5 = new Club("MUN",allmng.get(4),o); clubs.add(c5);
 		Club c6 = new Club("CHE",allmng.get(1),stf); clubs.add(c6);
 		//-----------------------------------------
-		Club c7 = new Club("EVE"); clubs.add(c7);
+		Club c7 = new Club("EVE"); clubs.add(c7); 
 		Club c8 = new Club("BOU"); clubs.add(c8);
 		Club c9 = new Club("LEI"); clubs.add(c9);
 		Club c10 = new Club("BHA"); clubs.add(c10);
@@ -57,6 +61,16 @@ public class PremierLeagueLogic {
 		Club c18 = new Club("SOU"); clubs.add(c18);
 		Club c19 = new Club("BUR"); clubs.add(c19);
 		Club c20 = new Club("FUL"); clubs.add(c20);
+		
+		ArrayList<MatchPane> day1 = new ArrayList<MatchPane>(); 
+		Match match1 = new Match(c7,0,c11,0,LocalDateTime.of(2018,12,11,0,0),true);
+		match1.setStadium(new Stadium("Goodison Park"));
+		MatchPane mp1 = new MatchPane(match1);
+		day1.add(mp1);
+		Day dayscreen1 = new Day(match1.getStartTime(),day1);
+		days = new ArrayList<Day>();
+		days.add(dayscreen1);
+
 		
 		//Standings
 		ObservableList<Standings> std = FXCollections.observableArrayList(
@@ -118,5 +132,18 @@ public class PremierLeagueLogic {
 	public ArrayList<Stadium> getStadiums() {
 		return stadiums;
 	}
+
+	public ArrayList<Day> getDays() {
+		ArrayList<MatchPane> matchpane = new ArrayList<MatchPane>();
+		for(Match m : (new Match()).makeList()) {
+			MatchPane pane = new MatchPane(m);
+			matchpane.add(pane);
+		}
+		Day anotherday = new Day(LocalDateTime.of(2018,12,15,0,0), matchpane);
+		days.add(anotherday);
+		return days;
+	}
+	
+	
 	
 }
