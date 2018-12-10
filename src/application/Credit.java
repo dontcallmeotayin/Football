@@ -56,6 +56,12 @@ public class Credit extends Pane {
 		home = b.getHome();
 		home.setLayoutX(635);
 		home.setLayoutY(610);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
 		
 		v.getChildren().addAll(v1,v2);
 		v.setAlignment(Pos.CENTER);

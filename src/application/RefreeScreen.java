@@ -37,6 +37,13 @@ public class RefreeScreen extends Pane{
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+
 		
 		getChildren().addAll(scrollPane, home);
 	}

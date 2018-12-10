@@ -35,8 +35,7 @@ public class Main extends Application{
 		
 		//Home
 		Btn btn = new Btn();
-		
-				
+					
 		//Calendar
 		Calendar calendar = new Calendar(logic.getDays());
 		
@@ -71,23 +70,11 @@ public class Main extends Application{
 			root.getChildren().add(calendar);
 			root.getChildren().remove(btn);
 		});
-		calendarBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		calendarBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 		
 		ImageView clubBtn =  btn.getClubBtn();
 		clubBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(clubScreen);
 			root.getChildren().remove(btn);
-		});
-		clubBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		clubBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 		ImageView tableBtn =  btn.getTableBtn();
@@ -95,23 +82,11 @@ public class Main extends Application{
 			root.getChildren().add(table);
 			root.getChildren().remove(btn);
 		});
-		tableBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		tableBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 		
 		ImageView managerBtn =  btn.getManagerBtn();
 		managerBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(managerscreen);
 			root.getChildren().remove(btn);
-		});
-		managerBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		managerBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 		ImageView playerBtn =  btn.getPlayerBtn();
@@ -119,23 +94,11 @@ public class Main extends Application{
 		root.getChildren().add(playerTeamSelection);
 		root.getChildren().remove(btn);
 		});
-		playerBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		playerBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 				
 		ImageView aboutBtn =  btn.getAboutBtn();
 		aboutBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(about);
 			root.getChildren().remove(btn);
-		});
-		aboutBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		aboutBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 		ImageView refreeBtn =  btn.getRefreeBtn();
@@ -143,35 +106,17 @@ public class Main extends Application{
 			root.getChildren().add(refreeScreen);
 			root.getChildren().remove(btn);
 		});
-		refreeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		refreeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 		
 		ImageView stadiumBtn =  btn.getStadiumBtn();
 		stadiumBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(stadiumScreen);
 			root.getChildren().remove(btn);
 		});
-		stadiumBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		stadiumBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 		
 		ImageView creditBtn =  btn.getCreditBtn();
 		creditBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(credit);
 			root.getChildren().remove(btn);
-		});
-		creditBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		creditBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 	//-------------------------------------------------------------
@@ -182,83 +127,41 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(calendar);
 		});
-		cahomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		cahomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-		
+
 		ImageView clhomeBtn =  clubScreen.getGoHome();
 		clhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(clubScreen);
 		});
-		clhomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		clhomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-
+		
 		ImageView thomeBtn =  table.getGoHome();
 		thomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(table);
 		});
-		thomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		thomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-		
+
 		ImageView mhomeBtn =  managerscreen.getGoHome();
 		mhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(managerscreen);
 		});
-		mhomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		mhomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-		
+	
 		ImageView phomeBtn =  playerTeamSelection.getHome();
 		phomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(playerTeamSelection);
 		});
-		phomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		phomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-				
+		
 		ImageView ahomeBtn =  about.getGoHome();
 		ahomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(about);
 		});
-		ahomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		ahomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
-		
+
 		ImageView rhomeBtn =  refreeScreen.getHome();
 		rhomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(refreeScreen);
-		});
-		rhomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		rhomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 		ImageView shomeBtn =  stadiumScreen.getHome();
@@ -266,23 +169,11 @@ public class Main extends Application{
 			root.getChildren().add(btn);
 			root.getChildren().remove(stadiumScreen);
 		});
-		shomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		shomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
-		});
 		
 		ImageView crehomeBtn =  credit.getGoHome();
 		crehomeBtn.setOnMouseClicked(e -> {
 			root.getChildren().add(btn);
 			root.getChildren().remove(credit);
-		});
-		crehomeBtn.setOnMouseEntered(e->{
-			root.setCursor(javafx.scene.Cursor.HAND);
-		});
-		crehomeBtn.setOnMouseExited(e->{
-			root.setCursor(javafx.scene.Cursor.DEFAULT);
 		});
 		
 	//-------------------------------------------------------------
@@ -294,6 +185,7 @@ public class Main extends Application{
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setResizable(false);
+		stage.setTitle("ESSKEETIT Little Lion");
 		stage.show();
 	}
 		
@@ -301,7 +193,4 @@ public class Main extends Application{
 		launch(args);
 	}
 	
-	
-	
-
 }

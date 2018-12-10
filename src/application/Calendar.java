@@ -46,6 +46,13 @@ public class Calendar extends Pane {
 		home = b.getHome();
 		home.setLayoutX(622);
 		home.setLayoutY(615);
+		home.setOnMouseEntered(e->{
+			setCursor(javafx.scene.Cursor.HAND);
+		});
+		home.setOnMouseExited(e->{
+			setCursor(javafx.scene.Cursor.DEFAULT);
+		});
+
 		
 		VBox v = new VBox();
 		v.setPrefHeight(450+(size*150));

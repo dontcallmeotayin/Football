@@ -62,7 +62,11 @@ public class Player extends Person implements CsvAvailable {
 		this.appearance = ap;
 		this.assists = as;
 		this.team = t;
-		setImage(team.toLowerCase()+number+".png");
+		try {
+			setImage(team.toLowerCase()+number+".png");
+		} catch (NullPointerException e) {
+            setImagetoBasic();
+		}
 	}
 
 	public double getHeight() {
