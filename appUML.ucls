@@ -118,8 +118,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="application.RefreePane" project="Premier League" 
-    file="/Premier League/src/application/RefreePane.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="application.RefereePane" project="Premier League" 
+    file="/Premier League/src/application/RefereePane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="307" y="592"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

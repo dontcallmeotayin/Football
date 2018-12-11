@@ -8,13 +8,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import logic.Refree;
+import logic.Referee;
 
 public class RefereeScreen extends Pane{
 	
 	private ImageView home;
 
-	public RefereeScreen(ArrayList<Refree> refree) {
+	public RefereeScreen(ArrayList<Referee> refree) {
 				
 		ScrollPane scrollPane = new ScrollPane();
 		scrollPane.setPrefSize(700, 675);
@@ -26,8 +26,8 @@ public class RefereeScreen extends Pane{
 		v.setPadding(new Insets(20));
 		v.setSpacing(10);
 		v.setStyle("-fx-background-color: #643D68;");
-		for(Refree rf:refree) {
-			RefreePane pane = new RefreePane(rf);
+		for(Referee rf:refree) {
+			RefereePane pane = new RefereePane(rf);
 			v.getChildren().add(pane);
 		}
 		

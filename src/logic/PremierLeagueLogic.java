@@ -14,7 +14,7 @@ public class PremierLeagueLogic {
 	private ArrayList<Club> clubs;
 	private ArrayList<Player> allplayers;
 	private ArrayList<Manager> allmng;
-	private ArrayList<Refree> refree;
+	private ArrayList<Referee> refree;
 	private ArrayList<Stadium> stadiums;
 	private ArrayList<Day> days;
 	
@@ -118,8 +118,8 @@ public class PremierLeagueLogic {
 		return allmng;
 	}
 
-	public ArrayList<Refree> getRefree() {
-		refree = (new Refree()).makeList();
+	public ArrayList<Referee> getRefree() {
+		refree = (new Referee()).makeList();
 		return refree;
 	}	
 	

@@ -199,8 +199,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="logic.Refree" project="Premier League" 
-    file="/Premier League/src/logic/Refree.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="23" language="java" name="logic.Referee" project="Premier League" 
+    file="/Premier League/src/logic/Referee.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="317" width="185" x="2762" y="1064"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -217,8 +217,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="application.RefreePane" project="Premier League" 
-    file="/Premier League/src/application/RefreePane.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="25" language="java" name="application.RefereePane" project="Premier League" 
+    file="/Premier League/src/application/RefereePane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="101" width="135" x="4484" y="-46"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

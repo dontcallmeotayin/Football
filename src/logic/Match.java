@@ -15,7 +15,7 @@ public class Match implements CsvAvailable{
 	private int homegoal;
 	private int awaygoal;
 	private LocalDateTime startTime;
-	private Refree refree;
+	private Referee refree;
 	private Stadium stadium;
 	private boolean isDone;
 	
@@ -39,7 +39,7 @@ public class Match implements CsvAvailable{
 		totalGoals();
 	}
 	
-	public Match(Club home,int hg,Club away,int ag,LocalDateTime start,Refree refree,boolean isDone) {
+	public Match(Club home,int hg,Club away,int ag,LocalDateTime start,Referee refree,boolean isDone) {
 		this.homeTeam = home;
 		this.awayTeam = away;
 		this.homegoal = hg;
@@ -103,11 +103,11 @@ public class Match implements CsvAvailable{
 		this.startTime = startTime;
 	}
 
-	public Refree getRefree() {
+	public Referee getRefree() {
 		return refree;
 	}
 
-	public void setRefree(Refree refree) {
+	public void setRefree(Referee refree) {
 		this.refree = refree;
 	}
 
